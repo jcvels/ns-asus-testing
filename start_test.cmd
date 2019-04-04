@@ -1,6 +1,6 @@
 :: ASUS Testing Script
-:: Release: 1.0 <=== MODIFICAR
-:: Date: 18/10/2021 <=== MODIFICAR
+:: Release: 1.1
+:: Date: 04/04/2022
 
 :: CONFIG
 @echo off
@@ -26,13 +26,8 @@ set /p VER=<%CD%\.git\FETCH_HEAD
 echo. [%TIME%] Version de la herramienta: %VER%
 
     :: WIFI CONECTION 
-    
-    :: ===> TODO: Solo hacer la conexión.
-    
-    echo. [%TIME%] Ejecutando validacion de wifi. (wireless_test.cmd)
-    cmd.exe /c %DIR%\WIFI\wireless_test.cmd
-
-    :: ===> TODO: Mover configuracion de fecha y hora acá 
+    echo. [%TIME%] Ejecutando conexión wifi y configuración de hora del sistema. (wireless_connect.cmd)
+    cmd.exe /c %DIR%\WIFI\wireless_connect.cmd
 
     :: UPDATE
     curl -s -H "Accept: application/vnd.github.VERSION.sha" "https://api.github.com/repos/jcvels/ns-asus-testing/commits/master" > remote-version

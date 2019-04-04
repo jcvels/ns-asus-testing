@@ -1,6 +1,6 @@
 ::  BIOS TEST & CONFIG Script
-::  Release: 1.0
-::  Date: 22/09/2021
+::  Release: 1.1
+::  Date: 04/04/2022
 ::  Author: Jorge Pauvels ( JorgeClaudio.Pauvels@newsan.com.ar)
 
 @echo off
@@ -25,14 +25,6 @@ set MODEL=%CD%\BIOS\TOOLS\bios_model
     :: check if bios model is the spected
     fc %MODEL% %TEMP% >> %LOG%
     if not %errorlevel% == 0 (
-        goto FAIL
-    )
-
-    :: set date and time
-    cd %SETTIME%
-    %TOOL_3%
-
-    if NOT EXIST %SETTIME%\test_passed.log (
         goto FAIL
     )
     
