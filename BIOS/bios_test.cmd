@@ -34,6 +34,10 @@ set LOG=%CD%\BIOS\bios_test.log
         goto FAIL
     )
 
+    :: TODO: Configuración de fecha y hora
+
+    
+
 :: PASS
 :PASS
 color 2F
