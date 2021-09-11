@@ -50,14 +50,7 @@ goto END
 
 :: FAIL
 :FAIL
-color 4F
-echo.
-echo. FAIL -- FAIL -- FAIL -- FAIL -- -- FAIL -- FAIL -- FAIL -- FAIL ---- FAIL -- FAIL -- FAIL -- FAIL -- FAIL -- FAIL --
-echo. -- FAIL -- FAIL -- FAIL -- FAIL -- -- FAIL -- FAIL -- FAIL -- FAIL ---- FAIL -- FAIL -- FAIL -- FAIL -- FAIL -- FAIL
-echo. FAIL -- FAIL -- FAIL -- FAIL -- -- FAIL -- FAIL -- FAIL -- FAIL ---- FAIL -- FAIL -- FAIL -- FAIL -- FAIL -- FAIL --
-echo.
-pause
-exit
+%CD%\MISC\fail_msg.cmd
 
 :END
 timeout 2 >> %LOG%

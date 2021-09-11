@@ -19,7 +19,7 @@ set LOG=%CD%\BIOS\bios_test.log
     timeout 1 >> %LOG%
 
     :: check if bios version is the spected
-    fc %VERSION% %TEMP%
+    fc %VERSION% %TEMP% >> %LOG%
     if not %errorlevel% == 0 (
         goto FAIL
     )
@@ -42,14 +42,7 @@ goto END
 
 :: FAIL
 :FAIL
-color 4F
-echo.
-echo. FAIL -- FAIL -- FAIL -- FAIL -- -- FAIL -- FAIL -- FAIL -- FAIL ---- FAIL -- FAIL -- FAIL -- FAIL -- FAIL -- FAIL --
-echo. -- FAIL -- FAIL -- FAIL -- FAIL -- -- FAIL -- FAIL -- FAIL -- FAIL ---- FAIL -- FAIL -- FAIL -- FAIL -- FAIL -- FAIL
-echo. FAIL -- FAIL -- FAIL -- FAIL -- -- FAIL -- FAIL -- FAIL -- FAIL ---- FAIL -- FAIL -- FAIL -- FAIL -- FAIL -- FAIL --
-echo.
-pause
-exit
+%CD%\MISC\fail_msg.cmd
 
 :END
 timeout 2 >> %LOG%
