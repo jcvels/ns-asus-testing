@@ -24,7 +24,7 @@ echo. [%TIME%] El directorio de trabajo actual es %DIR%
 
 :: WIFI CONECTION
 echo. [%TIME%] Iniciando coneccion de red.
-netsh wlan connect profile=%WLAN% name=%WLAN%
+netsh wlan connect name=%WLAN% ssid=%WLAN%
 timeout 10 > null
 ping %PING% > null
 if not %errorlevel% == 0 (
