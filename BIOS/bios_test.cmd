@@ -38,7 +38,7 @@ set LOG=%CD%\BIOS\bios_test.log
     :: TODO: Configuración de fecha y hora ################################ <<<---##
 
     :: set bios to default and validate
-    %TOOL_1% /def > %TEMP%
+    %TOOL_2% /def > %TEMP%
     timeout 1 >> %LOG%
     find /C "Return Code = 0" %TEMP% >> %LOG%
     if not %errorlevel% == 0 (
