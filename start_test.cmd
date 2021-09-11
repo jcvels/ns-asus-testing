@@ -41,6 +41,10 @@ cmd.exe /c %DIR%\FAN\fan_test.cmd
 echo. [%TIME%] Ejecutando validacion de bios. (bios_test.cmd)
 cmd.exe /c %DIR%\BIOS\bios_test.cmd
 
+
+
+
+
 :: END
 echo. [%TIME%] Testing finalizando.
 color
