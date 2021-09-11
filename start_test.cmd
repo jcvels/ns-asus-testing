@@ -19,18 +19,17 @@ set PING=1.1.1.1
 
 :: START
 echo.
-echo. [%TIME%] Starting ASUS Notebook Testing Script for MP
+echo. [%TIME%] ASUS Notebook Testing Script for MP
 echo. [%TIME%] El directorio de trabajo actual es %DIR%
 
 :: WIFI CONECTION
-echo. [%TIME%] Iniciando conección de red.
+echo. [%TIME%] Iniciando coneccion de red.
 netsh wlan connect profile=%WLAN% name=%WLAN%
+timeout 10 > null
 ping %PING% > null
 if not %errorlevel% == 0 (
-
     goto FAIL
 )
-
 
 :: FAN - Validacion de funcionamiento, velocidad encendido y apagado del system fan
 echo. [%TIME%] Ejecutando validacion del system fan. (fan_test.cmd)
@@ -40,9 +39,10 @@ cmd.exe /c %DIR%\FAN\fan_test.cmd
 echo. [%TIME%] Ejecutando validacion de bios. (bios_test.cmd)
 cmd.exe /c %DIR%\BIOS\bios_test.cmd
 
-:: DEBUG
-echo. [%TIME%] Ejecutando nombre_del_test. (nombre_del_test.cmd)
-timeout 10 > null
+:: END
+echo. [%TIME%] Testing finalizando.
+color
+pause > null
 
 :: FAIL
 :FAIL
