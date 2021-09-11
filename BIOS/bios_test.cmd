@@ -7,7 +7,7 @@
 
 :: CONFIGURACION
 set TOOL_1=%CD%\BIOS\TOOLS\WBT.exe
-set TOOL_2=%CD%\BIOS\TOOLS\WBT.exe
+set TOOL_2=%CD%\BIOS\TOOLS\WFTTOOL.exe
 set VERSION=%CD%\BIOS\TOOLS\bios_version
 set MODEL=%CD%\BIOS\TOOLS\bios_model
 set TEMP=%CD%\BIOS\TOOLS\on_test.tmp
