@@ -4,7 +4,7 @@
 
 :: CONFIG
 @echo off
-mode 400
+mode 900
 color 1F
 cls
 
@@ -31,5 +31,5 @@ echo. [%TIME%] Ejecutando validacion de bios. (bios_test.cmd)
 cmd.exe /c %DIR%\BIOS\bios_test.cmd
 
 :: DEBUG
-echo. [%TIME%] Ejecutando validacion del system fan. (fan_test.cmd)
-timeout 10
+echo. [%TIME%] Ejecutando <nombre_del_test>. (nombre_del_test.cmd)
+timeout 10 > null
