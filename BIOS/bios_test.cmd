@@ -37,7 +37,7 @@ set LOG=%CD%\BIOS\bios_test.log
 :: PASS
 :PASS
 color 2F
-echo. [INFO] PASS (bios_test.cmd)
+echo. [%TIME%] PASS (bios_test.cmd)
 goto END
 
 :: FAIL

@@ -45,7 +45,7 @@ set LOG=%CD%\FAN\fan_test.log
 :: PASS
 :PASS
 color 2F
-echo. [INFO] PASS (fan_test.cmd)
+echo. [%TIME%] PASS (fan_test.cmd)
 goto END
 
 :: FAIL

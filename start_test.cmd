@@ -18,17 +18,17 @@ set DIR=%CD%
 
 :: START
 echo.
-echo. [INFO] Starting ASUS Notebook Testing Script for MP at %TIME%
-echo. [INFO] El directorio de trabajo actual es %DIR%
+echo. [%TIME%] Starting ASUS Notebook Testing Script for MP
+echo. [%TIME%] El directorio de trabajo actual es %DIR%
 
 :: FAN - Validacion de funcionamiento, velocidad encendido y apagado del system fan
-echo. [INFO] Ejecutando validacion del system fan. (fan_test.cmd)
+echo. [%TIME%] Ejecutando validacion del system fan. (fan_test.cmd)
 cmd.exe /c %DIR%\FAN\fan_test.cmd
 
 :: BIOS - Validacion de version bios, modelo, configuracion de hora y configuración por defecto.
-echo. [INFO] Ejecutando validacion de bios. (bios_test.cmd)
+echo. [%TIME%] Ejecutando validacion de bios. (bios_test.cmd)
 cmd.exe /c %DIR%\BIOS\bios_test.cmd
 
 :: DEBUG
-echo. [INFO] Ejecutando validacion del system fan. (fan_test.cmd)
+echo. [%TIME%] Ejecutando validacion del system fan. (fan_test.cmd)
 timeout 10
