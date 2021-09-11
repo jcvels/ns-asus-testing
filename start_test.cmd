@@ -4,7 +4,6 @@
 
 :: CONFIG
 @echo off
-mode 900
 color 1F
 cls
 C:\Windows\System32\powercfg.exe /s 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
@@ -30,5 +29,5 @@ echo. [%TIME%] Ejecutando validacion de bios. (bios_test.cmd)
 cmd.exe /c %DIR%\BIOS\bios_test.cmd
 
 :: DEBUG
-echo. [%TIME%] Ejecutando <nombre_del_test>. (nombre_del_test.cmd)
+echo. [%TIME%] Ejecutando nombre_del_test. (nombre_del_test.cmd)
 timeout 10 > null
