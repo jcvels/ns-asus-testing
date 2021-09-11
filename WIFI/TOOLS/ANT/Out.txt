@@ -1,0 +1,5 @@
+
+ANT tool, Version 11.1938.0-04401
+(C) 2007-2019 Intel corporation / OEM Tools group. All rights reserved.
+
+Detected hardware: 

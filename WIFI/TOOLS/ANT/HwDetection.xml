@@ -1,0 +1,45 @@
+<NVM_METADATA>
+  <Devices>
+	<Device name="STONE_D1"           	device_id="0x095A" />
+	<Device name="STONE_D1_DELL"        device_id="0x095B" />
+	<Device name="STONE1"           	device_id="0x3165" />
+    <Device name="LIGHTNING1"           device_id="0x5501" />
+    <Device name="LIGHTNING"            device_id="0x5502" />
+    <Device name="SNOWFIELD"            device_id="0x24F3" />
+    <Device name="SNOWFIELD_LENOVO"     device_id="0x24F4" />
+    <Device name="SNOWFIELD1"           device_id="0x24F5" />
+    <Device name="SNOWFIELD1_LENOVO"    device_id="0x24F6" />
+    <Device name="WINDSTORM"            device_id="0x24FD" />
+    <Device name="THUNDER"              crf_id="0x01" rf_type="0x0105" killer_subvednor_id="0x1A56" killer_subsystem_id="0x1550" />
+    <Device name="JEFFERSON"            crf_id="0x03" rf_type="0x0105" killer_subvednor_id="0x1A56" killer_subsystem_id="0x1551"/>
+    <Device name="JEFFERSON"            crf_id="0x03" rf_type="0x0105" killer_subvednor_id="0x1A56" killer_subsystem_id="0x1552"/>
+    <Device name="JEFFERSON1"           crf_id="0x06" rf_type="0x0108" />
+    <Device name="JEFFERSON1D"          crf_id="0x0A" rf_type="0x0108" />
+    <Device name="SUNNY"                crf_id="0x0C" rf_type="0x010B" />
+    <Device name="HARRISON2"            crf_id="0x07" rf_type="0x010A" killer_subvednor_id="0x1A56" killer_subsystem_id="0x1651"/>
+    <Device name="HARRISON2"            crf_id="0x07" rf_type="0x010A" killer_subvednor_id="0x1A56" killer_subsystem_id="0x1652"/>
+	<Device name="HARRISON1"            crf_id="0x04" rf_type="0x010C" />
+    <Device name="CYCLONE"              crf_id="0x08" rf_type="0x010A" killer_subvednor_id="0x1A56" killer_subsystem_id="0x1653"/>
+    <Device name="CYCLONE"              crf_id="0x08" rf_type="0x010A" killer_subvednor_id="0x1A56" killer_subsystem_id="0x1654"/>
+    <Device name="GARFIELD2"            crf_id="0x09" rf_type="0x010D" />
+    <Device name="GARFIELD2_TC"         crf_id="0x09" rf_type="0x0F08" />
+	<Device name="TYPHOON"         		crf_id="0x02" rf_type="0x010D" />
+	<Device name="GARFIELD4"         	crf_id="0x0b" rf_type="0x010D" cdb="0x01"/>
+  </Devices>
+  <Macs>
+    <MAC name="THUNDER"     mac_type="0x0032" />
+    <MAC name="THUNDER_1"   mac_type="0x0032" />
+    <MAC name="PNJ"         mac_type="0x0032" />
+    <MAC name="QNJ"         mac_type="0x0036" />
+	<MAC name="SNJ"         mac_type="0x0042" xnj="1"/>
+    <MAC name="PULSAR"      mac_type="0x0030" />
+    <MAC name="PULSAR_B"    mac_type="0x0031" />
+    <MAC name="QUASAR_B"    mac_type="0x0033" />
+    <MAC name="QUASAR_V"    mac_type="0x0035" />
+    <MAC name="QUASAR_Z"    mac_type="0x0041" />
+    <MAC name="SUNNY"       mac_type="0x0039" />
+    <MAC name="CYCLONE"     mac_type="0x0034" />
+	<MAC name="TYPHOON"     mac_type="0x0042" xnj="0"/>
+  </Macs>
+</NVM_METADATA>                                          
+                                                         

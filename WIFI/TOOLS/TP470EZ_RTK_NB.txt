@@ -1,0 +1,25 @@
+
+ Chain A: 
+   	2.4GHz:                	19
+   	5.2GHz 5150MHz-5350MHz:	16.5
+   	5.2GHz 5350MHz-5470MHz:	16.5
+   	5.2GHz 5470MHz-5725MHz:	16.5
+   	5.2GHz 5725MHz-5950MHz:	16.5
+
+ Chain B: 
+   	2.4GHz:                	19
+   	5.2GHz 5150MHz-5350MHz:	16.5
+   	5.2GHz 5350MHz-5470MHz:	16.5
+   	5.2GHz 5470MHz-5725MHz:	16.5
+   	5.2GHz 5725MHz-5950MHz:	16.5
+
+
+   2.4GHz:
+       Max Power: [31.5] dBm
+       Ant-1 delta value: [0] dB
+       Ant-2 delta value: [0] dB
+
+   5GHz:
+       Max Power: [31.5] dBm
+       Ant-1 delta value: [0] dB
+       Ant-2 delta value: [0] dB

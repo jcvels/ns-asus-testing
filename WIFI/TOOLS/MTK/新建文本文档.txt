@@ -1,0 +1,3 @@
+?	獲取Dynamic sar table及輸出txt檔指令: mtkoem sar get_sar_table Y
+
+?	獲取Geo sar table及輸出txt檔指令: mtkoem sar get_geo_table Y

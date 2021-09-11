@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Tool Name="ANT">
+  <Test Name="Association" Description="performs association with a user defined Access Point">
+    <ARGUMENTS>
+      <ARGUMENT name="-network" Description="Access Point SSID" Value="N\A"/>
+	  <ARGUMENT name="-bssid" Description="Access Point BSSID (MAC address)" Value="N\A"/>
+      <ARGUMENT name="-band" Description="Test on a specific band" Value="A/B/G"/>
+      <ARGUMENT name="-enable_11n" Description="Enables 11n mode" Value="N/A"/>
+      <ARGUMENT name="-disable_11n" Description="Disables 11n mode" Value="N/A"/>
+      <ARGUMENT name="-stay_assoc" Description="When the test is done, the Nic will be disconnected. Use [-stay_assoc] to stay associated" Value="N/A"/>
+	  <ARGUMENT name="-ant_isolation" Description="Shows the physical isolation between two antennas when Wi-Fi is associated to AP and BT is active. Antenna isolation value is in dB." Value="N/A"/>
+	  <ARGUMENT name="-delay" Description="Sets delay, in msec between changing band/diversity/11n mode parameters and starting association. Default value is 1 msec." Value="1"/>
+	  <ARGUMENT name="-aggressive" Description="Sends association requests once every 2 seconds until association succeeds or time out expires." Value="N/A"/>
+	  <ARGUMENT name="-d" Description="Extracts logs to ‘antToolLog.log’. Overwrite will delete all file content" Value="append/overwrite"/>
+	  <ARGUMENT name="-debug" Description="Extracts logs to ‘antToolLog.log’. Overwrite will delete all file content" Value="append/overwrite"/>
+	  <ARGUMENT name="-log" Description="Extracts significant values to file." Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="ANT was able to associate with AP" Action="N/A"/>
+      <ERRORCODE Code="2" Description="Failure" Reason="ANT was unable to associate with AP" Action="Verify SSID is correct and the antennas connectivity"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="257" Description="Failure" Reason="Hardware initialization error" Action="Verify appropriate driver installed, device connected"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="RSSI Test" Description="performs association with a user defined Access Point and executes the RSSI test">
+    <ARGUMENTS>
+      <ARGUMENT name="-network" Description="Access Point SSID" Value="N\A"/>
+	  <ARGUMENT name="-bssid" Description="Access Point BSSID (MAC address)" Value="N\A"/>
+	  <ARGUMENT name="-antd" Description="Test RSSI on chain with the highest RSSI" Value="N\A"/>
+      <ARGUMENT name="-ant1" Description="Test RSSI on chain A" Value="N\A"/>
+      <ARGUMENT name="-ant2" Description="Test RSSI on chain B" Value="N\A"/>
+      <ARGUMENT name="-ant_all" Description="Test RSSI on all supported chains" Value="N\A"/>
+      <ARGUMENT name="-band" Description="Test on a specific band" Value="A/B/G"/>
+	  <ARGUMENT name="-i" Description="Number of RSSI test iterations" Value="1"/>
+	  <ARGUMENT name="-th" Description="Lower RSSI limit" Value="45"/>
+      <ARGUMENT name="-th_high" Description="Upper RSSI limit" Value="0"/>
+	  <ARGUMENT name="-stay_assoc" Description="When the test is done, the Nic will be disconnected. Use [-stay_assoc] to stay associated" Value="N/A"/>
+      <ARGUMENT name="-enable_11n" Description="Enables 11n mode" Value="N/A"/>
+      <ARGUMENT name="-disable_11n" Description="Disables 11n mode" Value="N/A"/>
+      <ARGUMENT name="-rssi_loops" Description="Number of RSSI measurements per test iteration" Value="10"/>
+      <ARGUMENT name="-falloff" Description="Sets fall off parameter of waiting for stable RSSI. This is the weight ratio of accumulated RSSI compared to weight of current RSSI when waiting for a stable RSSI." Value="3"/>
+	  <ARGUMENT name="-stable_rssi_threshold" Description="Sets threshold for the diff between current RSSI and average RSSI when waiting for stable RSSI. " Value="1"/>
+	  <ARGUMENT name="-ant_isolation" Description="Shows the physical isolation between two antennas when Wi-Fi is associated to AP and BT is active. Antenna isolation value is in dB." Value="N/A"/>
+	  <ARGUMENT name="-delay" Description="Sets delay, in msec between changing band/diversity/11n mode parameters and starting association. Default value is 1 msec." Value="1"/>
+	  <ARGUMENT name="-aggressive" Description="Sends association requests once every 2 seconds until association succeeds or time out expires." Value="N/A"/>
+	  <ARGUMENT name="-xml" Description="writes test results to an XML file, either appending or overwriting" Value="N/A"/>
+	  <ARGUMENT name="-OutputXMLFile" Description="chooses an output XML file" Value="AntennaAppSummary.xml"/>
+	  <ARGUMENT name="-d" Description="Extracts logs to ‘antToolLog.log’. Overwrite will delete all file content" Value="append/overwrite"/>
+	  <ARGUMENT name="-debug" Description="Extracts logs to ‘antToolLog.log’. Overwrite will delete all file content" Value="append/overwrite"/>
+	  <ARGUMENT name="-log" Description="Extracts significant values to file." Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="RSSI average value was within the specified limits" Action="N/A"/>
+      <ERRORCODE Code="1" Description="Failure" Reason="RSSI average value was outside the specified limits" Action="Check limits, Check antennas connectivity and proximity to Access point"/>
+      <ERRORCODE Code="2" Description="Failure" Reason="ANT was unable to associate with AP" Action="Verify SSID is correct and the antennas connectivity"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="257" Description="Failure" Reason="Hardware initialization error" Action="Verify appropriate driver installed, device connected"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="Delta Test" Description="performs association with a user defined Access Point and executes RSSI delta test between two chains">
+    <ARGUMENTS>
+      <ARGUMENT name="-network" Description="Access Point SSID" Value="N\A"/>
+	  <ARGUMENT name="-bssid" Description="Access Point BSSID (MAC address)" Value="N\A"/>
+      <ARGUMENT name="-deltaab" Description="Define the max delta value" Value="N/A"/>
+      <ARGUMENT name="-band" Description="Test on a specific band" Value="A/B/G"/>
+	  <ARGUMENT name="-stay_assoc" Description="When the test is done, the Nic will be disconnected. Use [-stay_assoc] to stay associated" Value="N/A"/>
+      <ARGUMENT name="-enable_11n" Description="Enables 11n mode" Value="N/A"/>
+      <ARGUMENT name="-disable_11n" Description="Disables 11n mode" Value="N/A"/>
+      <ARGUMENT name="-rssi_loops" Description="Number of RSSI measurements per test iteration" Value="10"/>
+	  <ARGUMENT name="-falloff" Description="Sets fall off parameter of waiting for stable RSSI. This is the weight ratio of accumulated RSSI compared to weight of current RSSI when waiting for a stable RSSI." Value="3"/>
+	  <ARGUMENT name="-stable_rssi_threshold" Description="Sets threshold for the diff between current RSSI and average RSSI when waiting for stable RSSI. " Value="1"/>
+	  <ARGUMENT name="-ant_isolation" Description="Shows the physical isolation between two antennas when Wi-Fi is associated to AP and BT is active. Antenna isolation value is in dB." Value="N/A"/>
+	  <ARGUMENT name="-delay" Description="Sets delay, in msec between changing band/diversity/11n mode parameters and starting association. Default value is 1 msec." Value="1"/>
+	  <ARGUMENT name="-aggressive" Description="Sends association requests once every 2 seconds until association succeeds or time out expires." Value="N/A"/>
+	  <ARGUMENT name="-xml" Description="writes test results to an XML file, either appending or overwriting" Value="N/A"/>
+	  <ARGUMENT name="-OutputXMLFile" Description="chooses an output XML file" Value="AntennaAppSummary.xml"/>
+	  <ARGUMENT name="-d" Description="Extracts logs to ‘antToolLog.log’. Overwrite will delete all file content" Value="append/overwrite"/>
+	  <ARGUMENT name="-debug" Description="Extracts logs to ‘antToolLog.log’. Overwrite will delete all file content" Value="append/overwrite"/>
+	  <ARGUMENT name="-log" Description="Extracts significant values to file." Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="RSSI delta value was within the specified limits" Action="N/A"/>
+      <ERRORCODE Code="1" Description="Failure" Reason="Delta value was outside the specified limits" Action="Check limits, Check antennas connectivity"/>
+      <ERRORCODE Code="2" Description="Failure" Reason="ANT was unable to associate with AP" Action="Verify SSID is correct and the antennas connectivity"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="257" Description="Failure" Reason="Hardware initialization error" Action="Verify appropriate driver installed, device connected"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="RSSI BT Test" Description="Test BT RSSI from the air">
+    <ARGUMENTS>
+      <ARGUMENT name="-bt" Description="Measures BT antenna RSSI" Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="BT RSSI average value was within the specified limits" Action="N/A"/>
+      <ERRORCODE Code="1" Description="Failure" Reason="BT RSSI average value was outside the specified limits" Action="Check limits, Check antennas connectivity"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="257" Description="Failure" Reason="Hardware initialization error" Action="Verify appropriate driver installed, device connected"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="Get RF Kill" Description="returns the RF-Kill switch status">
+    <ARGUMENTS>
+      <ARGUMENT name="-get_rf_kill" Description="returns the RF-Kill switch status" Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="4" Description="RF-Kill enabled" Reason="RF-Kill switch is set to on" Action="N/A"/>
+      <ERRORCODE Code="5" Description="RF-Kill disabled" Reason="RF-Kill switch is set to off" Action="N/A"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="257" Description="Failure" Reason="Hardware initialization error" Action="Verify appropriate driver installed, device connected"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="Disable Driver" Description="Disables WiFi driver">
+	<ARGUMENTS>
+      <ARGUMENT name="-disable_driver" Description="Disables WiFi driver" Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="Driver disabled" Action="N/A"/>
+      <ERRORCODE Code="1" Description="Failure" Reason="Unable to disable driver" Action="Delete all hidden devices"/>
+	  <ERRORCODE Code="3" Description="Failure" Reason="No appropriate installed driver was found" Action="Install appropriate driver"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="Enable Driver" Description="Enables WiFi driver">
+	<ARGUMENTS>
+      <ARGUMENT name="-enable_driver" Description="Enables WiFi driver" Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="Driver enabled" Action="N/A"/>
+      <ERRORCODE Code="1" Description="Failure" Reason="Unable to enable driver" Action="Delete all hidden devices"/>
+	  <ERRORCODE Code="3" Description="Failure" Reason="No appropriate installed driver was found" Action="Install appropriate driver"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="Reset Driver" Description="Resets WiFi driver">
+	<ARGUMENTS>
+      <ARGUMENT name="-reset_driver" Description="Resets WiFi driver" Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="Driver disabled then enabled" Action="N/A"/>
+      <ERRORCODE Code="1" Description="Failure" Reason="Unable to disable/enable driver" Action="Delete all hidden devices"/>
+	  <ERRORCODE Code="3" Description="Failure" Reason="No appropriate installed driver was found" Action="Install appropriate driver"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="Disable BT Driver" Description="Disables BT driver">
+	<ARGUMENTS>
+      <ARGUMENT name="-disable_bt_driver" Description="Disables BT driver" Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="BT Driver disabled" Action="N/A"/>
+	  <ERRORCODE Code="12" Description="Failure" Reason="Unable to disable BT driver" Action="Delete all hidden devices"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="Enable BT Driver" Description="Enable BT driver">
+	<ARGUMENTS>
+      <ARGUMENT name="-enable_bt_driver" Description="Enable BT driver" Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="BT Driver enabled" Action="N/A"/>
+      <ERRORCODE Code="11" Description="Failure" Reason="Unable to enable BT driver" Action="Delete all hidden devices"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="Device ID" Description="Retrieves Device ID">
+	<ARGUMENTS>
+      <ARGUMENT name="-get_deviceid" Description="Retrieves Device ID" Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="Device ID returned" Action="N/A"/>
+      <ERRORCODE Code="1" Description="Failure" Reason="Unable to retrieve Device ID" Action="Contact manufacturer"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="257" Description="Failure" Reason="Hardware initialization error" Action="Verify appropriate driver installed, device connected"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="Subsystem ID" Description="Retrieves Subsystem ID">
+	<ARGUMENTS>
+      <ARGUMENT name="-get_subsystemid" Description="Retrieves Subsystem ID" Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="Subsystem ID returned" Action="N/A"/>
+      <ERRORCODE Code="1" Description="Failure" Reason="Unable to retrieve Subsystem ID" Action="Contact manufacturer"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="257" Description="Failure" Reason="Hardware initialization error" Action="Verify appropriate driver installed, device connected"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="NVM Image" Description="Retrieves NVM Image">
+	<ARGUMENTS>
+      <ARGUMENT name="-get_nvmimage" Description="Retrieves NVM Image" Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="NVM Image returned" Action="N/A"/>
+      <ERRORCODE Code="1" Description="Failure" Reason="Unable to retrieve NVM Image" Action="Contact manufacturer"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="257" Description="Failure" Reason="Hardware initialization error" Action="Verify appropriate driver installed, device connected"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="HW Rev ID" Description="Retrieves HW Rev ID">
+	<ARGUMENTS>
+      <ARGUMENT name="-get_hwrevid" Description="Retrieves HW Rev ID" Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="HW Rev ID returned" Action="N/A"/>
+      <ERRORCODE Code="1" Description="Failure" Reason="Unable to retrieve HW Rev ID" Action="Contact manufacturer"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="257" Description="Failure" Reason="Hardware initialization error" Action="Verify appropriate driver installed, device connected"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="NVM Rev ID" Description="Retrieves NVM Rev ID">
+	<ARGUMENTS>
+      <ARGUMENT name="-get_nvmrevid" Description="Retrieves NVM Rev ID" Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="NVM Rev ID returned" Action="N/A"/>
+      <ERRORCODE Code="1" Description="Failure" Reason="Unable to retrieve NVM Rev ID" Action="Contact manufacturer"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="257" Description="Failure" Reason="Hardware initialization error" Action="Verify appropriate driver installed, device connected"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+  <Test Name="All NVM Data" Description="Retrieves All NVM Data in one test">
+	<ARGUMENTS>
+      <ARGUMENT name="-get_device_data" Description="Retrieves All NVM Data in one test" Value="N\A"/>
+    </ARGUMENTS>
+    <ERRORCODES>
+      <ERRORCODE Code="0" Description="Success" Reason="All NVM Data returned" Action="N/A"/>
+      <ERRORCODE Code="1" Description="Failure" Reason="One of the values failed to return" Action="Contact manufacturer"/>
+	  <ERRORCODE Code="256" Description="Failure" Reason="Invalid command line" Action="Verify the command line arguments"/>
+	  <ERRORCODE Code="257" Description="Failure" Reason="Hardware initialization error" Action="Verify appropriate driver installed, device connected"/>
+	  <ERRORCODE Code="258" Description="Failure" Reason="General error" Action="Contact manufacturer"/>
+    </ERRORCODES>
+  </Test>
+</Tool>
