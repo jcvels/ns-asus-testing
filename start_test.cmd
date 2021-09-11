@@ -4,6 +4,7 @@
 
 :: CONFIG
 @echo off
+mode 800
 color 1F
 cls
 
