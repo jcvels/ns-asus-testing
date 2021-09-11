@@ -19,12 +19,14 @@ set PING=1.1.1.1
 
 :: START
 echo.
-echo. [%TIME%] ASUS Notebook Testing Script for MP
+echo. // ASUS Notebook Testing Script for MP //
+echo.
+echo. [%TIME%] Iniciando.
 echo. [%TIME%] El directorio de trabajo actual es %DIR%
 
 :: WIFI CONECTION
 echo. [%TIME%] Iniciando coneccion de red.
-netsh wlan connect name=%WLAN% ssid=%WLAN%
+netsh wlan connect name=%WLAN% ssid=%WLAN% > null
 timeout 10 > null
 ping %PING% > null
 if not %errorlevel% == 0 (
