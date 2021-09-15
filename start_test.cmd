@@ -32,6 +32,9 @@ cmd.exe /c %DIR%\BIOS\bios_test.cmd
 
 :: END
 echo. [%TIME%] Testing finalizando.
+echo.
+echo. // ASUS Notebook Testing Script for MP //
+echo.
 color
 pause > null
 
