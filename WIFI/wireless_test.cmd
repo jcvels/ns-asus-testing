@@ -9,6 +9,7 @@
 set TOOL=%CD%\WIFI\TOOLS\wifiConnectAndCheck.exe
 set TOOLDIR=%CD%\WIFI\TOOLS
 set PASS=%CD%\WIFI\TOOLS\test_passed.log
+set LOG=%CD%\WIFI\wifi_test.log
 
 :: TESTING PROCCESS
 

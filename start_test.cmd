@@ -9,10 +9,7 @@ cls
 C:\Windows\System32\powercfg.exe /s 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
 
 :: SCRIPT CONFIG
-set TEST=PRUEBA PRUEBA
 set DIR=%CD%
-set WLAN=Wifi2.4
-set PING=1.1.1.1
 
 :: START
 echo.
