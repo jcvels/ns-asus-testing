@@ -8,15 +8,15 @@ color 1F
 cls
 
 :: POWERSUPPLY
-C:\OEM\OA3\TOOLS\waitKey.exe
+%CD%\OA3\TOOLS\waitKey.exe
 
 :: CONFIGURACION
 set FFKI_IP=192.168.0.167
-set CONFIGFILE=C:\OEM\OA3\TOOLS\oa3.cfg
-set OA3TOOL=C:\OEM\OA3\TOOLS\oa3tool.exe
-set FLASHTOOL=C:\OEM\OA3\TOOLS\SLPBuilderConsole.exe
+set CONFIGFILE=%CD%\OA3\TOOLS\oa3.cfg
+set OA3TOOL=%CD%\OA3\TOOLS\oa3tool.exe
+set FLASHTOOL=%CD%\OA3\TOOLS\SLPBuilderConsole.exe
 set FLASHCOMMAND=/oa30:\OEM\OA3\TOOLS\OA3.bin
-set LOGFILE=C:\OEM\OA3\injection_log_%date%_%time%.log
+set LOGFILE=%CD%\OA3\injection_log_%date%_%time%.log
 
 :: INICIO
 echo.
