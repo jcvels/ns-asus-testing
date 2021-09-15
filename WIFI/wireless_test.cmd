@@ -7,11 +7,13 @@
 
 :: CONFIGURACION
 set TOOL=%CD%\WIFI\TOOLS\wifiConnectAndCheck.exe
+set TOOLDIR=%CD%\WIFI\TOOLS
 set PASS=%CD%\WIFI\TOOLS\test_passed.log
 
 :: TESTING PROCCESS
 
     :: run wifi test tool
+    cd %TOOLDIR%
     %TOOL%
 
     :: check wifi test results
