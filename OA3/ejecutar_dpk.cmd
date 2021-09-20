@@ -7,14 +7,12 @@
 color 1F
 cls
 
-:: POWERSUPPLY
-%CD%\OA3\TOOLS\waitKey.exe
-
 :: CONFIGURACION
 set FFKI_IP=192.168.0.167
 set CONFIGFILE=%CD%\OA3\TOOLS\oa3.cfg
 set OA3TOOL=%CD%\OA3\TOOLS\oa3tool.exe
 set FLASHTOOL=%CD%\OA3\TOOLS\SLPBuilderConsole.exe
+set SHOWDPK=%CD%\OA3\TOOLS\showLicences.exe
 set FLASHCOMMAND=/oa30:\OEM\OA3\TOOLS\OA3.bin
 set LOGFILE=%CD%\OA3\injection_log_%date%_%time%.log
 
@@ -30,56 +28,71 @@ echo.## Iniciando nuevo proceso de inyeccion: %date% %time% >> %LOGFILE%
 %OA3TOOL% /validate >> %LOGFILE%
 if %errorlevel% == 0 (
 	color 4F
-	echo. - El equipo ya tiene una DPK inyectada. Se intentará recuperar el ProductKeyID.
+	echo. [%TIME%] El equipo ya tiene una DPK inyectada.
 	C:\OEM\OA3\TOOLS\PKIDasker.exe
-	goto OK
+	goto PASS
 ) 
 
 :: VERIFICA CONEXION
 ping %FFKI_IP% >> %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
-	echo. - No hay conexión con el FFKI.
-	goto SALIR
+	echo. [%TIME%] No hay conexión con el FFKI.
+	goto FAIL
 ) 
 
 :: VERIFICA CONFIGURACION
 find /C "%FFKI_IP%" %CONFIGFILE% >> %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
-	echo. - Error de configuración de IP en archivo CFG.
-	goto SALIR
+	echo. [%TIME%] Error de configuración de IP en archivo CFG.
+	goto FAIL
 ) 
 
 :: SOLICITUD DE DPK AL SERVER
 %OA3TOOL% -Assemble -Configfile=%CONFIGFILE% >> %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
-	echo. - ERROR OA3TOOL ASSEMBLE
-	goto SALIR
+	echo. [%TIME%] ERROR OA3TOOL ASSEMBLE
+	goto FAIL
+) 
+
+:: COPIA DE SEGURIDAD XML
+copy oa3.xml on_test.xml >> %LOGFILE%
+if NOT EXIST on_test.xml (
+	color 4F
+	echo. [%TIME%] ERROR COPIA DE SEGURIDAD XML
+	goto FAIL
 ) 
 
 :: INYECCION DE DPK EN BIOS
 %FLASHTOOL% %FLASHCOMMAND% >> %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
-	echo. - ERROR HERRAMIENTA DE INYECCIÓN
-	goto SALIR
+	echo. [%TIME%] ERROR HERRAMIENTA DE INYECCIÓN
+	goto FAIL
 )
 
 :: REPORTE DE INYECCION + HASH + OHR INFO AL SERVER
 %OA3TOOL% -Report -Configfile=%CONFIGFILE% >> %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
-	echo. - ERROR OA3TOOL REPORT 
-	goto SALIR
+	echo. [%TIME%] ERROR OA3TOOL REPORT 
+	goto FAIL
 ) 
 
-:OK
-color 2F
-echo. - LA OPERACION SE REALIZO CON EXITO
-echo.OA3 DPK OK %date% %time% >> C:\OEM\ok_dpk
-exit
+%SHOWDPK%
 
-:SALIR
-timeout 10
+:: PASS
+:PASS
+color 2F
+echo. [%TIME%] PASS (ejecutar_dpk.cmd)
+goto END
+
+:: FAIL
+:FAIL
+%CD%\MISC\fail_msg.cmd
+
+:END
+timeout 2 >> %LOG%
+color 1F
