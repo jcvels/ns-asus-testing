@@ -18,6 +18,10 @@ echo.
 echo. [%TIME%] Iniciando.
 echo. [%TIME%] El directorio de trabajo actual es %DIR%
 
+:: VERSION
+echo. [%TIME%] Versión de la herramienta:
+type %CD%\.git\FETCH_HEAD
+
 :: SERIAL NUMBER
 echo. [%TIME%] Ejecutando grabado SSN. (getSerialNumber.exe)
 cd %DIR%\BIOS\TOOLS\

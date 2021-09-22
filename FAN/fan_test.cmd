@@ -14,7 +14,7 @@ set LOG=%CD%\FAN\fan_test.log
 
     :: set full speed and wait 1 sec
     %TOOL% /fan -set 0 FS >> %LOG%
-    timeout 3 >> %LOG%
+    timeout 5 >> %LOG%
 
     :: check system fan rpms
     %TOOL% /fan -get 0 RPM -p 2 > %TEMP%
