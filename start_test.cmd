@@ -22,6 +22,7 @@ echo. [%TIME%] El directorio de trabajo actual es %DIR%
 echo. [%TIME%] Ejecutando grabado SSN. (getSerialNumber.exe)
 cd %DIR%\BIOS\TOOLS\
 getSerialNumber.exe
+cd %DIR%
 
 :: WIFI CONECTION
 echo. [%TIME%] Ejecutando validacion de wifi. (wireless_test.cmd)
