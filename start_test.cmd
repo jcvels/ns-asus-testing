@@ -22,8 +22,7 @@ echo. [%TIME%] Configuración de energia.
 C:\Windows\System32\powercfg.exe /s 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
 
 :: VERSION
-echo. [%TIME%] Versión de la herramienta:
-type %CD%\.git\FETCH_HEAD
+echo. [%TIME%] Versión de la herramienta: && type %CD%\.git\FETCH_HEAD
 
     :: SERIAL NUMBER
     echo. [%TIME%] Ejecutando grabado SSN. (getSerialNumber.exe)
