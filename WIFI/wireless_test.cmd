@@ -6,6 +6,7 @@
 @echo off
 
 :: CONFIGURACION
+set DIR=%CD%
 set TOOL=%CD%\WIFI\TOOLS\wifiConnectAndCheck.exe
 set TOOLDIR=%CD%\WIFI\TOOLS
 set PASS=%CD%\WIFI\TOOLS\test_passed.log
@@ -16,6 +17,7 @@ set LOG=%CD%\WIFI\wifi_test.log
     :: run wifi test tool
     cd %TOOLDIR%
     %TOOL%
+    cd %DIR%
 
     :: check wifi test results
     if not EXIST %PASS% (
