@@ -1,6 +1,6 @@
 ::  BIOS TEST & CONFIG Script
 ::  Release: 1.0
-::  Date: 11/09/2021
+::  Date: 22/09/2021
 ::  Author: Jorge Pauvels ( JorgeClaudio.Pauvels@newsan.com.ar)
 
 @echo off
