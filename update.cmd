@@ -6,3 +6,6 @@ del %CD%\BIOS\TOOLS\bios_model.log
 
 git checkout *.*
 git pull
+
+timeout 10
+shutdown -r -f -t 0
