@@ -22,10 +22,10 @@ set LOG=%CD%\BIOS\bios_test.log
     timeout 1 >> %LOG%
 
     :: check if bios version is the spected
-    fc %VERSION% %TEMP% >> %LOG%
-    if not %errorlevel% == 0 (
-        goto FAIL
-    )
+    :: fc %VERSION% %TEMP% >> %LOG%
+    :: if not %errorlevel% == 0 (
+    ::     goto FAIL
+    :: )
 
     :: get bios model by wmic
     wmic baseboard get product,manufacturer,version > %TEMP%
