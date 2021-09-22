@@ -8,8 +8,10 @@
 :: CONFIGURACION
 set TOOL_1=%CD%\BIOS\TOOLS\WBT.exe
 set TOOL_2=%CD%\BIOS\TOOLS\WFTTOOL.exe
+set TOOL_3=setDateTime.exe
 set VERSION=%CD%\BIOS\TOOLS\bios_version
 set MODEL=%CD%\BIOS\TOOLS\bios_model
+set SETTIME=%CD%\BIOS\TIME\
 set TEMP=%CD%\BIOS\TOOLS\on_test.tmp
 set LOG=%CD%\BIOS\bios_test.log
 
@@ -35,15 +37,19 @@ set LOG=%CD%\BIOS\bios_test.log
         goto FAIL
     )
 
-    :: TODO: Configuración de fecha y hora ################################ <<<---##
+    :: set date and time
+    cd %SETTIME%
+    %TOOL_3%
+
+    if NOT EXIST %SETTIME%\test_passed.log (
+        goto FAIL
+    )
+    
+    cd %CD%
 
     :: set bios to default and validate
     %TOOL_2% /def > %TEMP%
     timeout 1 >> %LOG%
-    @REM find /C "Return Code = 0" %TEMP% >> %LOG%
-    @REM if not %errorlevel% == 0 (
-    @REM     goto FAIL
-    @REM )
 
 :: PASS
 :PASS
