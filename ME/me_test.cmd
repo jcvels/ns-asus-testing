@@ -8,20 +8,22 @@
 :: CONFIGURACION
 set DIR=%CD%
 set TOOLDIR=%CD%\ME\
+set TEMP=on_test.tmp
+set LOG=on_test.log
 
 :: TESTING PROCCESS
 
     cd %TOOLDIR%
 
-    del on_test.tmp > null
+    del %TEMP% >> %LOG%
 
-    FPTW64.exe -closemnf –y > on_test.tmp
+    FPTW64.exe -closemnf –y > %TEMP%
     find /C "FPT Operation Successful." %TEMP% >> %LOG%
     if not %errorlevel% == 0 (
         goto FAIL
     )
 
-    MEManufWin64.exe -eol > on_test.tmp
+    MEManufWin64.exe -eol > %TEMP%
     find /C "MEManuf Operation Passed" %TEMP% >> %LOG%
     if not %errorlevel% == 0 (
         goto FAIL
