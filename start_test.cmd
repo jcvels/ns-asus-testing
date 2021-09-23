@@ -18,11 +18,11 @@ echo. [%TIME%] Iniciando.
 echo. [%TIME%] El directorio de trabajo actual es %DIR%
 
 :: CONFIGURACION DE ENERGIA
-echo. [%TIME%] Configuracion de energia.
+echo. [%TIME%] Configuracion de energia aplicada.
 C:\Windows\System32\powercfg.exe /s 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
 
 :: VERSION
-set /p VER=<%CD%\.git\ORIG_HEAD
+set /p VER=<%CD%\.git\FETCH_HEAD
 echo. [%TIME%] Version de la herramienta: %VER%
 
     :: SERIAL NUMBER
@@ -50,6 +50,8 @@ echo. [%TIME%] Version de la herramienta: %VER%
     :: TXE
 
     :: KEYPARTS
+    echo. [%TIME%] Ejecutando keyparts yest. (keyparts_test.cmd)
+    cmd.exe /c %DIR%\PARTS\keyparts_test.cmd
 
     :: BATERY START
 
