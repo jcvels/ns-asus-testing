@@ -15,7 +15,7 @@ set LOG=on_test.log
 
     cd %TOOLDIR%
 
-    %TOOL%
+    keypartsTest.exe
 
     if not EXIST %PASS% (
         goto FAIL

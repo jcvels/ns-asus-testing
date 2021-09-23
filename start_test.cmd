@@ -50,7 +50,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
     :: TXE
 
     :: KEYPARTS
-    echo. [%TIME%] Ejecutando keyparts yest. (keyparts_test.cmd)
+    echo. [%TIME%] Ejecutando keyparts test. (keyparts_test.cmd)
     cmd.exe /c %DIR%\PARTS\keyparts_test.cmd
 
     :: BATERY START
