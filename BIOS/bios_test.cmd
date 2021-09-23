@@ -6,6 +6,7 @@
 @echo off
 
 :: CONFIGURACION
+set DIR=%CD%
 set TOOL_1=%CD%\BIOS\TOOLS\WBT.exe
 set TOOL_2=%CD%\BIOS\TOOLS\WFTTOOL.exe
 set TOOL_3=setDateTime.exe
@@ -45,11 +46,11 @@ set LOG=%CD%\BIOS\bios_test.log
         goto FAIL
     )
     
-    cd %CD%
-
-    :: set bios to default and validate
+        :: set bios to default and validate
     %TOOL_2% /def > %TEMP%
     timeout 1 >> %LOG%
+
+    cd %DIR%
 
 :: PASS
 :PASS
