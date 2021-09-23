@@ -17,7 +17,7 @@ set LOG=on_test.log
 
     del %TEMP% >> %LOG%
 
-    FPTW64.exe -closemnf –y > %TEMP%
+    FPTW64.exe -closemnf -y > %TEMP%
     find /C "FPT Operation Successful." %TEMP% >> %LOG%
     if not %errorlevel% == 0 (
         goto FAIL

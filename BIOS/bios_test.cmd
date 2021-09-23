@@ -6,7 +6,7 @@
 @echo off
 
 :: CONFIGURACION
-set DIR=%CD%
+set OLD=%CD%
 set TOOL_1=%CD%\BIOS\TOOLS\WBT.exe
 set TOOL_2=%CD%\BIOS\TOOLS\WFTTOOL.exe
 set TOOL_3=setDateTime.exe
@@ -50,7 +50,7 @@ set LOG=%CD%\BIOS\bios_test.log
     %TOOL_2% /def > %TEMP%
     timeout 1 >> %LOG%
 
-    cd %DIR%
+    cd %OLD%
 
 :: PASS
 :PASS
