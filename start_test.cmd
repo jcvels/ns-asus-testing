@@ -18,11 +18,12 @@ echo. [%TIME%] Iniciando.
 echo. [%TIME%] El directorio de trabajo actual es %DIR%
 
 :: CONFIGURACION DE ENERGIA
-echo. [%TIME%] Configuración de energia.
+echo. [%TIME%] Configuracion de energia.
 C:\Windows\System32\powercfg.exe /s 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
 
 :: VERSION
-echo. [%TIME%] Versión de la herramienta: && type %CD%\.git\ORIG_HEAD
+set /p VER=<%CD%\.git\ORIG_HEAD
+echo. [%TIME%] Version de la herramienta: %VER%
 
     :: SERIAL NUMBER
     echo. [%TIME%] Ejecutando grabado SSN. (getSerialNumber.exe)
