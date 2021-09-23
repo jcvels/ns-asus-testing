@@ -42,13 +42,50 @@ echo. [%TIME%] Versión de la herramienta: && type %CD%\.git\ORIG_HEAD
     echo. [%TIME%] Ejecutando validacion de bios. (bios_test.cmd)
     cmd.exe /c %DIR%\BIOS\bios_test.cmd
 
+    :: ME
+    echo. [%TIME%] Ejecutando ME Config. (me_test.cmd)
+    cmd.exe /c %DIR%\BIOS\bios_test.cmd
+
+    :: TXE
+
+    :: KEYPARTS
+
+    :: BATERY START
+
+    :: AUDIO
+
+    :: KEYBOARD
+
+    :: VIDEO
+
+    :: TOUCHPAD
+
+    :: CAMERA
+
+    :: USB
+
+    :: HDMI
+
+    :: LEDS
+
+    :: LID
+
+    :: BATERY END
+
+    :: RUN-IN
+
+    :: OA3
+
+    :: SYSTEM INSTALL
+
 :: END
-echo. [%TIME%] Testing finalizando.
+echo. [%TIME%] Finalizando.
 echo.
 echo. // ASUS Notebook Testing Script for MP //
 echo.
 color
 pause > null
+exit
 
 :: FAIL
 :FAIL
