@@ -44,7 +44,7 @@ echo. [%TIME%] Versión de la herramienta: && type %CD%\.git\ORIG_HEAD
 
     :: ME
     echo. [%TIME%] Ejecutando ME Config. (me_test.cmd)
-    cmd.exe /c %DIR%\BIOS\bios_test.cmd
+    cmd.exe /c %DIR%\ME\me_test.cmd
 
     :: TXE
 
