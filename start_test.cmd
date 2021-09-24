@@ -64,6 +64,8 @@ echo. [%TIME%] Version de la herramienta: %VER%
     cmd.exe /c %DIR%\AUDIO\audio_test.cmd
 
     :: KEYBOARD
+    echo. [%TIME%] Ejecutando keyboard test. (keyboard_test.cmd)
+    cmd.exe /c %DIR%\KEYBOARD\keyboard_test.cmd
 
     :: VIDEO
 
