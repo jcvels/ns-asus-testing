@@ -26,7 +26,7 @@ set LOG=on_test.log
 :: PASS
 :PASS
 color 2F
-echo. [%TIME%] PASS (keyparts_test.cmd)
+echo. [%TIME%] PASS (battery_test.cmd)
 goto END
 
 :: FAIL
