@@ -54,7 +54,11 @@ echo. [%TIME%] Version de la herramienta: %VER%
     cmd.exe /c %DIR%\PARTS\keyparts_test.cmd
 
     :: BATERY START
-
+    echo. [%TIME%] Iniciando battery test. (batteryTestStart.exe)
+    cd %DIR%\BATTERY\
+    cmd.exe /c %DIR%\BATTERY\batteryTestStart.exe
+    cd %DIR%
+    
     :: AUDIO
 
     :: KEYBOARD
@@ -74,7 +78,9 @@ echo. [%TIME%] Version de la herramienta: %VER%
     :: LID
 
     :: BATERY END
-
+    echo. [%TIME%] Ejecutando battery test. (battery_test.cmd)
+    cmd.exe /c %DIR%\BATTERY\battery_test.cmd
+    
     :: RUN-IN
 
     :: OA3
