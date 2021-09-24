@@ -60,6 +60,8 @@ echo. [%TIME%] Version de la herramienta: %VER%
     cd %DIR%
     
     :: AUDIO
+    echo. [%TIME%] Ejecutando audio test. (audio_test.cmd)
+    cmd.exe /c %DIR%\AUDIO\audio_test.cmd
 
     :: KEYBOARD
 
@@ -80,7 +82,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
     :: BATERY END
     echo. [%TIME%] Ejecutando battery test. (battery_test.cmd)
     cmd.exe /c %DIR%\BATTERY\battery_test.cmd
-    
+
     :: RUN-IN
 
     :: OA3
