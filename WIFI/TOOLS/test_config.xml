@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <config>
-  <profileFile>wifi_profile.xml</profileFile>
+  <profileFile>profile_Wifi2.4.xml</profileFile>
   <wlanName>Wifi2.4</wlanName>
   <pingServer>ing-rp-gm7-3</pingServer>
   <dataUrl>https://www.newsan.com.ar/wp-content/uploads/2019/10/column_1-700x684.jpg</dataUrl>
