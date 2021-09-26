@@ -73,7 +73,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
 
     :: CAMERA
     echo. [%TIME%] Ejecutando camera test. (camera_test.cmd)
-    cmd.exe /c %DIR%\KEYBOARD\camera_test.cmd
+    cmd.exe /c %DIR%\CAM\camera_test.cmd
 
     :: USB
 
