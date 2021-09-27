@@ -68,6 +68,8 @@ echo. [%TIME%] Version de la herramienta: %VER%
     cmd.exe /c %DIR%\KEYBOARD\keyboard_test.cmd
 
     :: VIDEO
+    echo. [%TIME%] Ejecutando display test. (display_test.cmd)
+    cmd.exe /c %DIR%\LCD\display_test.cmd
 
     :: TOUCHPAD
 
@@ -78,7 +80,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
     :: USB
     echo. [%TIME%] Ejecutando usb test. (usb_test.cmd)
     cmd.exe /c %DIR%\USB\usb_test.cmd
-    
+
     :: HDMI
 
     :: LEDS
