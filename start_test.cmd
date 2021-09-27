@@ -76,7 +76,9 @@ echo. [%TIME%] Version de la herramienta: %VER%
     cmd.exe /c %DIR%\CAM\camera_test.cmd
 
     :: USB
-
+    echo. [%TIME%] Ejecutando usb test. (usb_test.cmd)
+    cmd.exe /c %DIR%\USB\usb_test.cmd
+    
     :: HDMI
 
     :: LEDS
