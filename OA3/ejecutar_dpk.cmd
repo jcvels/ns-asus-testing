@@ -18,8 +18,8 @@ set LOGFILE=%CD%\OA3\injection_log_%date%_%time%.log
 
 :: INICIO
 echo.
-echo.OEM Activation 3.0 Key Injection Script 2.2
-echo.## Iniciando nuevo proceso de inyeccion: %date% %time% >> %LOGFILE%
+echo. [%TIME%] OEM Activation 3.0 Key Injection Script 2.2
+echo. [%TIME%] Iniciando nuevo proceso de inyeccion: %date% %time% >> %LOGFILE%
 
 :: ARREGLOS PREVIOS
 :: REG DELETE "HKLM\SYSTEM\CurrentControlSet\Services\ClipSVC\Parameters" /v "ProcessBiosKey" /f
@@ -29,7 +29,7 @@ echo.## Iniciando nuevo proceso de inyeccion: %date% %time% >> %LOGFILE%
 if %errorlevel% == 0 (
 	color 4F
 	echo. [%TIME%] El equipo ya tiene una DPK inyectada.
-	C:\OEM\OA3\TOOLS\PKIDasker.exe
+	%SHOWDPK%
 	goto PASS
 ) 
 

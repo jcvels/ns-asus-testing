@@ -94,6 +94,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
     :: RUN-IN
 
     :: OA3
+    cmd.exe /c %DIR%\OA3\ejecutar_dpk.cmd
 
     :: SYSTEM INSTALL
 
