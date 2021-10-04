@@ -47,8 +47,6 @@ echo. [%TIME%] Version de la herramienta: %VER%
     echo. [%TIME%] Ejecutando ME Config. (me_test.cmd)
     cmd.exe /c %DIR%\ME\me_test.cmd
 
-    :: TXE
-
     :: KEYPARTS
     echo. [%TIME%] Ejecutando keyparts test. (keyparts_test.cmd)
     cmd.exe /c %DIR%\PARTS\keyparts_test.cmd
@@ -82,10 +80,14 @@ echo. [%TIME%] Version de la herramienta: %VER%
     cmd.exe /c %DIR%\USB\usb_test.cmd
 
     :: HDMI
+    echo. [%TIME%] Ejecutando battery test. (hdmi_test.cmd)
+    cmd.exe /c %DIR%\HDMI\hdmi_test.cmd
 
     :: LEDS
 
     :: LID
+
+    :: POWER
 
     :: BATERY END
     echo. [%TIME%] Ejecutando battery test. (battery_test.cmd)
