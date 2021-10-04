@@ -1,13 +1,13 @@
-::  POWER TEST Script
+::  HDMI TEST Script
 ::  Release: 1.0
-::  Date: 02/10/2021
+::  Date: 04/10/2021
 ::  Author: Jorge Pauvels ( JorgeClaudio.Pauvels@newsan.com.ar)
 
 @echo off
 
 :: CONFIGURACION
 set DIR=%CD%
-set TOOLDIR=%CD%\PWR
+set TOOLDIR=%CD%\HDMI
 set PASS=test_passed.log
 set LOG=on_test.log
 
@@ -15,7 +15,7 @@ set LOG=on_test.log
 
     cd %TOOLDIR%
 
-    usbTest.exe
+    hdmiTest.exe
 
     if not EXIST %PASS% (
         goto FAIL
@@ -26,7 +26,7 @@ set LOG=on_test.log
 :: PASS
 :PASS
 color 2F
-echo. [%TIME%] PASS (power_test.cmd)
+echo. [%TIME%] PASS (hdmi_test.cmd)
 goto END
 
 :: FAIL

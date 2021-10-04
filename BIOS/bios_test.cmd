@@ -15,18 +15,13 @@ set MODEL=%CD%\BIOS\TOOLS\bios_model
 set SETTIME=%CD%\BIOS\TIME\
 set TEMP=%CD%\BIOS\TOOLS\on_test.tmp
 set LOG=%CD%\BIOS\bios_test.log
+set PARTN=90NB0TY1-M11530
 
 :: TESTING PROCCESS
 
-    :: dump bios mfg block
-    %TOOL_1% /dump > %TEMP%
+    :: add 90PN
+    %TOOL_1% /WS 19 %PARTN% > %TEMP%
     timeout 1 >> %LOG%
-
-    :: check if bios version is the spected
-    :: fc %VERSION% %TEMP% >> %LOG%
-    :: if not %errorlevel% == 0 (
-    ::     goto FAIL
-    :: )
 
     :: get bios model by wmic
     wmic baseboard get product,manufacturer,version > %TEMP%
@@ -46,8 +41,12 @@ set LOG=%CD%\BIOS\bios_test.log
         goto FAIL
     )
     
-        :: set bios to default and validate
+    :: set bios to default and validate
     %TOOL_2% /def > %TEMP%
+    timeout 1 >> %LOG%
+
+    :: dump 
+    %TOOL_1% /dump > bios_dump.txt
     timeout 1 >> %LOG%
 
     cd %OLD%
