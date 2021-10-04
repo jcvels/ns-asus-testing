@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Video play test</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Video">
+	<PARAM NAME="Keyword" VALUE="Video playback">
+	<PARAM NAME="Keyword" VALUE="Video formats supported">
+</OBJECT>
+
+<H1><A NAME="hid_tests_video_play"></A>Video play test</H1>
+
+<P>This test allows video files to be played as a BurnInTest test. This allows for the detection of numerous error conditions that a PC might exhibit, from lack of media codec support, playback errors and dropped samples (reduced quality due to the PCs inability to process the video quickly enough) and Bit Error Rates. From the Video Playback Preferences window, up to 3 video files can be selected for playback, with each video being played in turn (1<SUP>st</SUP>, 2<SUP>nd</SUP>, 3<SUP>rd</SUP>, 1<SUP>st</SUP> etc). </P>
+
+<P>Video files come in a number of different file formats and within these file formats, video and audio are encoded using different compression methods. </P>
+
+<P>The file formats supported include: 
+
+<UL>
+	<LI>Audio-Video Interleaved (AVI) <BR><BR></LI>
+
+	<LI>Motion Picture Experts Group (MPEG, MPG) </LI>
+</UL>
+
+<P>The Video Compression formats supported (where installed) include: 
+
+<UL>
+	<LI>Cinepak <BR><BR></LI>
+
+	<LI>Intel Indeo<BR><BR></LI>
+
+	<LI>DivX<BR><BR></LI>
+
+	<LI>MJPEG <BR><BR></LI>
+
+	<LI>MPEG-1 <BR><BR></LI>
+
+	<LI>MPEG-4 video: ISO version 1.0 , Microsoft version 3<BR><BR></LI>
+
+	<LI>Microsoft Windows Media Video codec version 7.0</LI>
+</UL>
+
+<P>MPEG-2 is not supported.</P>
+
+<P>Note: Each of the above formats are registered trademarks of their respective owners.</P>
+
+<P>Sample test videos are available from the PassMark Web site.</P>
+
+<P>A test window will be opened when the tests are started. This will be sized with width based on the BurnInTest test window size and height such that the aspect ratio is maintained (i.e. so it is not squashed). The window may moved,  resized or made Full screen.</P>
+
+<P>The title bar will show the native video size (Width x Height). BitErrorRate will be logged to the detailed log, where available and greater than 0.</P>
+
+<P>The number of operations will indicate the number of seconds of Video played. A cycle represents each video file that is played, e.g. if Videos 1,2,3,1,2 were played, this would represent 5 cycles. </P>
+
+<P>Duty cycle sets the amount of delay between each of the video files played. </P>
+
+<P>Error reporting may be configured not to report reduced quality of Video playback (dropped samples) errors. This can be achieved by editing the Error Classifications file (BITErrorClassifications.txt) for Error Number 182 to NONE. For example, changing the line from:</P>
+
+<P>182,"Video Playback is dropping samples",WARNING,</P>
+
+<P>to</P>
+
+<P>182,"Video Playback is dropping samples",NONE,</P>
+
+</BODY>
+</HTML>

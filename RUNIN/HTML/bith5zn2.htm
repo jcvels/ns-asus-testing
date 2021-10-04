@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Plugin preferences dialog box</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Preferences">
+	<PARAM NAME="Keyword" VALUE="Plugin">
+	<PARAM NAME="Keyword" VALUE="KeyboardTest">
+	<PARAM NAME="Keyword" VALUE="ModemTest">
+	<PARAM NAME="Keyword" VALUE="Firewire">
+</OBJECT>
+
+<H1><A NAME="hid_preferences_plugin"></A>Test Preferences – “Plugin”</H1>
+
+<P>You can specify up to 3 external Plugin test applications.</P>
+
+<P><B><I>Application</I></B></P>
+
+<P>Specifies the plugin filename and command line arguments. See Available Plugin’s below for examples.</P>
+
+<P><B><I>Run as pre-test plugin</I></B></P>
+
+<P>Some Plugin tests may require manual user testing, for example, testing a keyboard. You can specify that a plugin be run before the main set of tests, such that the Plugin test will run, exit on completion of that test, and then the main set of tests will be run.</P>
+
+<P><B><I>Plugin’s available from Passmark</I></B></P>
+
+<P>PassMark has developed plugins for Modem, Keyboard and Firewire port testing.</P>
+
+<P><I><U>Modem testing</U></I></P>
+
+<P>When PassMark’s ModemTest is used as a BurnInTest Plugin, it tests in the Local Diagnostics mode. This mode requires only a single modem and no telephone line. ModemTest requests Identification information from the Modem (via a series of AT commands) and then if supported by the modem starts a local loop back on the analog side of the modem, ModemTest then sends data packets which are echoed back by the modem.</P>
+
+<P>Version of Plugin required: PassMark ModemTest V1.3 1010 (or higher)</P>
+
+<P>Test name within BurnInTest displays and reports: Modem.</P>
+
+<P>Test information displayed in BurnInTest:.Status text, number of operations, errors and cycles, error text and severity.</P>
+
+<P>Application field should be set to:</P>
+
+<PRE><CODE>ModemTest.exe /p &lt;COM port number&gt; &lt;Results file name&gt; &lt;Config file&gt;
+   Where:
+/p specifies ModemTest to run as a plugin,in local diagnostic mode;
+&lt;COM port number&gt; is the serial port the Modem is asociated with;
+&lt;Results file name&gt; is a ModemTest specific result file;
+&lt;Config file&gt; is a ModemTest specific configuration file.
+e.g.
+C:\Program Files\ModemTest\ModemTest.exe /p 1 results.log "C:\Program Files\ModemTest\ModemTest.cfg"
+Note: any arguments that contain a directory path, must be enclosed in quotation marks.
+</CODE></PRE>
+
+<P>Run as pre-test plugin, should be unchecked.</P>
+
+<P>Notes:
+
+<OL>
+	<LI>You should install ModemTest before starting.<BR><BR></LI>
+
+	<LI>You should license ModemTest so that the “Welcome” window is not displayed when the BurnInTest tests are started.<BR><BR></LI>
+
+	<LI>You should set up a configuration file and save it in the ModemTest directory before starting.</LI>
+</OL>
+
+<P><I><U>Keyboard testing</U></I></P>
+
+<P>When PassMark’s KeyboardTest is used as a BurnInTest Plugin, it tests in the Batch mode without collecting the manually entered information such as Keyboard Serial number. This mode allows automatic detection of all keys being successfully pressed, of User failure with User selected reasons. The keyboard can be failed at any time during the test or on requested user verification. A reason from a list of failure reasons will also be logged in BurnInTest.</P>
+
+<P>It should be noted that the KeyboardTest Keyboard Layout file (.kbl) needs to describe the keyboard you plan to test. This file describes all of the keys on the keyboard and is used (among other things) to determine when all the keys have been pressed and hence the trigger for automatically passing the keyboard. You may be able to use one of the default keyboards shipped with KeyboardTest, you may find a matching keyboard on our website Keyboard Layout Download Page or you may have to create your own .kbl file as described in the KeyboardTest help file.</P>
+
+<P>Version of Plugin required: PassMark KeyboardTest V2.2 1011 (or higher)</P>
+
+<P>Test name within BurnInTest displays and reports: Keyboard.</P>
+
+<P>Test information displayed in BurnInTest:.Status text, number of operations, errors and cycles, error text and severity.</P>
+
+<P>Application field should be set to:</P>
+
+<PRE><CODE>KeyboardTest.exe /p
+   Where:
+/p specifies KeyboardTest to run as a plugin,in a modifed batch mode
+e.g.
+C:\KeyboardTest\KeyboardTest.exe /p</CODE></PRE>
+
+<P>Run as pre-test plugin, should be <I>checked</I>.</P>
+
+<P>Notes:
+
+<OL>
+	<LI>You should install KeyboardTest before starting.<BR><BR></LI>
+
+	<LI>You should license KeyboardTest so that the “Welcome” window is not displayed when the BurnInTest tests are started.<BR><BR></LI>
+
+	<LI>You should set up a Keyboard configuration file and bitmap of your test keyboard before starting. Please refer to the KeyboardTest help file.</LI>
+</OL>
+
+<P><I><U>Firewire testing</U></I></P>
+
+<P>Firewire port testing, using a Passmark developed plugin and a “Kanguru FireFlash” drive.</P>
+
+<P>Version of Plugin required: PassMark Plugin V1.0 1000 (or higher)</P>
+
+<P>Test name within BurnInTest displays and reports: Firewire.</P>
+
+<P>Test information displayed in BurnInTest:.Status text, number of operations, errors and cycles, error text and severity.</P>
+
+<P>Application field should be set to:</P>
+
+<PRE><CODE>Firewire.exe [/a|/k &lt;drive letter&gt;]
+   Where:
+    The parameter specifies the Firewire port to test based on the drive letter of the “Kanguru FireFlash” drive
+/a select the first drive letter with a “Kanguru” drive;
+/k &lt;drive letter&gt; select the drive specifed in &lt;drive letter&gt;;
+&lt;drive letter&gt; is a single character, C to Z.
+e.g.
+C:\FireWire\Firewire.exe /k D
+C:\FireWire\Firewire.exe /a</CODE></PRE>
+
+<P>Run as pre-test plugin, should be unchecked.</P>
+
+<P>Notes:
+
+<OL>
+	<LI>You should install the Firewire plugin before starting.<BR><BR></LI>
+
+	<LI>You should use a “Kanguru Fire Flash” drive with this plugin. This should be plugged in before starting the BurnInTest test.</LI>
+</OL>
+
+</BODY>
+</HTML>

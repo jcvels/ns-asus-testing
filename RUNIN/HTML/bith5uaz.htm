@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Disk preferences dialog box</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Preferences">
+	<PARAM NAME="Keyword" VALUE="Disk Assignment">
+	<PARAM NAME="Keyword" VALUE="Floppy">
+	<PARAM NAME="Keyword" VALUE="Hard drive">
+	<PARAM NAME="Keyword" VALUE="Drive">
+</OBJECT>
+
+<H1><A NAME="hid_preferences_disk"></A>Test Preferences – Disk</H1>
+
+<P><B><I>Configuring hard disk, Floppy disk and tests for other types of drives</I></B></P>
+
+<P>These fields and buttons allow the user to select the drives used in the disk test.</P>
+
+<P><I><U>Disk Selection</U></I></P>
+
+<P>To edit the test preferences for a disk, select the Drive in the “Disk Selection” List. Any changes you make in the “Edit details for drive: &lt;drive name&gt;” will be reflected in this list.</P>
+
+<P><I><U>Test this drive</U></I></P>
+
+<P>To specify that a drive should be tested, check the “Test this drive”. This will copy the last used settings to the drive specified. To test a shared network drive, the drives needs to have a drive letter mapped to it. Only those drives detected by the Windows operating system as displayed in the drop down list.</P>
+
+<P>The following settings can be configured differently for each drive: Slow drive warning threshold, File size, Test Pattern and Log SMART errors. To use the general disk drive Duty cycle for each disk just set the Duty Cycle override value to blank (no value), otherwise set the required value per disk. </P>
+
+<P>To remove a disk from the test, uncheck the “Test this drive”.</P>
+
+<P>Up to twenty drive letters can be selected for simultaneous testing. Note: The simultaneous testing of two partitions on the same physical hard drive will result in a lot of seeking between partitions and slow down the test significantly.</P>
+
+<P><I><U>Test Mode</U></I></P>
+
+<P>The test patterns that can be selected are explained in the section, “Disk test (Floppy and hard).</P>
+
+<P><I><U>Slow drive warning threshold</U></I></P>
+
+<P>BurnInTest can be configured so that a warning message is generated when the transfer speed from a disk device drops below a certain level. The transfer speed is measured in Megabytes / second and a different threshold can be assigned for each drive.</P>
+
+<P>Selecting a level of 0 will disable the feature.</P>
+
+<P>When the measured I/O transfer speed is below the threshold, a warning message will appear in the detailed error log. The entry will be similar to the following,</P>
+
+<PRE><B><CODE>2002-08-30 15:01:26, Disk, Threshold level: 20.00 MB/Sec, Measured speed: 18.29 MB/Sec</CODE></B></PRE>
+
+<P>The disk test periodically samples the transfer speed every second (600ms when the duty cycle &gt; 90). Every sample below the threshold generates a warning.</P>
+
+<P>The duty cycle for the disk test should be set to 100% when using this feature. Using a lower value doesn’t make a lot of sense. Setting a threshold can be useful in helping to determine if the drive is functioning correctly and the correct device drivers have been loaded.</P>
+
+<P><I><U>Test File Size</U></I></P>
+
+<P>The use can select the test file size and test pattern that is used with the disk test for each disk. The size of the file is equal to a certain percentage of the disks capacity. The default file size is 1.0% of the disk size. So if a disk had a total capacity of 200GB then the default size of each file would be 2GB. Setting a smaller percentage results in more files being created on the disk and the read / verify cycle occurring more quickly. </P>
+
+<P>Note that the file system type (NTFS, FAT32 or FAT) and the version of the Windows operating system (e.g. Windows 2000) may limit the size of the file that can be created on a disk. </P>
+
+<P><I><U>Log SMART errors</U></I></P>
+
+<P>Select this checkbox to have BurnInTest monitor the disk drives SMART attributes. If a SMART attribute for any of the hard drives being tested exceeds its threshold, an error is logged along with the attribute exceeded. To learn more about SMART see <A HREF="bith4tis.htm">What is S.M.A.R.T?</A> </P>
+
+<P>Note: This feature is only available in Windows 2000/XP.</P>
+
+<P><I><U>Seek count</U></I></P>
+
+<P>For test modes that perform seeking to different positions on the disk drive (e.g. <I>Random data with random seeking</I>), the seek count specifies the number of seeks for a particular iteration (e.g. After <I>Random data with random seeking</I> has created 100 test files, the <I>Seek count</I> specifies the number of times a seek should occur between blocks within these 100 files).  </P>
+
+<P><I><U>Duty Cycle Override</U></I></P>
+
+<P>To use the general disk drive Duty cycle for each disk just set the Duty Cycle override value to blank (no value), otherwise set the required value per disk. </P>
+
+<P><I><U>Automatically select all hard drives</U></I></P>
+
+<P>If you would like to test all fixed disks (hard disks) over multiple systems that have different drives letters, you can select “Automatically select all hard drives” and all of the hard drives on the system will be selected prior to running the test. </P>
+
+<P>This option will not alter Floppy, CD or DVD disk drive preferences.</P>
+
+</BODY>
+</HTML>

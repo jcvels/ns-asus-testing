@@ -88,6 +88,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
     :: LID
 
     :: POWER
+    
 
     :: BATERY END
     echo. [%TIME%] Ejecutando battery test. (battery_test.cmd)

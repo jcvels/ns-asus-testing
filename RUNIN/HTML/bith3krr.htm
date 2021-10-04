@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Logging preferences dialog box</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Preferences">
+	<PARAM NAME="Keyword" VALUE="Logging">
+	<PARAM NAME="Keyword" VALUE="Log files">
+	<PARAM NAME="Keyword" VALUE="Log clearing">
+	<PARAM NAME="Keyword" VALUE="Accumulate logs">
+</OBJECT>
+
+<H1><A NAME="hid_preferences_logging"></A>Test Preferences – Logging</H1>
+
+<P><B><I>Logging to the Detailed Error log history </I></B></P>
+
+<P>Errors are automatically logged to the Detailed Error log history. This log is viewed using “View”, ”Error Log File”. This type of logging is not affected by the “Logging on” option, which refers to automatic disk logging.</P>
+
+<P>Note: Text and HTML reports can be manually created using “File”, "Save report”. This will save System information, a result summary and the recent Detailed Error log history (up to 1000 entries). A customer style test certificate is also available. </P>
+
+<P><B><I>Automatic Logging (to disk)</I></B></P>
+
+<P>Logging to disk is switched on and off with the “<U>Logging on</U>” option. When disk logging is on, BurnInTest will log System information, results, result summaries, and detailed error descriptions to files based on the following user settings.</P>
+
+<P>The log directory allows the directory and filename prefix to be specified. For the default of “Time stamped files”, the file will automatically be appended with _<I>YYMMDD_</I>HHMMSS.log, .htm or .trace, specifying the Year, Month, Day, Hour, Minute &amp; second that the disk log file was created. </P>
+
+<P>Specify “<U>Log name prefix</U>” if you wish to prefix the standard BurnInTest Text or HTML log filenames you can type a prefix string into the “Prefix” edit box. For example, if you want to prefix  the standard BurnInTest log filenames with the text “SPECIAL_TEST_” then just enter, </P>
+
+<P>SPECIAL_TEST_</P>
+
+<P>If you want to prefix using an environment variable, %COMPUTERNAME%,  %USERNAME%, %OS%, %PROCESSOR_ARCHITECTURE% are supported. So, if for example you wanted to prefix log files with a test run description, the computer’s name and  the user’s name, just enter, </P>
+
+<P>Test123_%COMPUTERNAME%_%USERNAME%_</P>
+
+<P>A “<U>Log detail level</U>” may be selected for disk logging to specify the amount of information to be written to disk. The options that may be selected are:
+
+<OL>
+	<LI>Result Summary only. Produces a .log or .htm file containing system information, a summary of the tests run (e.g. Which tests, the number of operations and errors per test) and a summary of the serious and critical errors during a test run (cleared at the end of a non-scripted test run or at the end of the script for a scripted test run).<BR><BR></LI>
+
+	<LI>Normal. Produces a .log or .htm file containing the “Result Summary only” information and detailed errors (1 or 2 lines per error). </LI>
+</OL>
+
+<P>A “<U>Trace level</U>” may be selected for detailed disk logging to specify the amount of information to be written to disk. The options that may be selected are:
+
+<OL>
+	<LI>No Trace log. No trace log is produced.  This is the default setting.<BR><BR></LI>
+
+	<LI>Activity Trace level 1. Produces a .trace with the “Normal” information and a summary of test activities (e.g. The starting and stopping of tests).<BR><BR></LI>
+
+	<LI>Activity trace level 2. Produces a .trace file with the “Activity Trace level 1” information and a detailed description of the test activity.</LI>
+</OL>
+
+<P>Setting “<U>Max file size</U>” specifies the approximate maximum file size in terms of the number of lines in either the log or trace files.</P>
+
+<P>Some test runs can lead to a large number of error events that are the same. To produce a summarized log of these errors, select “<U>Summarize”</U>. When more than 3 events that are the same are produced in chronological order, the 3<SUP>rd</SUP> event through to the last same event will be summarized into a single line, together with an indication of the number of events that are the same that have not been displayed. The default is to not summarize events.</P>
+
+<P>By default a log file is created when Logging is turned on or when BurnInTest starts if logging is configured to be on. Select “Test run only” to only create a log file when the test run starts. Please note that any events that occurs before a test run (eg. System or application events) will be lost.</P>
+
+<P>The format of the Result summary and Normal log files may be specified to be either ASCII text or HTML via the “<U>ACSII Format</U>” or “<U>HTML Format</U>” buttons. This setting will also determine the format of the Trace logs (from version 5.1).</P>
+
+<P>By default, time stamped log files are created, this is the “<U>Time stamped files</U>” option. A new set of log files will be created when Logging On is switched on, any of the logging options (Log Directory, Detail Level, ASCII/HTML Format) are changed, or when BurnInTest is started with Logging switched on. The only exception is when BurnInTest is automatically stopped with a REBOOT or REBOOTEND scripting command, and then the original log files will be re-opened and appended to.</P>
+
+<P>The log files are closed and available for use by another application when Logging On is switched off, any of the logging options (Log Directory, Detail Level, ASCII/HTML Format) are changed, or when BurnInTest is exited or automatically stopped with a REBOOT or REBOOTEND scripting command.</P>
+
+<P>By specifying “<U>Single file</U>”, no date or time stamp is appended to the filename and only a single log file (and if specified, a single trace file) will be created and all results will be logged to this file. “Single file” may be a useful option when the output is to be processed by an external program.</P>
+
+<P><B><I>Periodically log result summary reports during a test</I></B></P>
+
+<P>When logging is switched on, by default a result summary report will be logged at the end of a test run. Change this value if you would like to log interim summary reports during the test (every X minutes). The main requested use of this option is to help obtain information about the testing status of a system prior to a system crash on an unstable system. Note: All error events are written in real time, so the main use of this option will be if there are few errors occurring.</P>
+
+<P><B><I>Pre-test logging options for test result clearing and log file creation</I></B></P>
+
+<P>Test results, including the <I>detailed error and status log history, </I>can either be cleared each time a new test run is started or test results can be accumulated across several test runs. Accumulating test results is useful when doing scripted testing, including, reboot testing. If test results are accumulated, the only way test results can be cleared is with the ‘Edit / Clear All Results’ menu item.</P>
+
+<P>Accumulating test results means that the error count, cycle count and operations count values are the total values that have been accumulated across all test runs on this machine. </P>
+
+<P>Accumulation will also occur across scripted reboots, sleeps and execute commands.</P>
+
+<P>Log files may be appended to the existing log file or a new log file created at the start of each test run.</P>
+
+<P>Three options are available for clearing/accumulating test results and creating/appending log files. These options are:
+
+<UL>
+	<LI>Clear test results and create a new log<BR><BR></LI>
+
+	<LI>Clear test results and append to the existing log<BR><BR></LI>
+
+	<LI>Accumulate test results and append to the existing log </LI>
+</UL>
+
+<P>Note: Regardless of the configuration settings, the <I>detailed error and status log</I> history is maintained at a maximum of 1000 lines, with the oldest data cleared if this size is exceeded.</P>
+
+<P><B><I>See also</I></B></P>
+
+<P><A HREF="bith6ugi.htm">Calling external programs via Auto stop actions</A></P>
+
+<P><A HREF="bith3xyf.htm">Maintaining multiple test configurations</A></P>
+
+</BODY>
+</HTML>

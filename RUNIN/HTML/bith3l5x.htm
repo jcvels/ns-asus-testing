@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Command line options</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Command line">
+	<PARAM NAME="Keyword" VALUE="Auto execute">
+	<PARAM NAME="Keyword" VALUE="Configuration files">
+</OBJECT>
+
+<H1><A NAME="hid_commandline"></A>Command line arguments</H1>
+
+<P>The following are the BurnInTest command line parameters…</P>
+
+<P><B>-C [configfilename]</B><BR>
+Loads the <A HREF="bith3xyf.htm">configuration file</A> specified by [configfilename]</P>
+
+<P><B>-D [minutes]</B><BR>
+Sets the test duration to the value specified by minutes. Decimal values can be used.</P>
+
+<P><B>-K</B></P>
+
+<P>Keep disk test files. Specifies not to delete the disk drive test files when an error (e.g. Verification error) occurs. This is intended to assist investigating disk errors. It is recommended that this option is used in conjunction with the Auto Stop Tests on Error feature within Preferences. Once the test files have been investigated, they should be deleted manually.</P>
+
+<P><B>-L [x,y,wt,ht]<BR>
+</B>Starts BurnInTest with the main window located at top-left co-ordinates x, y and with width wt and height ht. It is important that there are no white space characters in [x,y,wt,ht] specifications.</P>
+
+<P><B>-R</B><BR>
+Executes the tests immediately without needing to press the go button. It also skips the pre-test warning message.</P>
+
+<P><B>-S [scriptfilename]</B><BR>
+On startup, BurnInTest will automatically run the script file specified by [scriptfilename]. [scriptfilename] can be an absolute or relative path to the script file, but if the path and/or filename contain any space characters, you should enclose the entire string in double quotes (“”). Learn more about <A HREF="bith0rqf.htm">Scripting here</A>.</P>
+
+<P><B><I>Example 1</I></B></P>
+
+<P>Here is an example of a Windows batch file that could be used to start BurnInTest,</P>
+
+<PRE><CODE>c:
+cd "\program files\BurnInTest"
+bit.exe –c “heavyload.bitcfg”</CODE></PRE>
+
+<P><B><I>Example 2</I></B></P>
+
+<P>Here is an example that could be placed in the Windows Startup folder to run BurnInTest automatically with the current default settings, (after Windows had booted up).</P>
+
+<PRE><CODE>bit.exe /r
+</CODE></PRE>
+
+<P><B><I>See also</I></B></P>
+
+<P><A HREF="bith6ugi.htm">Calling external programs via Auto stop actions</A></P>
+
+<P><A HREF="bith4lid.htm">Reboot cycling</A></P>
+
+</BODY>
+</HTML>

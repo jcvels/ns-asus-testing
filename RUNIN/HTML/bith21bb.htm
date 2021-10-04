@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Detailed Error Log file; Error classifications</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Error log">
+	<PARAM NAME="Keyword" VALUE="Detailed log">
+	<PARAM NAME="Keyword" VALUE="Error classifications">
+	<PARAM NAME="Keyword" VALUE="Error settings">
+	<PARAM NAME="Keyword" VALUE="Errors - ignoring">
+</OBJECT>
+
+<H1><A NAME="hid_detailed_log"></A>Detailed Error log history</H1>
+
+<P>The detailed error log history can be opened from the ‘View / Error log file’ menu. It contains a record of recent errors and status messages that have occurred during a test run. It is possible to save a copy of this log of recent history using the ‘File / Save test log’ menu item.</P>
+
+<P>The log can contain up to 1000 messages. After 1000, the oldest messages are overwritten by the newer ones. The log window is updated in real time and can left open while a test run is in progress.</P>
+
+<P><B><I>Error Classification</I></B></P>
+
+<P>Where logging records an error, the severity of this error (CRITICAL, SERIOUS, WARNING or INFORMATION) is logged. Where an informational line (related to this error) follows the error line, the error classification is not repeated (to aid determination of the number of unique errors per classification).</P>
+
+<P>Each line is color coded based on the Error Classification.</P>
+
+<P><B><I>Time stamp</I></B></P>
+
+<P>The time stamp records the time when the event occurred. The format is, YYYY-MM-DD HH:MM:SS</P>
+
+<P><B><I>Test type</I></B></P>
+
+<P>The test type refers t the name of the test which originated the event. Examples are, “RAM”, Floppy Disk”. The word “Status”, indicated that the event is not an error but just a status message.</P>
+
+<P><B><I>Details</I></B></P>
+
+<P>This is a text field that contains additional information about the error (or status message).</P>
+
+<P>In some cases a log entry may be spread across two lines. The 1<SUP>st</SUP> line will contain some general information about the error and the 2<SUP>nd</SUP> line will contain more detail.</P>
+
+<P>Some error messages may contain internal program variables (and thus be fair cryptic). These are not always intended to be interpreted by the user can but help us track down faults in our software.</P>
+
+<P><B><I><U>Configuring Error Classifications</U></I></B></P>
+
+<P>Each of the standard errors detected by BurnInTest can configured to include a customer specific string and error classification. The file BITErrorClassification.txt (in the software directory) contains the error text and classification used by BurnInTest. </P>
+
+<P>The file is formatted as a Comma Separated File with four fields:</P>
+
+<OL>
+	<LI>Error number – this must not be changed by the customer;<BR><BR></LI>
+
+	<LI>Error description text – this may be changed. This must be a sting enclosed by quotes;<BR><BR></LI>
+
+	<LI>Error classification – this may be changed. This must be one of the following text values (not in quotes): 
+<P>CRITICAL, SERIOUS, WARNING, or INFORMATION 
+
+<P>A number of errors may be configured to be ignored (not reported as errors), as they may be considered ‘below the radar’. These are configured by setting the Error classification to NONE. These are:
+
+<UL>
+	<LI>138,"Warning: Could not lock parallel port",WARNING,PP<BR><BR></LI>
+
+	<LI>146,"Frame could not be displayed and was skipped",INFORMATION,<BR><BR></LI>
+
+	<LI>160,"Butterfly seeking test not supported for this disk",INFORMATION,<BR><BR></LI>
+
+	<LI>182,"Video Playback is dropping samples",WARNING,</LI>
+</UL>
+
+<P>Other errors may not be configured to be ignored in this way.
+</LI>
+
+	<LI>Customer comment – this is optional and may be changed – it is ignored by BurnInTest.</LI>
+</OL>
+
+<P>Comment lines may be inserted by using a “#” at the start of the line. These lines will be ignored by BurnInTest.</P>
+
+<P>An example is shown below:</P>
+
+<P># PassMark BurnInTest,,,</P>
+
+<P># Error message text and classification,,,</P>
+
+<P>0,"No errors",NONE,</P>
+
+<P>1,"Incorrect mathematical addition",SERIOUS,</P>
+
+<P>2,"Incorrect mathematical subtraction",SERIOUS,</P>
+
+<P>3,"Incorrect mathematical division",SERIOUS,</P>
+
+<P>4,"Incorrect mathematical multiply",SERIOUS,</P>
+
+<P>5,"Incorrect MMX addition",SERIOUS,</P>
+
+<P>6,"Incorrect MMX subtraction",SERIOUS,</P>
+
+<P>7,"Incorrect MMX multiplication",SERIOUS,</P>
+
+<P>8,"Failed Windows call - Line Drawing",SERIOUS,</P>
+
+</BODY>
+</HTML>

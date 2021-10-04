@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>USB port test</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="USB port">
+	<PARAM NAME="Keyword" VALUE="USB Device">
+	<PARAM NAME="Keyword" VALUE="Loopback">
+	<PARAM NAME="Keyword" VALUE="Serial Number (USB)">
+	<PARAM NAME="Keyword" VALUE="USB">
+	<PARAM NAME="Keyword" VALUE="USB 1.x">
+	<PARAM NAME="Keyword" VALUE="USB 2.0">
+</OBJECT>
+
+<H1><A NAME="hid_tests_usb"></A>USB port test</H1>
+
+<P><I>(Applicable to BurnInTest Pro version only)</I></P>
+
+<P>Tests the USB (Universal Serial Bus) communications ports connected to the PC. The USB devices that are connected can be viewed from the <A HREF="bith14ma.htm">Test Preferences</A> window.</P>
+
+<P>A USB port <A HREF="bith84gy.htm">loop back plug</A> is required to run this test. There are two versions available, USB1 and USB2 loopback plugs. The USB1 loopback plug supports a range of testing for the USB1.x (USB 1.x supports rates up to 12 Mb/sec), while the USB2 loopback plug provides a wider range of test for USB 1.x and 2.0 (USB 2.0 supports rates up to 480Mb/sec). These can be purchased from the PassMark web site (<U>www.passmark.com</U>).</P>
+
+<P>Using a USB loopback plug (USB1 or USB2 loopback plugs) and BurnInTest, it is possible to,
+
+<UL>
+	<LI>Quickly check if a USB port is powered (the red LED)<BR><BR></LI>
+
+	<LI>Check that data can be sent and received from the port <BR><BR></LI>
+
+	<LI>Check USB errors rates and transmission speed. <BR><BR></LI>
+
+	<LI>Check that the system remains stable under long periods of load<BR><BR></LI>
+
+	<LI>Test that USB support in Windows has been correctly installed<BR><BR></LI>
+
+	<LI>Check USB cabling <BR><BR></LI>
+
+	<LI>Concurrently check multiple USB ports at the same time. </LI>
+</UL>
+
+<P>In addition, with the USB2 loopback plug and BurnInTest (V4.0 and above), it is possible to test: 
+
+<UL>
+	<LI>Check if your PC ports are high speed 480Mbits/sec (USB 2.0), or full speed 12Mbits/sec (USB 1.x) via a LED or the BurnInTest USB test Window<BR><BR></LI>
+
+	<LI>Check USB errors rates and transmission speed (using the USB2.0 Highspeed protocol)</LI>
+</UL>
+
+<P><I>It is worth noting that with the USB2 loopback plug and the PassMark USB2Test software it is possible to: </I>
+
+<UL>
+	<LI><I>Benchmark the maximum speed of your PC's USB ports </I><BR><BR></LI>
+
+	<LI><I>Measure the level of recovered data (retransmitted frames) </I></LI>
+</UL>
+
+<P>Using these plugs on a system that is functioning correctly, you can expect error free loopback transfer speeds of around:
+
+<UL>
+	<LI>USB1 loopback plug: 700 - 800 Kbits/sec per port <BR><BR></LI>
+
+	<LI>USB2 loopback plug: 5 – 7 Mbits/sec per port. <I>(Note: With benchmarking functionality provided in the USB2Test software you can expect to see between 250Mb/sec and 380Mb/sec for a USB2 port connected to the motherboard).</I></LI>
+</UL>
+
+<P>To reach this level you need to have the USB test duty cycle set to 100%. Up to 10 of these USB test plugs can be simultaneously connected to a PC (providing that free USB ports are available on the PC or on a down stream hub). Note: If required, both USB1 and USB2 loopback plugs can be used to test different USB ports simultaneously.</P>
+
+<P>To use the plugs they must be correctly installed with their device driver. See the installation and users guide that is supplied with the plugs for more details. Additional information about the plugs is also available on the PassMark web site.</P>
+
+<P>Each test cycle corresponds to:
+
+<UL>
+	<LI>USB1 loopback plug:  300 data blocks (Roughly 600KB) <BR><BR></LI>
+
+	<LI>USB2 loopback plug: 8000 data blocks (4000KB)</LI>
+</UL>
+
+<P>The number of Operations (‘ops’) corresponds to the number of bytes sent and received. The duty cycle affects the time spent waiting between cycles.</P>
+
+<P>Each plug also has its own serial number stored in EPROM, on the plug, so it is possible to identify each plug when multiple plugs are connected. USB2 loopback plugs are firmware controlled and upgradeable.</P>
+
+<P>The USB test sends data to the USB loopback plug in:
+
+<UL>
+	<LI>USB1 loopback plug:  2KB blocks. The USB loopback plug receives this data, checks the cyclic redundancy checksum is correct, and then re-encodes the data before sending it back to the PC.<BR><BR></LI>
+
+	<LI>USB2 loopback plug: 0.5KB blocks. The USB loopback plug receives this data, copies it to a new buffer and transmits it back to the PC. The PC compares the data in the block for an exact match, and then builds a new packet of random data bytes before sending it back to the PC.</LI>
+</UL>
+
+<P>Any differences between the data send and received is flagged as an error.</P>
+
+<P>As the low level USB protocol has some ability to detect errors and re-transmit bad data it is important to pay attention to the transfer speed. A low transfer speed may be an indicator of an intermittent or partial hardware fault. With the USB2 loopback plug an error LED will be lit when more than a defined number of recoverable bus errors occur (currently set to 4). <I>(Note: The USB2Test software will report the number of recoverable bus errors per block).</I> A lack of high quality cabling within or external to the PC is a typical cause of retransmission due to recoverable bus errors.</P>
+
+<P>The USB2 loopback plug Error LED is reset at the start of each test if results are configured to be cleared:
+
+<UL>
+	<LI>at the start of each test (Preferences, Logs, Log Clearing, Automatically clear logs at the start of each run), <BR><BR></LI>
+
+	<LI>on selecting “Edit, Clear All Results” or<BR><BR></LI>
+
+	<LI>on a power reset (e.g. PC sleep mode).</LI>
+</UL>
+
+<P><B><I><U>USB test window</U></I></B></P>
+
+<P>The following information is displayed in the USB test window.</P>
+
+<P><B><I>USB Identity</I></B></P>
+
+<P>An indication of whether the USB port is connected to a USB1 or USB2 loopback plug is shown together with the maximum speed supported by the protocol currently supported by the USB port (e.g. 12Mb/s or 480Mb/s). The device number and the unique device serial number are then displayed. The device number is determined by the order in which plugs are connected and disconnected and is not linked to a physical USB socket on the PC. (Note that this is different from Serial and Parallel ports). The device serial number is collected during the USB device enumeration process and comes from the memory (EEPROM) in the plug itself.</P>
+
+<P><B><I>Bytes Sent</I></B></P>
+
+<P>The number of Kilobytes sent to the USB device.</P>
+
+<P><B><I>Bytes Rec.</I></B></P>
+
+<P>The number of Kilobytes received from the USB device.</P>
+
+<P><B><I>Throughput</I></B></P>
+
+<P>The number of Kilobits or Megabits of data received and transmitted in the last second.</P>
+
+<P><B><I>Ave. Throughput</I></B></P>
+
+<P>The average number of Kilobits or Megabits of data received and transmitted per second since the start of the test.</P>
+
+<P><B><I>Errors</I></B></P>
+
+<P>The number of errors that have occurred (i.e. Transmitted data does not match received data). </P>
+
+</BODY>
+</HTML>

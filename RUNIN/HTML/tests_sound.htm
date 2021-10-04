@@ -1,0 +1,82 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Sound Card</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Audio,Distortion,Loopback,Midi files,Mixer,MP3 files,Music,Sound card,Sound clips,Speaker,Volume,Wave files" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?tests_sound.htm"; }
+  else { parent.quicksync('a6.16'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Headingpage"><span class="f_Headingpage">Sound card test [SOUND]</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="tests_serialport.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="tests_tape.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 0px 0px 8px 0px;">This test operates in two different modes. The standard mode verifies that the sound card can play back MP3, wave form audio and MIDI (Musical Instrument Digital Interface) sound.</p>
+<p style="margin: 0px 0px 8px 0px;">There is also a loopback mode, which requires a <a href="loopback_audio.htm">loopback cable</a>. Loopback mode measures the distortion between audio input and audio output. <a href="loopback_audio.htm">Loopback cables</a> are available from <a href="http://www.passmark.com" class="weblink">http://www.passmark.com</a></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Standard Test:</span></p>
+<p style="margin: 0px 0px 8px 0px;">Three small sound clips are played by in a loop. The duration of play back is determined by the duty cycle setting selected by the user. A larger duty cycle setting will result in a longer playback period. The sound test window displays the amount of time remaining in the playback. If the sound clip is shorter than the test period, then the sound will be played in a loop until the test period is complete.</p>
+<p style="margin: 0px 0px 8px 0px;">You may select the files that are played during the test in the Sound preferences window. The default test files are in the BurnInTest installation directory. </p>
+<p style="margin: 0px 0px 8px 0px;">C:\Program Files\BurnInTest\Testsound.mid &nbsp;(MIDI file)<br>
+C:\Program Files\BurnInTest\Testsound.wav &nbsp;(Wave file)<br>
+C:\Program Files\BurnInTest\Testsound.mp3 &nbsp;(MP3 file)<br>
+&nbsp;</p>
+<p style="margin: 0px 0px 8px 0px;">While the test is running the user should verify that the sounds produced are clear and without distortion. If no sound is heard and BurnInTest detects no errors, check</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="19">-</td><td>The mute and volume settings in the Windows mixer / volume control window</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="19">-</td><td>The speakers are plugged into the correct plug on the sound card</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">-</span></td><td>The speakers volume control is turned up</td></tr></table></div><p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Loopback Test:</span></p>
+<p style="margin: 0px 0px 8px 0px;">Loopback testing involves connecting the audio out and line in plugs of your computers sound card together with an <a href="loopback_audio.htm">audio loopback cable</a>. </p>
+<p style="margin: 7px 0px 7px 0px;">More specifically, BurnInTest uses the 'first' waveform-audio capable input port for the audio in. This will be the Audio, Sound recording, Default device (the input device can be changed based on the options available in the Audio Sound recording list, Control panel -&gt; Sounds and audio devices -&gt; Audio tab -&gt; Sound recording, Default device). For example, the list of options for the input device may be:<br>
+"Realtek HD Audio rear input"<br>
+"Realtek HD Front Green Jack"<br>
+"Realtek HD Front Pink Jack"</p>
+<p style="margin: 0px 0px 8px 0px;">The test uses a single channel (mono), 8 bit sound format with telephone quality sample rate (11025Hz). The test generates a sin wave sample with a frequency of 300Hz and a duration of approximately 20 seconds. This sample is output, looped back over an audio loop back cable and the input recorded. Once the sample is complete, the test then analyzes the waveform for distortion. It is possible to set the maximum level of distortion before an error is logged in the Sound preferences window. </p>
+<p style="margin: 0px 0px 8px 0px;">An operation is defined to be an 8-bit sample of a waveform that is looped and is within the user distortion setting. A cycle is defined to be playing a waveform sample of approximately 20 seconds, recording this sample and analyzing it for distortion.</p>
+<p style="margin: 0px 0px 8px 0px;">Note 1: If you use the Sound Loopback test at the same time as you use the Video Playback test, you must use a Video file with no audio component as the audio will impact the distortion ratio of the sound test.</p>
+<p style="margin: 0px 0px 8px 0px;">Note 2: If your sound card is capable of modifying the usage of the line in jack then you should ensure that line it is in fact currently configured as line in. For example with RealTek High Definition Audio, when the sound card is set up for 8 channel home theater, the line in jack is changed to a side speaker out jack (using the RealTek Alcwzrd software).</p>
+<p style="margin: 0px 0px 8px 0px;">Note 3: If a system is under high load, the audio device driver may not be able to output a continuous Sine waveform. If this occurs, you may see the "Corrupt Audio input" warning. To determine if this is load related, reduce system load and re-test. </p>
+<p style="margin: 0px 0px 8px 0px;">Note 4: If your system produces audio on certain events, such as clicking a mouse button, then these sounds should be turned off before using the sound Loopback test. </p>
+<p style="margin: 0px 0px 8px 0px;">Before beginning a loopback test, there are a few important configurations, which must be carried out in Windows in order for the test results to be meaningful.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-weight: bold;">Getting ready for the loopback test</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic;">1. Open the mixer.</span></p>
+<p style="margin: 0px 0px 8px 0px;">This can be done from Control Panel =&gt;Sounds and Audio devices. Alternatively, the mixer can be started by double clicking on the small speaker icon on the task bar. Note that the mixer device has two properties sections, Playback and Recording, which contain different volume controls depending on your sound card. It is possible to toggle between the two sections through the Options =&gt;Properties menu item of the mixer device.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic;">2. Check that Wave output is enabled.</span></p>
+<p style="margin: 0px 0px 8px 0px;"><img src="mixer1.png" width="188" height="262" border="0" alt="mixer1">Look at the settings for the overall Volume Control and Wave volume control. The slide bars should be near the center of the range and the Mute check boxes should be unchecked. It is advisable to Mute all other output devices (e.g. Midi, CD Audio) in order to maintain a pure output signal. In particular, the Line In volume control should be muted to prevent feedback loops in some sound cards. Initially leave the balance setting in the middle. If these settings are not correct, there will be no sound output.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic;">3. Switch to the mixer recording (input) window.</span></p>
+<p style="margin: 0px 0px 8px 0px;">From the mixer window select the Options =&gt; Properties menu item, and then select the Recording option and the volume control check boxes. After clicking on OK the recording volume controls for the mixer inputs are displayed.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic;">4. Check that Line In input is enabled.</span></p>
+<p style="margin: 0px 0px 8px 0px;"><img src="mixer3.png" width="186" height="264" border="0" alt="mixer3">This volume control is the most important setting for the loopback test. If the volume setting is too low, the input signals will be correspondingly vague and therefore distortion will be high. If the volume setting is too high, the input signal may become “capped” as the sound waves become truncated. This will also lead to high distortion and errors being logged. You may need to play with this control while the test is in progress in order to find the “sweet spot”. A useful tool for calibrating your input and output audio levels is PassMark SoundCheck, available from <a href="http://www.passmark.com" class="weblink">http://www.passmark.com</a>.</p>
+<p style="margin: 0px 0px 8px 0px;">Once the Volume Controls and Recording Controls have been configured correctly, the test is ready to begin. BurnInTest measures the level of distortion between the output signal and the input signal on a wave-by-wave basis. If the distortion measured exceeds the value set in the Sound Preferences window and an error is logged and the output and input waves are displayed in the Sound Test window. Waves that exceed 0.5 of the maximum distortion level are also displayed, but no error is logged.</p>
+
+</td></tr></table>
+
+</body>
+</html>

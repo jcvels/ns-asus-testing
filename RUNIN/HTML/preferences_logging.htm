@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Logging</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Accumulate logs,Log clearing,Log files,Logging,Preferences" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?preferences_logging.htm"; }
+  else { parent.quicksync('a8.6'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Headingpage"><span class="f_Headingpage">Logging (reporting)</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="preferences_error.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="preferences_mgt_console.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">Automatic test results logging (reporting)</span></p>
+<p style="margin: 0px 0px 8px 0px;">Test events (such as errors) are always automatically logged to the Event log history. This can be viewed by selecting the "Event Log" tab on the main window. This type of logging is not affected by the “Logging on” option, which refers to automatic logging to disk.</p>
+<p style="margin: 0px 0px 8px 0px;">Text and HTML reports can be manually created using “File”, "Save report”. This will save System information, a result summary and the recent Detailed Event log history. A customer style HTML test certificate is also available. </p>
+<p style="margin: 0px 0px 8px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic; text-decoration: underline;">Turn automatic logging on</span></p>
+<p style="margin: 0px 0px 8px 0px;">Logging to disk is switched on and off with the “<span style="font-style: italic; font-weight: bold;">Turn automatic logging on</span>” option. When disk logging is on, BurnInTest will log System information, results, result summaries, and detailed error descriptions to files based on the following user settings.</p>
+<p style="margin: 0px 0px 8px 0px;">The log files will be created when a test run starts. The log files are closed and available for use by another application when "Turn automatic logging on" is switched off, any of the logging options (Log Directory, Detail Level, ASCII/HTML Format) are changed, or when BurnInTest is exited or automatically stopped with a REBOOT or REBOOTEND scripting command.</p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">&nbsp;</span></p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">Log file name</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic; text-decoration: underline;">Log file name</span></p>
+<p style="margin: 0px 0px 8px 0px;">The <span style="font-style: italic;">Log file name</span> allows the directory and filename prefix to be specified. For the default of “<span style="font-style: italic;">Time stamped files</span>”, the file will automatically be appended with _<span style="font-style: italic;">YYMMDD_</span>HHMMSS.log, .htm or .trace, specifying the Year, Month, Day, Hour, Minute &amp; second that the disk log file was created. </p>
+<p class="p_PreferencesControl"><span class="f_PreferencesControl">Log name prefix</span></p>
+<p style="margin: 0px 0px 8px 0px;">Specify a “<span style="font-style: italic;">Log name prefix</span>” if you wish to prefix the standard BurnInTest Text or HTML log filenames with some text. For example, if you want to prefix &nbsp;the standard BurnInTest log filenames with the text “SPECIAL_TEST_” then just enter, </p>
+<p style="margin: 0px 0px 8px 48px;"><span style="font-size: 8pt;">SPECIAL_TEST_</span></p>
+<p style="margin: 0px 0px 8px 0px;">This prefix to the log file name can use Windows environment variables, such as %COMPUTERNAME%, &nbsp;%USERNAME%, %OS%, %PROCESSOR_ARCHITECTURE%. So, if for example you wanted to prefix log files with a test run description, the computer’s name and &nbsp;the user’s name, just enter, </p>
+<p style="margin: 0px 0px 8px 48px;"><span style="font-size: 8pt;">%COMPUTERNAME%_%USERNAME%_</span></p>
+<p style="margin: 0px 0px 8px 0px;">There is a special BurnInTest variable, "%REPORTSERIAL%", that can be used in the Log file prefix field. This text will be replaced with the serial number as saved in the <a href="machineid.htm">report information</a>. This will only occur if %REPORTSERIAL% has not already been expanded by an existing Windows environment variable (as above). Any invalid filename characters (\ / : * ? " &lt; &gt; |) that are part of the serial will be replaced with "-" characters.</p>
+<p class="p_PreferencesControl"><span class="f_PreferencesControl">Time stamped files / Single file</span></p>
+<p style="margin: 0px 0px 8px 0px;">By default, time stamped log files are created, this is the “<span style="font-style: italic;">Time stamped files</span>” option. A new set of log files will be created when Logging On is switched on, any of the logging options (Log Directory, Detail Level, ASCII/HTML Format) are changed, or when BurnInTest is started with Logging switched on. The only exception is when BurnInTest is automatically stopped with a REBOOT or REBOOTEND scripting command, and then the original log files will be re-opened and appended to.</p>
+<p style="margin: 0px 0px 8px 0px;">By specifying “<span style="font-style: italic;">Single file</span>”, no date or time stamp is appended to the filename and only a single log file (and if specified, a single trace file) will be created and all results will be logged to this file. “Single file” may be a useful option when the output is to be processed by an external program.</p>
+<p style="margin: 7px 0px 7px 0px;">Notes: </p>
+<p style="margin: 0px 0px 8px 0px;">1) When <span style="font-style: italic;">running BurnInTest from a USB drive</span>, using the -p command line parameter, it is recommended that you do not specify a Log file path, only a file name. By doing this, if the USB drive letter changes between systems then the Log file will still be stored in the BurnInTest directory on the USB drive.</p>
+<p style="margin: 0px 0px 8px 0px;">2) Unlike V5 of BurnInTest, you can specify any environment variable in the log name prefix. As such, you need to be careful in regards to the environment variable you use. For example, don't specify an environment variable that contains a directory path, as this may be invalid.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">Report types</span></p>
+<p style="margin: 0px 0px 8px 0px;">The format of the Result summary and Normal log files may be specified to be either ASCII text or HTML via the “<span style="font-style: italic;">Text (ASCII)</span>”, “<span style="font-style: italic;">HTML</span>” or "<span style="font-style: italic;">Customer certificate</span>" buttons. This setting will also determine the format of the Trace logs.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">Report detail</span></p>
+<p class="p_PreferencesControl"><span class="f_PreferencesControl">Log file detail level</span></p>
+<p style="margin: 0px 0px 8px 0px;">A “<span style="font-style: italic;">Log file detail level</span>” may be selected for disk logging to specify the amount of information to be written to disk. The options that may be selected are:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">1.</span></td><td><span style="font-style: italic;">Result Summary only</span>. Produces a .log or .htm file containing system information, a summary of the tests run (e.g. Which tests, the number of operations and errors per test) and a summary of the serious and critical errors during a test run (cleared at the end of a non-scripted test run or at the end of the script for a scripted test run).</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">2.</span></td><td><span style="font-style: italic;">Normal</span>. Produces a .log or .htm file containing the “Result Summary only” information and detailed errors (1 or 2 lines per error). </td></tr></table></div><p class="p_PreferencesControl"><a name="activity_trace2"></a><span class="f_PreferencesControl">Trace file detail level</span></p>
+<p style="margin: 0px 0px 8px 0px;">A “<span style="font-style: italic;">Trace file detail level</span>” may be selected for detailed disk logging to specify the amount of information to be written to disk. The options that may be selected are:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">1.</span></td><td>No Trace log. No trace log is produced. &nbsp;This is the default setting.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">2.</span></td><td><span style="font-style: italic;">Activity Trace level 1</span>. Produces a .trace with the “Normal” information, a summary of test activities (e.g. The starting and stopping of tests) and some additional error descriptions.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">3.</span></td><td>Activity trace level 2. Produces a .trace file with the “Activity Trace level 1” information and a detailed description of the test activity.</td></tr></table></div><p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; text-decoration: underline;">Summarize</span></p>
+<p style="margin: 0px 0px 8px 0px;">Some test runs can lead to a large number of error events that are the same. To produce a summarized log of these errors, select “<span style="font-style: italic;">Summarize”</span>. When more than 3 events that are the same are produced in chronological order, the 3rd event through to the last same event will be summarized into a single line, together with an indication of the number of events that are the same that have not been displayed. The default is to not summarize events.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; text-decoration: underline;">Max file size (lines)</span></p>
+<p style="margin: 0px 0px 8px 0px;">Setting “Max file size” specifies the approximate maximum file size in terms of the number of lines in either the log or trace files.</p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">&nbsp;</span></p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">Periodically log result summary reports during a test</span></p>
+<p style="margin: 0px 0px 8px 0px;">When logging is switched on, by default a result summary report will be logged at the end of a test run. Change this value if you would like to log interim summary reports during the test (every X minutes). The main requested use of this option is to help obtain information about the testing status of a system prior to a system crash on an unstable system. Note: All error events are written in real time, so the main use of this option will be if there are few errors occurring.</p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">&nbsp;</span></p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">Pre-test logging options</span></p>
+<p style="margin: 0px 0px 8px 0px;">Test results, including the <span style="font-style: italic;">detailed error and status log history, </span>can either be cleared each time a new test run is started or test results can be accumulated across several test runs. </p>
+<p style="margin: 0px 0px 8px 0px;">Accumulating test results means that the error count, cycle count and operations count values are the total values that have been accumulated across all test runs on this machine. Accumulation will also occur across scripted reboots, sleeps and execute commands. </p>
+<p style="margin: 0px 0px 8px 0px;">Log files may be appended to the existing log file or a new log file created at the start of each test run.</p>
+<p style="margin: 0px 0px 8px 0px;">Three options are available for clearing/accumulating test results and creating/appending log files. These options are:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Clear test results and create a new log</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Clear test results and append to the existing log</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Accumulate test results and append to the existing log </td></tr></table></div><p style="margin: 0px 0px 8px 0px;">When using BurnInTest Scripting, accumulating test results is useful to accumulate results across multiple tests runs (i.e. multiple RUN commands). Accumulate test results is the typical settings for scripting multiple test runs in a single script file. Accumulated results will be cleared at the start of each test script and the accumulation occurs across all test runs within that script. </p>
+<p style="margin: 0px 0px 8px 0px;">Test results can also be cleared using the ‘Edit / Clear All Results’ menu item.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">See also</span></p>
+<p style="margin: 0px 0px 8px 0px;"><a href="preferences_timer.htm">Example reports</a></p>
+<p style="margin: 0px 0px 8px 0px;"><a href="preferences_timer.htm">Calling external programs via Auto stop actions</a></p>
+<p style="margin: 0px 0px 8px 0px;"><a href="multtestconfig.htm">Maintaining multiple test configurations</a></p>
+
+</td></tr></table>
+
+</body>
+</html>

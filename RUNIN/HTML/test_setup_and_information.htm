@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Test setup and information</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?test_setup_and_information.htm"; }
+  else { parent.quicksync('a12.1.5'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Headingpage"><span class="f_Headingpage">Test setup and information</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="general_usage.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="problems_during_testing.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 7px 0px 7px 0px;"><span style="font-weight: bold;">Q. I have a quad core/ dual core/dual CPU system, does BurnInTest test all CPUs ?</span><br>
+Yes. BurnInTest starts test threads for each CPU, CPU core and Hyperthreaded CPUs. This can be seen from the Windows Task Manager (Performance tab). </p>
+<p style="margin: 7px 0px 7px 0px;"><a name="usb"></a><span style="font-weight: bold;">Q. Are there any recommendations when using the USB2.0 Loopback plugs with BurnInTest ?</span><br>
+Yes. V7.0 (or higher) of the device driver should be used for <a href="http://www.passmark.com/products/usb2loopback.htm" target="_blank" class="weblink">USB2.0 Loopback Plugs</a>.</p>
+<p style="margin: 7px 0px 7px 0px;"><a name="firewire"></a><span style="font-weight: bold;">Q. Can I test my FireWire ports ? How ?</span><br>
+Yes. For FireWire port testing, PassMark suggest using an External Hard Disk with a FireWire interface and the BurnInTest disk test.</p>
+<p style="margin: 7px 0px 7px 0px;"><a name="conterfeit_usb"></a><span style="font-weight: bold;">Q. How can I use BurnInTest to test for counterfeit oversize capacity USB drives</span><br>
+See this guide on our website for <a href="http://www.passmark.com/support/bit_fake_USB_detection.htm" target="_blank" class="weblink">detecting fake USB drives</a>. </p>
+<p class="p_Heading1"><a name="plugins"></a><span style="font-weight: bold;">Q. BurnInTest does not have a test for my specialized hardware. Can I add my own test to be run with the other tests ?</span><br>
+Yes. If you have specialized hardware that BurnInTest does not test, you can write your own test and integrate it with BurnInTest V7.0. <br>
+Up to 5 plugins can be specified. PassMark has developed plugins for the following tests:<br>
+- Touch screen testing, using PassMark's <a href="http://www.passmark.com/products/monitortest.htm" target="_blank" class="weblink">MonitorTest</a> software;<br>
+- Modem testing, using PassMark's <a href="http://www.passmark.com/products/modemtst.htm" target="_blank" class="weblink">ModemTest</a> software;<br>
+- Keyboard testing, using PassMark's <a href="http://www.passmark.com/products/keytest.htm" target="_blank" class="weblink">KeyboardTest</a> software,<br>
+<span style="color: #0000ff; text-decoration: underline;"><a href="http://www.passmark.com/ftp/BurnInTest_sample_plugin.zip" target="_blank" class="weblink">Sample software</a></span> in C and C++ is also available to assist developing a plugin for your specific hardware. </p>
+<p style="margin: 7px 0px 7px 0px;"><a name="no_os"></a><span style="font-weight: bold;">Q. Can I test my system without an operating system?</span><br>
+Yes. A bootable CD or USB flash drive can be created with Microsoft Windows Pre-install Environment (WinPE) and BurnInTest V7.0 Professional. Many BurnInTest users can benefit from testing PC hardware when there is no Operating system installed, or the Operating System is inoperable. This can be useful for testing PC hardware:<br>
+1. In a production line environment, <br>
+2. That is to be shipped with Linux, <br>
+3. In a known virus free environment and <br>
+4. To try to determine the cause of corruption of an Operating System. <br>
+A <span style="color: #0000ff; text-decoration: underline;"><a href="http://www.passmark.com/ftp/BIT_WinPE.pdf" target="_blank" class="weblink">document</a></span> has been produced to assist people in setting up an environment that allows PassMark BurnInTest to be used in these situations.</p>
+<p style="margin: 7px 0px 7px 0px;"><a name="lock_pages"></a><span style="font-weight: bold;">Q. I having trouble setting the 'lock pages in memory' in Windows XP?</span><br>
+Windows XP security rights can be complex to set up and manage. If you have followed the instructions in the help file for setting the 'lock pages in memory' right and still have a problem, try setting this right for "Everyone" and not just for the "Administrator".</p>
+<p style="margin: 7px 0px 7px 0px;"><a name="tape"></a><span style="font-weight: bold;">Q. I want to test my tape drive, how do I know what device ID to use ?</span><br>
+If your system has only a single tape drive, then the system device identifier will be tape0, and the physical definition will be \\.\tape0. If you have more than one tape drive, then their physical definition would be automatically assigned by Windows (NTDETECT.COM in NT) at startup in the increasing order of their SCSI id's. So if you have two tape drives with SCSI id's 3 and 5, then the tape drive with SCSI id 3 would be \\.\tape0 and the tape drive with SCSI id 5 would be \\.\tape1. For BurnInTest you only need to enter the device identifier (TAPE0, TAPE1, etc..). You must have a windows device driver installed to use the tape drive. So if it is not working, this is the thing to check. Note also that Windows 9x do not support tapes drives.</p>
+<p style="margin: 7px 0px 7px 0px;"><a name="advanced_net"></a><span style="font-weight: bold;">Q. How do I setup the Advanced Network test to test more than 6 network ports on my system?</span><br>
+The BurnInTest help file contains information on the workings and setup of the Advanced Network test. In summary, this test allows an M:N network test, where M is the number of PC's running BurnInTest and N is the number of PC's running Endpoint software. To test say 6 network ports on a system you will need to run BurnInTest on this PC with 6 network ports. For this test you would only run BurnInTest on this one system. You will also need other PC's (1 or more) on the network with 6 (or more) Network Adapters and these systems must run the Passmark Endpoint software. The Endpoint software can be found in the BurnInTest installation directory, and should be copied to the Endpoint PC systems. You specify the Network ports on the BurnInTest system to test, the network load, protocols etc in Configuration -&gt; Test Preferences -&gt; Network -&gt; Advanced Network Test -&gt; Advanced test options -&gt; Test On etc.. You do not specify the Endpoint Network port addresses as these are determined automatically by BurnInTest. The Advanced Network Test can also be used to test the Endpoint systems Network ports and intermediate networking equipment.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

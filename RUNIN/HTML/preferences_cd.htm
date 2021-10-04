@@ -1,0 +1,138 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Optical drives</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Preferences,Disc Assignment,CD,CD ROM,Drive,DVD,Autoplay,Removable storage,Autorun" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?preferences_cd.htm"; }
+  else { parent.quicksync('a8.10'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Headingpage"><span class="f_Headingpage">Optical drives</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="advnetoptions.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="preferences_parport.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 0px 0px 8px 0px;">These fields allow the user to select the optical drives to be used for the Optical disk test (CD, DVD and BD).</p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">Optical Drive Selection</span></p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox" style="font-size: 10pt; font-weight: normal; text-decoration: underline;">Automatically select all optical drives at the start of testing</span></p>
+<p style="margin: 0px 0px 8px 0px;">This option is useful when testing a large number of systems with varying optical drive letters. When selected, BurnInTest will allow a global set of test parameters to be applied to all of the optical drives detected on each system at test run time. </p>
+<p style="margin: 0px 0px 8px 0px;">When this option is selected, an additional Test Mode, Auto Test CD &amp; Burn DVD, is available. This option is useful for systems with a DVD burner and one or more other optical drives. When selected, BurnInTest will allow a global set of test parameters to be applied to all of the CD and DVD drives detected on each system at test run time. However, the Test Modes that will be used will be set by BurnInTest. If a DVD recorder is detected on the system, then the first (lowest drive letter) DVD burner will be allocated a Test mode of Burn DVD. All other CD and DVD drives will be allocated the "PassMark Test CD / DVD" Test mode.</p>
+<p style="margin: 0px 0px 8px 0px;">If Select all available drives is selected and the automatic detection of optical drives determines there are no drives, then the optical drive test is turned off.</p>
+<p style="margin: 0px 0px 8px 0px;"><span class="f_PreferencesGroupbox">Edit details for drive</span></p>
+<p style="margin: 0px 0px 8px 0px;">To edit the test preferences for an optical drive, select the Drive in the “Optical Drive Selection” List. Any changes you make in the “Edit details for drive: &lt;drive name&gt;” will be reflected in this list.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic; text-decoration: underline;">Test mode</span></p>
+<p style="margin: 0px 0px 8px 0px;">To specify that an optical drive should be tested, select a “Test Mode” from the drop down list. Only those optical drives detected by the Windows operating system as displayed in the drop down list. The test modes are: NO TEST, Music CD playback, Data disk read and verify, PassMark Test CD / DVD, No media in drive, Burn CD and Burn DVD. "Auto Test CD &amp; Burn DVD" is also available after "Select all optical drives" has been selected. See the <a href="tests_cdrom.htm">CD Test description</a> for more details about test modes.</p>
+<p style="margin: 0px 0px 8px 0px;">To remove an optical drive from the test, select a “Test Mode” of “NO TEST” from the drop down list.</p>
+<p style="margin: 0px 0px 8px 0px;">Up to 26 drive letters can be selected for simultaneous testing. The CD and DVD burn tests supports a maximum of 1 drive simultaneously &nbsp;The type of CD or DVD used in the actual test should match the setting in this window.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic; text-decoration: underline;">Additional seeking / Seek count</span></p>
+<p style="margin: 0px 0px 8px 0px;">For PassMark CD/DVD’s and Burn CD-RW only. When <span style="font-style: italic;">Additional seeking</span> is selected, seeking to different positions on the CD/DVD or CD-RW will occur <span style="font-style: italic;">Seek Count</span> number of times for each cycle of file read/verify.<span style="font-style: italic; text-decoration: underline;"> </span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic; text-decoration: underline;">Quick Erase / Full Erase</span></p>
+<p style="margin: 0px 0px 8px 0px;">For Burn CD-RW and Burn DVD-RW only. Erase the CD or DVD media. The quick option erases content type information in typically less than two minutes. The Full option additionally erases all user data on the disc, however this can take a considerable amount of time (over 1 hour) and the test cannot be canceled during this stage.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic; text-decoration: underline;">Test media</span></p>
+<p style="margin: 0px 0px 8px 0px;">For Burn CD-RW and Burn DVD-RW only. </p>
+<p style="margin: 0px 0px 8px 0px;">CD-RWs are available in a number of sizes. The most common are 650Megabytes (MB) and 700MB of data. This option allows the user to specify whether the CD-RW to be tested is supports 650MB or 700MB.</p>
+<p style="margin: 0px 0px 8px 0px;">DVD-RWs and DVD+RWs are available in a number of sizes. The most common are 4.7GB data. This option allows the user to specify the size of the test data to be written to the disk.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic; text-decoration: underline;">Test data drive</span></p>
+<p style="margin: 0px 0px 8px 0px;">For Burn CD-RW and Burn DVD-RW only. PassMark format Test CD or DVD data is temporarily created on a hard disk before burning this test data to the CD or DVD. This test data is very large. By default, it will be created in the BurnInTest installation directory, and is deleted after the CD or DVD burn test. The target drive for this test data may be changed from the “default installation directory” to the root directory of a hard disk on the system. This hard disk drive letter is specified from the drop down “Test data drive” list. The selected drive will be saved as user configuration after selecting “OK” (you do not need to add a CD drive to alter this drive configuration). </p>
+<p style="margin: 0px 0px 8px 0px;">This option is provided for when BurnInTest is run from read-only media (CD/DVD’s), Floppy disks or other disks with insufficient space and where the hard disk that BurnInTest is installed is to be tested by the BurnInTest hard disk test (writing and reading a large temporary test file to a disk that is being tested with BurnInTest should be avoided).</p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">&nbsp;</span></p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">Autoplay configuration</span></p>
+<p style="margin: 0px 0px 8px 0px;">When an optical disk is inserted into a drive, Windows will attempt to auto-play the disc. In Windows XP and above a window prompting the user to take some action is displayed even if the CD is just a data CD and can not be played. The behavior can be prevented by selecting the ‘block removable storage auto play’ option in the CD preferences window.</p>
+<p style="margin: 0px 0px 8px 0px;">For this feature to work the following conditions must be meet.</p>
+<p style="margin: 0px 0px 8px 0px;">- The main window of BurnInTest must be the active foreground window.</p>
+<p style="margin: 0px 0px 8px 0px;">- Internet explorer version 4.0 or above must be installed.</p>
+<p style="margin: 0px 0px 8px 0px;">- The auto-play feature must not already be disabled by some other means (e.g. changes to the registry)</p>
+<p style="margin: 0px 0px 8px 0px;">Note: In some cases it is also possible to block the auto-play function by holding down the shift key when a disc is inserted. (This is a feature of Windows and not BurnInTest).</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic;">Using the Registry to Disable Auto Run / Auto play (Experts only)</span></p>
+<p style="margin: 0px 0px 8px 0px;">There are two registry values that can be used to persistently disable Auto Run: NoDriveAutoRun and NoDriveTypeAutoRun. The first value disables Auto Run for specified drive letters and the second disables Auto Run for a class of drives. If either of these values is set to disable Auto Run for a particular device, it will be disabled.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic;">Note:</span> The NoDriveAutoRun and NoDriveTypeAutoRun values should only be modified by system administrators to change the value for the entire system for testing or administrative purposes. Applications (such as BurnInTest) should not modify these values, as there is no way to reliably restore them to their original values.</p>
+<p style="margin: 0px 0px 8px 0px;">The NoDriveAutoRun value disables Auto Run for specified drive letters. It is a <span style="font-style: italic;">REG_DWORD</span> data value, found under the <span style="font-style: italic;">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer</span> key. The first bit of the value corresponds to A:, the second to B:, and so on. To disable Auto Run for one or more drive letters, set the corresponding bits. For example, to disable the A: and C: drives, set NoDriveAutoRun to 0x00000005. </p>
+<p style="margin: 0px 0px 8px 0px;">The NoDriveTypeAutoRun value disables Auto Run for a class of drives. It is a <span style="font-style: italic;">REG_DWORD</span> or 4-byte <span style="font-style: italic;">REG_BINARY</span> data value, found under the <span style="font-style: italic;">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer</span> key. By setting the bits of this value's first byte, different drives can be excluded from working with Auto Run.</p>
+<p style="margin: 0px 0px 8px 0px;">The following table gives the bits and bit mask constants that can be set in the first byte of NoDriveTypeAutoRun to disable Auto Run for a particular drive type. For Microsoft Windows 2000, you must restart Windows Explorer before the changes take effect.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 0px;"><table cellspacing="2" cellpadding="1" border="0" style="border: none; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="26%" style="width:26%;"><p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic;">Bit Number </span></p>
+</td>
+<td valign="top" width="37%" style="width:37%;"><p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic;">Bit mask Constant </span></p>
+</td>
+<td valign="top" width="37%" style="width:37%;"><p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic;">Description </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="26%" style="width:26%;"><p style="margin: 0px 0px 8px 0px;">0x04 </p>
+</td>
+<td valign="top" width="37%" style="width:37%;"><p style="margin: 0px 0px 8px 0px;">DRIVE_REMOVEABLE </p>
+</td>
+<td valign="top" width="37%" style="width:37%;"><p style="margin: 0px 0px 8px 0px;">Disk can be removed from drive (such as a floppy disk). </p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="26%" style="width:26%;"><p style="margin: 0px 0px 8px 0px;">0x08 </p>
+</td>
+<td valign="top" width="37%" style="width:37%;"><p style="margin: 0px 0px 8px 0px;">DRIVE_FIXED </p>
+</td>
+<td valign="top" width="37%" style="width:37%;"><p style="margin: 0px 0px 8px 0px;">Disk cannot be removed from drive (a hard disk). </p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="26%" style="width:26%;"><p style="margin: 0px 0px 8px 0px;">0x10</p>
+</td>
+<td valign="top" width="37%" style="width:37%;"><p style="margin: 0px 0px 8px 0px;">DRIVE_REMOTE </p>
+</td>
+<td valign="top" width="37%" style="width:37%;"><p style="margin: 0px 0px 8px 0px;">Network drive. </p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="26%" style="width:26%;"><p style="margin: 0px 0px 8px 0px;">0x20</p>
+</td>
+<td valign="top" width="37%" style="width:37%;"><p style="margin: 0px 0px 8px 0px;">DRIVE_CDROM </p>
+</td>
+<td valign="top" width="37%" style="width:37%;"><p style="margin: 0px 0px 8px 0px;">CD-ROM drive. </p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="26%" style="width:26%;"><p style="margin: 0px 0px 8px 0px;">0x40</p>
+</td>
+<td valign="top" width="37%" style="width:37%;"><p style="margin: 0px 0px 8px 0px;">DRIVE_RAMDISK </p>
+</td>
+<td valign="top" width="37%" style="width:37%;"><p style="margin: 0px 0px 8px 0px;">RAM disk. </p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

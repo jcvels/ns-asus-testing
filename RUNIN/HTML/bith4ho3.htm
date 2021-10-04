@@ -1,0 +1,460 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Common Error messages</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Fault">
+	<PARAM NAME="Keyword" VALUE="Bug Hunting">
+</OBJECT>
+
+<H1><A NAME="hid_commonerrors"></A>Common Test Error Messages</H1>
+
+<P>When BurnInTest encounters an error during a test run a short description of the error is displayed in the main window. What follows is an explanation of the common errors that may be encountered.</P>
+
+<P><I><U>Incorrect mathematical addition / subtraction / division / multiply</U></I></P>
+
+<P>The execution of a mathematical operation came up with the wrong result (e.g. 1 + 1 = 3). This is a very serious error for a computer as it means the computer is incapable of execution the same sequence of instructions to get the same result. Possible reasons are faulty RAM, System bus, CPU or overheating. There is a strong chance that your computer will crash or lock up just after an error like this because if the computer can’t add two numbers correctly, there is a good chance that it can’t continue to run a program either.</P>
+
+<P><I><U>Incorrect MMX addition / subtraction / multiplication<BR>
+Incorrect 128bit (SIMD-SSE) floating point addition<BR>
+Incorrect 128bit (SIMD-SSE) floating point multiply<BR>
+Incorrect 64bit 3DNow! floating point result</U></I></P>
+
+<P>Similar to the above, mathematical faults except that the error occurred while using the extended CPU instructions. (Rather than the standard 32bit Maths)</P>
+
+<P><I><U>Failed Windows call - Line Drawing / Bitmaps / Shapes</U></I></P>
+
+<P>The Windows operating system has failed to correctly complete the graphical operation that was requested by BurnInTest. This could indicate that Windows is running low on internal resources or that there is a problem with the software drivers for the video card.</P>
+
+<P><I><U>No free memory for buffer</U></I></P>
+
+<P>Windows does not have enough free memory to allow the allocation of a buffer. </P>
+
+<P><I><U>Not enough free disk space</U></I></P>
+
+<P>There is not enough free space on the disk to create a test file for the Disk tests.</P>
+
+<P><I><U>Test file could not be created</U></I></P>
+
+<P>BurnInTest was unable to create a file on the disk in order for it to be able to run the disk tests. Check that you have access to the disk with Windows explorer, Check file write and create permissions in the root directory of the disk under test.</P>
+
+<P><I><U>Error while writing to the disk</U></I></P>
+
+<P>The test file could not be completely written to the disk. This could indicate a hardware error or a sudden lack of free disk space</P>
+
+<P><I><U>Error writing to disk - Disk is full</U></I></P>
+
+<P>The test file could not be completely written to disk because the selected hard drive is full.</P>
+
+<P><I><U>Test file could not be re-opened</U></I></P>
+
+<P>The test file was created successfully, but could not be reopened for verification. This could indicate a hardware error or a resource problem within Windows.</P>
+
+<P><I><U>Error while reading from the disk</U></I></P>
+
+<P>The test file created on the disk can no longer be read. This could indicate a hardware error or a problem within windows.</P>
+
+<P><I><U>Data Verify failure</U></I></P>
+
+<P>This is a serious error that indicates that the data read from the disk is NOT the same as the data that was written to the disk. This could indicate a hardware error.</P>
+
+<P><I><U>Disk is full or FAT root file system limit reached</U></I></P>
+
+<P>A test file could not be created on the disk being tested because the disk is full or the capacity of the file system has been exhausted. Normally this error only happens when the disk is formatted using the old FAT files system. Floppy disks still use the old FAT file system and there is a limited number of files that can be created in the root directory of a floppy disk. The number of files depends on the length of each file name. (and does NOT depend on available disk space). Thus this not really an error, but a limitation of the FAT file system. (Which has now been replaced by FAT32 and NTFS).</P>
+
+<P><I><U>Warning - Disk low speed threshold crossed</U></I></P>
+
+<P>The disk speed has fallen below the low speed threshold as specified in the Disk test preferences window.</P>
+
+<P><I><U>Could not set CD Time format<BR>
+Could not get number of audio tracks<BR>
+Could not play the audio track<BR>
+CD-ROM failed to return status information<BR>
+Can not detect audio information on CD<BR>
+No audio media in CD-ROM</U></I></P>
+
+<P>These errors relate to one of the following problems.<BR>
+There is not a CD in the first CD-ROM connected to the computer.<BR>
+The CD in the CD-ROM is not a Music CD.<BR>
+The CD is already in use by another application.<BR>
+The CD has an error on it and is unreadable.<BR>
+The CD is dirty, dusty or scratched and can not be read<BR>
+The CD Software drivers are not correctly installed.<BR>
+The CD-ROM has a hardware error.</P>
+
+<P><I><U>Checksum failure for CD/DVD file</U></I></P>
+
+<P>This indicates that the file read from the data CD/DVD being tested failed the checksum verification. This means that the CD/DVD Drive is unable to accurately read data from the CD/DVD being tested.</P>
+
+<P><I><U>Could not open file on CD/DVD for reading</U></I></P>
+
+<P>The CD/DVD drive selected could not be opened for reading as a data CD/DVD.</P>
+
+<P><I><U>Error while reading file from CD/DVD</U></I></P>
+
+<P>A full block of data could not be read from the data CD/DVD.</P>
+
+<P><I><U>Error while searching for files on data CD/DVD</U></I></P>
+
+<P>An error occurred while searching for files on a data CD/DVD. This can be the result of a corrupted (Error code 1117) or blank CD/DVD (Error code 21).</P>
+
+<P><I><U>Data read from CD/DVD was incorrect</U></I></P>
+
+<P>A block read from a specialized PassMark Test CD or DVD was incorrect. There was at least one byte in the block that was not the value expected. In the detailed error log there is additional information that give the number of bytes in error and displays the expected value and the value actual read from the disc. It may be that the drive is faulty but you should check that the disc is not scratched, dusty or damaged before assuming a hardware fault.</P>
+
+<P><I><U>Could not determine type of Test CD/DVD</U></I></P>
+
+<P>BurnInTest was expecting to find a specialized test CD/DVD in the drive selected. A specialized test CD/DVD has a specific set of files, which all have a specific file size. These disc are normally purchased from PassMark Software or made using the PassMark CD-Maker utility. BurnInTest was not able to find the correct files or the files appear to have the wrong file size. If you don’t have a specialized test CD/DVD available, select one of the other two test options in the preferences window.</P>
+
+<P><I><U>Error loading DirectX .dll</U></I></P>
+
+<P>DirectX (version specified in the System Requirements section) is not installed correctly.</P>
+
+<P><I><U>Error initializing DirectX<BR>
+Error initializing DirectX device</U></I></P>
+
+<P>These errors relate to one of the following problems.<BR>
+DirectX (version specified in the System Requirements section) or above is not installed correctly.<BR>
+You need to install the most recent driver for your graphics card.<BR>
+You’ve selected an incompatible screen resolution and/or color depth for you desktop.</P>
+
+<P><I><U>Error creating DirectX textures<BR>
+Out of video memory</U></I></P>
+
+<P>This error means that you have exhausted all of your graphic adapters onboard memory.</P>
+
+<P><I><U>Warning: Switching to reference rasterizer</U></I></P>
+
+<P>BurnInTest was unable to initialize a hardware accelerated device and is using software emulation to render the 3D graphics test. This will result in a much lower frame rate.</P>
+
+<P><I><U>Video memory corruption</U></I></P>
+
+<P>One of the pixel values read from video memory is not the same as that which was written to video memory. This may indicate that your video memory is damaged.</P>
+
+<P><I><U>Error initializing DirectDraw</U></I></P>
+
+<P>DirectDraw could not be initialized. Check that DirectX (version specified in the System Requirements section) is installed. Check that the most recent version of your video adapter driver is present.</P>
+
+<P><I><U>Frame could not be displayed and was skipped</U></I></P>
+
+<P>DirectDraw reported an error when displaying one of the test patterns to the test window. If you receive many of these errors, reboot and check that the most recent version of your video adapter is present. There are several instances when this message is expected. One example is when the video display mode is changed or power control settings are altered.</P>
+
+<P><I><U>Not enough video memory available for test</U></I></P>
+
+<P>The minimum video memory required for the test (usually 100KB) could not be allocated. Check your display adapter is not carrying out any other resource hungry processes, such as games. Attempt a reboot and ensure that the most recent version of your video adapter is present.</P>
+
+<P><I><U>Minimum color depth of 16 bits required.</U></I></P>
+
+<P>Your screen mode is set to a color depth of less than 16 bits. Set the screen mode to 16 bit or 32 bit color and run the test again.</P>
+
+<P><I><U>Could not find the default printer<BR>
+Could not open the default printer<BR>
+Could not send page to printer<BR>
+Could not open printer spooler<BR>
+Error writing data to spooler</U></I></P>
+
+<P>These errors relate to one of the following problems.<BR>
+There is no printer defined in the Windows setup.<BR>
+There is no default printer selected.<BR>
+The default printer is not connected to the printer.<BR>
+There is no paper / ink / toner in the printer.<BR>
+There was a communications problem to the printer. e.g. The parallel port may not be functioning correctly.</P>
+
+<P><I><U>Could not open printer command file</U></I></P>
+
+<P>The printer command file specified by the user was not found on the hard disk. Check the path name and file name are correct in the preferences window.</P>
+
+<P><I><U>Error verifying data in RAM</U></I></P>
+
+<P>The data written to memory is not the same as the information read from memory. This is a very serious error, much like the “Incorrect mathematical…”, error above. It’s highly likely that your computer is about to crash or lock up.</P>
+
+<P><I><U>Error allocating RAM from Windows</U></I></P>
+
+<P>The Windows operating system was not able to allocate the amount of RAM requested by BurnInTest for the memory test. As the RAM must be allocated in a continuous block, this error can sometimes be seen as a result of free memory fragmentation.</P>
+
+<P><I><U>Error connecting to network<BR>
+Could not create a network socket<BR>
+Could not set socket timeouts</U></I></P>
+
+<P>During the establishment of a network connection an error was encountered. The Network address selected has no effect on if these errors occur. They can be the result of the following problems.<BR>
+– There is no network connection configured for the computer<BR>
+– The computer is physically disconnected from the network<BR>
+– The Internet TCP/IP protocol is not installed on this computer</P>
+
+<P><I><U>Networking functions aren't available (ws2_32.dll)</U></I></P>
+
+<P>During the establishment of a network connection an error was encountered. This error indicates that the Windows Network Socket functions supplied by the library ws2_32.dll are not available on this system. This main mean that<BR>
+- The Internet TCP/IP protocol is not correctly installed on this computer</P>
+
+<P><I><U>Could not allocate memory for packets</U></I></P>
+
+<P>Windows is low on resources and cannot allocate any more memory.</P>
+
+<P><I><U>Could not resolve host name, check settings</U></I></P>
+
+<P>The Network address selected does not seem to be correct. Try another address, or using a TCP/IP address directly. The address 127.0.0.1 is good for testing as it is an internal loop back.</P>
+
+<P><I><U>No permission to open RAW network socket</U></I></P>
+
+<P>If you are a non-administrator logged onto a Windows 2000 or XP system you will get this error with the Network test. In Windows 2000, there is no way to disable this security check. Access to Raw Sockets is granted on a per-transport basis. For the address family AF_INET, only administrators have the access necessary to create Raw Sockets. The test should be run while logged in as the ‘administrator’.</P>
+
+<P><I><U>Timeout sending packet<BR>
+Timeout waiting for packet<BR>
+Error sending packet<BR>
+Error receiving packet<BR>
+Bad packet</U></I></P>
+
+<P>These errors relate to one of the following problems.<BR>
+The Host using the network address selected doesn’t reply to ‘ping’ messages. Try a different host.<BR>
+There is a configuration problem in your network connection.<BR>
+Your network card may be faulty.<BR>
+The network itself is not reliably. The information send was not the same as the information echoed by the remote host.<BR>
+The network is congested or faulty and the packets are not being echoed within the timeout period specified in the preferences window.</P>
+
+<P><I><U>Network test alarm. Error ratio exceeded</U></I></P>
+
+<P>The Bad Packet ratio specified in the Network test preferences has been exceeded.</P>
+
+<P><I><U>Got someone else’s packet</U></I></P>
+
+<P>This is not really an error. It’s more of an information message. Don’t worry about this message.</P>
+
+<P><I><U>Bad packet. Checksum incorrect</U></I></P>
+
+<P>The checksum in the echoed, incoming data packet is not correct. This indicates data corruption or a fault on the remote machine. Note that this checksum is calculated by the remote machine.</P>
+
+<P><I><U>Bad packet. Corrupt data</U></I></P>
+
+<P>The contents of the incoming data packet are not correct. Normally this error would not been seen as the checksum should detect the incorrect data before this error occurs.</P>
+
+<P><I><U>COM port is already in use by another program</U></I></P>
+
+<P>The serial port selected for the test is already is use by Windows. This may be for the mouse, a modem or another serial device.</P>
+
+<P><I><U>The requested COM port could not be found</U></I></P>
+
+<P>The serial port selected for the test does not exist in this computer. This could happen if COM4 is selected but the computer has only 2 serial ports, COM1 and COM2.</P>
+
+<P><I><U>Error while opening COM port</U></I></P>
+
+<P>Windows has reported an error while trying to open the serial port selected for the test. This could be a configuration problem in Windows. This error should not normally been seen.</P>
+
+<P><I><U>Error getting current COM port configuration<BR>
+Error while setting new COM port configuration</U></I></P>
+
+<P>Windows has reported an error while trying to configure the selected serial port. The most common cause for this error would be the selection of a speed that is not supported by the serial port chips installed in the computer (the UART). Most chips only support speeds up to 115Kbit/s.</P>
+
+<P><I><U>Corruption. Data received didn't match data sent</U></I></P>
+
+<P>BurnInTest has detected that the data received from the serial port doesn’t match the data sent. This could indicate that there is a hardware problem. This type of data corruption would however be a fairly rare type of event. The more common result of a hardware failure would be the total inability to send or receive data. (see below).</P>
+
+<P><I><U>Error while setting current COM port timeouts</U></I></P>
+
+<P>Windows has reported an error while trying to set the timeout periods for the data transmission and reception. This could be a configuration problem in Windows. This error should not normally been seen.</P>
+
+<P><I><U>Error while sending data to the COM port</U></I></P>
+
+<P><I><U>Error while receiving from the COM port</U></I></P>
+
+<P>Windows has reported an error while trying to send / receive data through the serial port. If a device (such as a <A HREF="bith2qln.htm">loop back plug</A>) is not connected to the serial port then no data can be sent. If the loop back plug is connected and is not faulty, then this error may indicate a hardware fault.</P>
+
+<P><I><U>COM port Clear To Send (CTS) line stuck high</U></I></P>
+
+<P><I><U>COM port Clear To Send (CTS) line stuck low</U></I></P>
+
+<P><I><U>COM port Data Set Ready (DSR) line stuck high</U></I></P>
+
+<P><I><U>COM port Data Set Ready (DSR) line stuck low</U></I></P>
+
+<P>The signal pin test phase of the serial test has failed. This might be because of an incorrectly wired up loop back plug, a cabling problem between the serial socket and the motherboard, a non standard COM port or a problem with the Windows configuration for the COM port. A failure of the CTS pin may be caused by the associated RTS pin, to which it is looped. A failure of the DSR pin may be caused by the associated DTR pin, to which it is looped.</P>
+
+<P><I><U>Parallel device driver not initialized</U></I></P>
+
+<P>To access the Parallel port under Windows 2000 and XP BurnInTest needs to load a special device driver that allows direct access to the parallel port. If this driver, “DIRECTIO.sys”, can not be found or loaded then this is the error message. You need to be logged in as the administrator in order to load this driver. This error may also occur if the file is missing.</P>
+
+<P><I><U>Parallel device driver could not detect port</U></I></P>
+
+<P>This error usually occurs if the parallel port test attempts to access a parallel port, which doesn’t exist (such as perhaps LPT3 or LPT4). It can also happen if the BIOS settings for the port are not correct. Note that the old ‘bi-directional’ BIOS mode is not supported. ECP or EPP mode is required.</P>
+
+<P><I><U>Could not open parallel device driver</U></I></P>
+
+<P>This error usually occurs if the parallel port test fails to access a parallel port, which does exist.</P>
+
+<P><I><U>Warning: Could not lock parallel port</U></I></P>
+
+<P>When the parallel port test initializes, it attempts to lock the port for exclusive access. This is essentially to prevent Windows XP “warm polling” the port, which can produce invalid test results. This error results in a failure to lock the port and does not represent a failure in testing the parallel port.</P>
+
+<P><I><U>Corruption. Data received didn't match data sent</U></I></P>
+
+<P>The data sent to the Parallel port was not the same as the data received. This may indicate a hardware problem or a missing or faulty loop back connector.</P>
+
+<P><I><U>Error while sending data to the parallel port<BR>
+Error while receiving data to the parallel port</U></I></P>
+
+<P>Windows has reported an error while trying send or receive data. This could be a configuration problem in Windows. This error should not normally been seen.</P>
+
+<P><I><U>Could not detect the parallel port selected</U></I></P>
+
+<P>BurnInTest was unable to find a parallel port at the location selected. Try picking another port and see the Parallel port test description for more details about <A HREF="bith5vck.htm">port selection</A></P>
+
+<P><I><U>Could not access the tape drive selected</U></I></P>
+
+<P>The tape drive selected from the preferences window (e.g. TAPE1) could not be found connected to the computer. </P>
+
+<P><I><U>Error while formatting tape partition</U></I></P>
+
+<P>The tape drive reported an error while trying to format the tape in the tape drive.</P>
+
+<P><I><U>Error while loading (rewinding) tape</U></I></P>
+
+<P>The tape drive reported an error as a result of a request to load and position the tape for writing.</P>
+
+<P><I><U>Error while locking tape in drive</U></I></P>
+
+<P>The tape drive reported that it was unable to lock the tape in the drive. Some tape drives may not support this option and this art of the test can be turned off in the tape preferences window.</P>
+
+<P><I><U>Tape device is not ready to start test</U></I></P>
+
+<P>The tape drive is not in a state where it can accept a new command (but it should be).</P>
+
+<P><I><U>No media in tape drive</U></I></P>
+
+<P>The tape drive reported that there is no media in the drive.</P>
+
+<P><I><U>No free memory for write buffer</U></I></P>
+
+<P>There is not enough free RAM to allocate a write buffer.</P>
+
+<P><I><U>Error while seeking to new position on tape</U></I></P>
+
+<P>The tape drive reported an error while seeking to a new position on the tape.</P>
+
+<P><I><U>Error while writing to tape</U></I></P>
+
+<P>The tape drive failed to fully write the current data block to the tape.</P>
+
+<P><I><U>Error while writing file marker between files</U></I></P>
+
+<P>The tape drive failed to write a file marker. (A flag to indicate a new file)</P>
+
+<P><I><U>Error while reading data block from tape</U></I></P>
+
+<P>The tape drive failed to fully read the current data block from the tape.</P>
+
+<P><I><U>Corruption. Data read didn't match data written</U></I></P>
+
+<P>The data read from the tape didn’t match the data written to the tape.</P>
+
+<P><I><U>Unable to get/set tape drive parameters</U></I></P>
+
+<P>A request to get/set the tape drive capabilities resulted in an error.</P>
+
+<P><I><U>Unable to get/set tape media parameters</U></I></P>
+
+<P>A request to get/set the capabilities of the media current in the tape drive resulted in an error.</P>
+
+<P><I><U>Tape is write protected</U></I></P>
+
+<P>The tape media is write protected and the test cannot continue.</P>
+
+<P><I><U>Tape drive has reported that it requires cleaning</U></I></P>
+
+<P>The tape drive and/or the media in the drive are dirty. Clean the tape drive before reattempting the test.</P>
+
+<P><I><U>Tape partition is too small for test files</U></I></P>
+
+<P>The media is too small or the tape drive does not have the capability to fit the requested files on the tape. Select fewer files or smaller files or use a bigger tape.</P>
+
+<P><I><U>Could not open MIDI Sequencer or MIDI file</U></I></P>
+
+<P>The sound test was not able to open the sound card device or the midi sound file on the disk for playback. This can be because the test file has been moved or deleted from the disk or because the sound card has not been installed correctly.</P>
+
+<P><I><U>Failed to play back MIDI via sequencer</U></I></P>
+
+<P>The MIDI sequencer was not able to play back the file. This error is normally accompanied with a 2nd error message in the detailed log that gives additional information.</P>
+
+<P><I><U>Could not play back wave file</U></I></P>
+
+<P>The sound test was not able to open the sound card device or the wave sound file on the disk for playback. This can be because the test file has been moved or deleted from the disk or because the sound card has not been installed correctly.</P>
+
+<P><I><U>Audio Input doesn't match Audio Output</U></I></P>
+
+<P>The data received through the audio line in is in a wave type form, but differs from the output waveform by a greater degree than the Max Distortion value set in the Sound test preferences. It is not rare for occasional high distortion values to occur on certain sound cards, especially if the system load is particularly high.</P>
+
+<P><I><U>Corrupt Audio input</U></I></P>
+
+<P>This is a more serious error than the previous one. The audio line in data is corrupt and in no way resembles the output wave. Check that the audio loopback cable is connected to the correct ports and the Windows mixer settings are properly configured (<I>see section 3.11 Sound card test)</I>.</P>
+
+<P><I><U>Could not detect USB loopback plug</U></I></P>
+
+<P>The USB enumeration process failed to find a USB loopback plug device. This might be because, (1) The USB plug is not physically connected. (2) The USB loopback device driver was not successfully installed. (3) The USB plug was connected while a test was already in progress and thus was not recognized. (4) The Windows O/S is not installed correctly. (5) The USB socket on the PC is faulty. (6) The USB cable being used is faulty or is prone to errors. (7) The plug itself has become faulty. (8) The USB cable is too long or of poor quality (shielded cables under 5m are recommended). As there are many possible causes for this error it can take some investigation to find the origin of the fault. The first step however should always be to remove the plug, wait a few seconds then reconnect the plug.</P>
+
+<P><I><U>USB loopback plug identified itself incorrectly</U></I></P>
+
+<P>The USB enumeration process succeeded, but the unique identification information stored in the USB plugs EEPROM memory is incorrect. Under normal conditions this should never happen. The plug can not be used unless it is programmed correctly. Contact PassMark Software for assistance.</P>
+
+<P><I><U>Could not allocate RAM for USB I/O buffers</U></I></P>
+
+<P>The system is low on memory</P>
+
+<P><I><U>USB device open failed</U></I></P>
+
+<P>The initial attempt to connect to the device failed. The device might already be open and locked by another process. With all the tests stopped, try removing the plug, waiting a few seconds then reconnecting the plug.</P>
+
+<P><I><U>USB device reset failed</U></I></P>
+
+<P><I><U>Setting USB data rate failed</U></I></P>
+
+<P><I><U>Setting USB data characteristics failed</U></I></P>
+
+<P><I><U>Setting USB flow control failed</U></I></P>
+
+<P><I><U>Setting USB I/O timeouts failed</U></I></P>
+
+<P><I><U>Purging of USB I/O data buffers failed</U></I></P>
+
+<P><I><U>Set USB loopback DTR failed</U></I></P>
+
+<P><I><U>Set USB loopback RTS failed</U></I></P>
+
+<P>These errors are all very rare. Normally errors will occur earlier in the initialization process and not at these steps. In addition to the possible causes for errors mentioned above, it is also possible that there is a software configuration problem. If one of theses errors persists, contact PassMark Software for assistance.</P>
+
+<P><I><U>Data packet transmission failed</U></I></P>
+
+<P><I><U>USB driver reported send error</U></I></P>
+
+<P>Data could not be sent to the USB device. It may be that the device has an intermittent connection to the host and has disconnected itself. (i.e. a faulty cable). It may also indicate that there is a problem with the device drivers or USB hardware.</P>
+
+<P><I><U>Data packet reception failed</U></I></P>
+
+<P><I><U>USB driver reported receive error</U></I></P>
+
+<P>Data could not received from the USB device. It may also indicate that there is a problem with the device drivers or USB hardware.</P>
+
+<P><I><U>USB data packet verify failed</U></I></P>
+
+<P>A block of data was sent to, and received from, the USB plug but the data was corrupted. What was received did not match what was sent. This could indicate a poor quality cable that is subject to external electromagnetic interference or faulty USB hardware.</P>
+
+<P><I><U>Warning: Too many USB errors attempted reset</U></I></P>
+
+<P>After 10 errors BurnInTest automatically attempts clear the error condition start by provoking a reset on the device and device drivers. If the error condition does clear after this action the problem was almost definitely a software problem.</P>
+
+<P><I><U>Insufficient rights to lock pages</U></I></P>
+
+<P>Either you are not running Windows 2000 or XP or the administrator user rights to lock pages in memory is not set. See the page in the help file called, Setting the <A HREF="bith5ddf.htm">Lock Pages in Memory right</A> for more information. This right is required for the advanced memory test and is turned off be default. If you have set this right, make sure you are logged on as the administrator and have rebooted the machine so that the change takes effect.</P>
+
+<P><I><U>Could not get extended RAM info. W2000 or XP Req.</U></I></P>
+
+<P>The user has selected the advanced RAM test but there was a problem detecting while trying to obtain information about extended RAM. This maybe because the system is not running Windows 2000 or Windows XP</P>
+
+<P><I><U>SMART Threshold exceeding condition detected.</U></I></P>
+
+<P>One of the drives S.M.A.R.T Attributes has exceeded its threshold. This signals imminent drive failure and indicates the tests should be stopped and the drive replaced. To learn more about S.M.A.R.T, see <A HREF="bith4tis.htm">What is S.M.A.R.T?</A></P>
+
+</BODY>
+</HTML>

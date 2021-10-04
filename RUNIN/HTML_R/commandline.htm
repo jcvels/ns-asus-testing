@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?commandline.htm"; }
+else { parent.quicksync('a4'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Command line options</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Command line,Interactive mode,Configuration mode,Arguments" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16pt; font-weight: bold;">  Command line options</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="forcetypes.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="autorun.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 7px 0px 7px 0px;">There are three command line options. If no command line option is specified, Rebooter runs in interactive mode.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">-Reboot</span></p>
+<p style="margin: 7px 0px 7px 0px;">Perform a reboot according to the parameters in the saved configuration file. The count down to a reboot will start immediately after the program has started. All buttons are disabled (as if the user had hit the Start Cycle button). The type of reboot / restart performed will be whatever was lasted saved in the configuration file. </p>
+<p style="margin: 7px 0px 7px 0px;">Note: When Rebooter is started from BurnInTest, the Rebooter setting of "Auto load Rebooter at startup" is not applied. This allows BurnInTest to be setup as the auto restart program, and avoids the conflict of both BurnInTest and Rebooter auto starting after a reboot. This means that only a single reboot will be performed when rebooter is run from BurnInTest. To perform multiple reboots from within BurnInTest a script should be used with multiple REBOOT commands. </p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">-Config</span></p>
+<p style="margin: 7px 0px 7px 0px;">Allows the user to change and save the settings but not do a reboot. This is useful when Rebooter is integrated into another external application. The external application can call Rebooter with this option to allow the user to configure various parameters then call Rebooter once again with the –Reboot argument to effect the Reboot.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">-p</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="color: #000000;">Forces Rebooter to use the rebooter.exe directory rather than the User's personal directory for configuration and log files etc. This may be useful when running rebooter from a USB drive</span>. Note: If BurnInTest is started with the -p &nbsp;command line parameter then BurnInTest will start rebooter with the -p command line parameter.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Example – Execute a reboot from the command line</span></p>
+<p style="margin: 7px 0px 7px 0px;">rebooter &nbsp;-reboot</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

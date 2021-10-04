@@ -1,0 +1,98 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>RAM</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Advanced RAM test,Standard RAM test,Lock pages in RAM,Administrator right,Torture Test" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?preferences_ram.htm"; }
+  else { parent.quicksync('a8.16'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Headingpage"><span class="f_Headingpage">RAM</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="preferences_timer.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="add_lockrights.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 7px 0px 7px 0px;">The RAM Test preferences are only included in the BurnInTest Pro version only.</p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">RAM Test mode and test pattern</span></p>
+<p class="p_PreferencesControl"><span class="f_PreferencesControl">Standard</span></p>
+<p style="margin: 0px 0px 8px 0px;">The standard memory test allocates RAM from the Windows operating system. BurnInTest then uses the virtual address range supplied by Windows. Having RAM allocated in this way means that Windows can swap these RAM pages out to disk and generally move them around in physical memory. As BurnInTest accesses each memory page frequently during a test, this swapping does not happen very much in practice but it does create a small amount of uncertainty about what is actually being tested. </p>
+<p style="margin: 0px 0px 8px 0px;">The Test pattern may be selected to be one of the following, or to cycle through each pattern in the following order: </p>
+<p style="margin: 0px 0px 8px 48px;">Sequence (0,1,2...255)*</p>
+<p style="margin: 0px 0px 8px 48px;">Binary 1 (10101010)*</p>
+<p style="margin: 0px 0px 8px 48px;">Binary 2 (01010101)*</p>
+<p style="margin: 0px 0px 8px 48px;">Zeros (00000000)*</p>
+<p style="margin: 0px 0px 8px 48px;">Ones (11111111)*</p>
+<p style="margin: 0px 0px 8px 48px;">8-bit Cell adjacency test</p>
+<p style="margin: 0px 0px 8px 48px;">Note: *The 32-bit version of BurnInTest will use 32-bit data patterns. The 64-bit version of BurnInTest will use &nbsp;64-bit data patterns.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; text-decoration: underline;">Multi-Process Torture Test (Pro version only)</span></p>
+<p style="margin: 0px 0px 8px 0px;">The torture test is a multi-process memory test. It can be very useful to test the system paging mechanism (swapping RAM &lt;-&gt; Disk). Multiple processes are started in their own virtual address space and each process allocates and tests a block of RAM. Disk swapping and the over-allocation of RAM can be tested using this method. The number of test processes to start and the percentage of total RAM that each process will use can be specified by the user.</p>
+<p style="margin: 0px 0px 8px 0px;">The Test pattern may be selected to be one of the following, or to cycle through each pattern in the following order: </p>
+<p style="margin: 0px 0px 8px 48px;">Sequence (0,1,2...255)*</p>
+<p style="margin: 0px 0px 8px 48px;">Binary 1 (10101010)*</p>
+<p style="margin: 0px 0px 8px 48px;">Binary 2 (01010101)*</p>
+<p style="margin: 0px 0px 8px 48px;">Zeros (00000000)*</p>
+<p style="margin: 0px 0px 8px 48px;">Ones (11111111)*</p>
+<p style="margin: 0px 0px 8px 48px;">8-bit Cell adjacency test</p>
+<p style="margin: 0px 0px 8px 48px;">Note: *The 32-bit version of BurnInTest will use 32-bit data patterns. The 64-bit version of BurnInTest will use &nbsp;64-bit data patterns.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; text-decoration: underline;">Addressing Windows Extensions (32-bit Pro version only)</span></p>
+<p style="margin: 0px 0px 8px 0px;">The Addressing Windows Extensions memory test directly allocates physical RAM and locks it down to avoid any inference from Windows. The memory allocated is effectively removed from the Windows operating system and can never be swapped or moved (until unlocked). It is still not possible to use all of the installed RAM, as Windows still needs to run. However this is a much better state of affairs as compared to the standard test. There is also a second advantage with the Advanced test. It can use, in theory, up to 64GB of RAM. The standard version of Windows2000 supports 4GB of RAM. Windows Advanced Server and Windows Data Center Server support 8GB and 64GB respectively.</p>
+<p style="margin: 0px 0px 8px 0px;">The main disadvantage of the Advanced memory test is that you must manually assign an <a href="add_lockrights.htm">additional administrator right</a> to lock pages in RAM.</p>
+<p style="margin: 0px 0px 8px 0px;">The Test pattern may be selected to be one of the following, or to cycle through each pattern in the following order: </p>
+<p style="margin: 0px 0px 8px 0px;"><span style="width:48px">&nbsp;</span><span style="font-style: italic;">32-bit test patterns:</span></p>
+<p style="margin: 0px 0px 8px 48px;">Sequence (0,1,2...255)</p>
+<p style="margin: 0px 0px 8px 48px;">Binary 1 (10101010)</p>
+<p style="margin: 0px 0px 8px 48px;">Binary 2 (01010101)</p>
+<p style="margin: 0px 0px 8px 48px;">Zeros (00000000)</p>
+<p style="margin: 0px 0px 8px 48px;">Ones (11111111)</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; text-decoration: underline;">Test pattern</span></p>
+<p style="margin: 0px 0px 8px 0px;">The test pattern options will vary depending on the type of RAM test selected, see above for details.</p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">&nbsp;</span></p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">Standard test settings (Pro version only)</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic; text-decoration: underline;">Also run the Standard test as a pre-test</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic;">An option exists to run a Memory test prior to the main set of tests</span>. The advantage of doing this is that the memory can be checked before the other tests are run, &nbsp;making it easier to identify memory problems directly, rather than possibly indirectly (such as faulty memory in the system cache showing as a disk error). Also, when the RAM test is run individually, the allocation of test RAM is more aggressive and thus more RAM is tested. For example, when the RAM test is run individually, it will more aggressively take system cache and test this RAM. </p>
+<p style="margin: 0px 0px 8px 0px;">The Memory pre-test will override the duty cycle setting for the pre-test phase of the test, and set the memory duty cycle to 100%. The user selected duty cycle will be used after the memory pre-test, during the main set of tests. During the memory pre-test all test patterns will be tested for one cycle each.</p>
+<p style="margin: 0px 0px 8px 0px;">The test duration and number of test cycles of the RAM pre-test is included in the overall test duration and number of cycles. For example, if the overall test duration is set for 60 minutes and the RAM pre-test takes 15 minutes, then the main set of tests will run for 45 minutes after the memory pre-test.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">Multi-process torture test settings (32-bit Pro version only)</span></p>
+<p style="margin: 0px 0px 8px 0px;">The number of test processes to start and the percentage of total RAM that each process will use can be specified in this section. It should be noted that setting more than 100% of RAM for testing will force the testing of the paging mechanism (i.e. swapping pages from memory to disk due to over allocation of memory). This can make the system unresponsive, especially if run with other BurnInTest tests.</p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">&nbsp;</span></p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">Logging settings</span></p>
+<p style="margin: 0px 0px 8px 0px;">Turning the "Log memory allocations" setting on will cause BurnInTest to log memory allocations (and de-allocations) into the detailed log file. This is mainly useful for debugging purposes.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">See also</span></p>
+<p style="margin: 0px 0px 8px 0px;"><a href="tests_memory.htm">Memory test description</a></p>
+
+</td></tr></table>
+
+</body>
+</html>

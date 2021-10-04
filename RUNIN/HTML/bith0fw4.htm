@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Serial port test</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Serial port">
+	<PARAM NAME="Keyword" VALUE="COM port">
+	<PARAM NAME="Keyword" VALUE="Loop back">
+</OBJECT>
+
+<H1><A NAME="hid_tests_serialport"></A>Serial port test</H1>
+
+<P><I>(Applicable to BurnInTest Pro version only)</I></P>
+
+<P>Tests the serial communications ports connected to the PC. Up to 64 serial ports may be tested simultaneously. The serial ports and test speed can be selected from the <A HREF="bith46jw.htm">Test Preferences</A> window.</P>
+
+<P>A serial port <A HREF="bith2qln.htm">loop back plug</A> per port is required to run this test. These can be purchased from the PassMark web site (www.passmark.com) or you can <A HREF="bith2qln.htm">make them yourself</A>.</P>
+
+<P>Each loopback test cycle corresponds to about 10 seconds of data transmission followed by a signal pin test phase. The signal pin test phase checks that the following pins on the serial port are functioning correctly.</P>
+
+<P>RTS – Request to Send</P>
+
+<P>CTS - Clear to Send</P>
+
+<P>DTR – Data terminal ready</P>
+
+<P>DSR – Data set ready</P>
+
+<P>The number of ‘ops’ corresponds to the number of bytes sent and received. The duty cycle affects the time spent waiting between cycles.</P>
+
+<P>The serial port selected must not already be in use by Windows (for example by the mouse or an active modem), for the test to be carried out.</P>
+
+<P>The speed that the serial port operates at is independent from the modem speeds. Even if you have a 56Kbit/s modem your serial port may operate at a higher speed. The maximum serial port speed depends on the type of chip installed on your motherboard. Most PC’s will only do up to 115Kbit/s, so don’t be alarmed if the test fails at 128Kbit/s or above.</P>
+
+<P>If the “detect only” option was selected in the preferences window then the loopback test will not be performed. The presence of the serial port in the system will still be checked for however.</P>
+
+<P>The following information is displayed for each port being tested.</P>
+
+<P><B><I>Serial Port</I></B></P>
+
+<P>This is the Windows name for the serial port being tested. The port can be selected from the Test Preferences window. Any port between COM1 and COM64 is supported. </P>
+
+<P><B><I>Speed</I></B></P>
+
+<P>This is speed that the serial port is configured for. The speed can be selected from the Test Preferences window. </P>
+
+<P>To cycle through each speed setting starting from the lowest to the highest, select either “Cycle to 115K” or “Cycle to 256K”. In these cases a test of approximately 30 seconds will be carried out for each of the following speeds, in the following order:</P>
+
+<P>300 Baud</P>
+
+<P>600</P>
+
+<P>1200</P>
+
+<P>2400</P>
+
+<P>4800</P>
+
+<P>9600</P>
+
+<P>14400</P>
+
+<P>19200</P>
+
+<P>38400</P>
+
+<P>56000</P>
+
+<P>57600</P>
+
+<P>115200 (Cycle back to 300 Baud for “Cycle to 115K” option)</P>
+
+<P>128000</P>
+
+<P>256000 (Cycle back to 300 Baud for “Cycle to 256K” option)</P>
+
+<P><B><I>Bytes Sent</I></B></P>
+
+<P>This is the number of bytes that have been sent to the serial port.</P>
+
+<P><B><I>Bytes Received</I></B></P>
+
+<P>This is the number of bytes that have received from the serial port.</P>
+
+<P><B><I>Errors</I></B></P>
+
+<P>This is the number of <A HREF="bith4ho3.htm">errors</A> detected. </P>
+
+<P>Note: - From V4.1 1025 the Serial Port error reporting has been improved, with framing errors, buffer overrun errors, input buffer overflow errors,  parity errors and Transmit buffer full errors now reported, rather than a broader error description.</P>
+
+<P><B><I>Throughput</I></B></P>
+
+<P>This is the real measured throughput for the port. This will generally be less than the Speed (see above) as there is some overhead in the code and in the data transmission itself (e.g. Stop bits).</P>
+
+</BODY>
+</HTML>

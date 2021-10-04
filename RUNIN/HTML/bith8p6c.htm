@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Print preferences dialog box</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Print preferences">
+	<PARAM NAME="Keyword" VALUE="Command files">
+	<PARAM NAME="Keyword" VALUE="Printer command files">
+	<PARAM NAME="Keyword" VALUE="HP Printer file.pcl">
+	<PARAM NAME="Keyword" VALUE="PCL">
+	<PARAM NAME="Keyword" VALUE="Postscript">
+</OBJECT>
+
+<H1><A NAME="hid_preferences_print"></A>Test Preferences – Printer</H1>
+
+<P><B><I>Standard test</I></B></P>
+
+<P>The standard test sends pages of text to the default Windows printer. The pages printed by the printer should be a page of solid text in a fixed-point font filling the printable area of the page. There should be a small margin (usually under 1cm) around the block of text.</P>
+
+<P><B><I>Standard color printer test</I></B></P>
+
+<P>The standard color test sends pages of color text to the default Windows printer. </P>
+
+<P><B><I>Printer command file</I></B></P>
+
+<P>The user can define a printer command file to be used in place of the standard test. A printer command file is a file containing a series of printer commands which is used by the printer to carry out certain actions.</P>
+
+<P><B><I>Print cover page before sending job to printer</I></B></P>
+
+<P>The user may choose to print a cover page before sending the command file to the printer. This may help troubleshooting possible command file, as opposed to, printer errors.</P>
+
+<P><B><I>How to create a printer command file</I></B></P>
+
+<P>There is an example printer command file included with BurnInTest. The example file is called “HP Printer file.pcl” and can be found in the BurnInTest installation directory. This file is a list of printer commands used with HP inkjet printers. It moves the print head without actually printing any pages.</P>
+
+<P>The language used for each make of printer is different, but you can still make your own printer command file. You need to create a document, then print this document to a file using the correct printer device driver.</P>
+
+<P>For example in Microsoft word, when printing your document select the “Print to file” checkbox in the Print window. Once a file is created it can then be used with BurnInTest.</P>
+
+<P>Normally printer command files have a ‘.prn’ file name extension but this may vary depending on the printer language used.</P>
+
+<P>PCL = Printer command language (from Hewlett Packard)</P>
+
+<P>PS = Postscript.</P>
+
+</BODY>
+</HTML>

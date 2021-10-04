@@ -1,0 +1,68 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Parallel port test</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Parallel port,LPT port,Loop back" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?tests_parport.htm"; }
+  else { parent.quicksync('a6.11'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Headingpage"><span class="f_Headingpage">Parallel port test [PARALLEL]</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="tests_cdrom.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="tests_plugin.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 12pt; font-style: italic;">(Applicable to BurnInTest Pro version only)</span></p>
+<p style="margin: 0px 0px 8px 0px;">Tests the parallel communications port connected to the PC. The parallel port to be tested can be selected from the <a href="preferences_parport.htm">Test Preferences</a> window.</p>
+<p style="margin: 0px 0px 8px 0px;">A parallel port <a href="loopback_par.htm">loop back plug</a> is required to run this test. These can be purchased from the PassMark web site (www.passmark.com) or you can <a href="loopback_par.htm">make them yourself</a>.</p>
+<p style="margin: 0px 0px 8px 0px;">Each test cycle corresponds to 500,000 bytes of data transmission. The number of ‘ops’ corresponds to the number of bytes sent and received. The duty cycle affects the time spent waiting between cycles.</p>
+<p style="margin: 0px 0px 8px 0px;">The parallel port selected must not already be in use by Windows (for example by the printer or other external device), for the test to be carried out. &nbsp;The default on-board Parallel port settings are that Port1 is named LPT1 and corresponds to the physical IO memory address 0378. Depending on the version of Windows you are using you may be able to change a number of Parallel Port settings, including the port name (e.g. You may have renamed LPT1 to LPT2) and the IO address (e.g. You may have changes port1 to use 0x3BC instead of 0x378). BurnInTest will automatically detect the changes for the on-board parallel port. For W2000 and later versions of Windows, PCI and ISA parallel ports will also be automatically detected and available for testing. </p>
+<p style="margin: 0px 0px 8px 0px;">Note: That the Windows operating system may block exclusive access to the Parallel port. This is reported with the error “Unable to lock Parallel Port”. When this occurs there is a retry pattern over a number of minutes to try and lock the port. Regardless of the result, the parallel port test will then commence. If you wish to ignore the “Unable to lock Parallel Port” message the BITErrorClassifications.txt file can be edited to change this error message classification (Number 138) to NONE.</p>
+<p style="margin: 0px 0px 8px 0px;">In Windows XP and later you need to be the administrator to run this test. In Windows Vista &nbsp;(and later) you will need to run BurnInTest with Elevated administrator privileges ("Run as administrator") or turn off UAC (User Account Control). To perform Parallel Port testing from a script that includes system reboots, UAC will need to be turned off to perform Parallel Port testing after the reboot. Turning off UAC will remove all user account control and you should understand the impact of this before doing it (and ensure the system is returned to required settings after the test).</p>
+<p style="margin: 0px 0px 8px 0px;">If the port is not detected by BurnInTest check the BIOS settings for the port. Note that the old ‘bi-directional’ BIOS mode is not supported. ECP or EPP mode is required.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Parallel Port</span></p>
+<p style="margin: 0px 0px 8px 0px;">This is the port name for the parallel port being tested. The port can be selected from the Test Preferences window. </p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Bytes Sent</span></p>
+<p style="margin: 0px 0px 8px 0px;">This is the number of bytes that have been sent to the parallel port.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Bytes Received</span></p>
+<p style="margin: 0px 0px 8px 0px;">This is the number of bytes that have received from the parallel port.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Errors</span></p>
+<p style="margin: 0px 0px 8px 0px;">This is the number of <a href="commonerrors.htm">errors</a> detected.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Throughput</span></p>
+<p style="margin: 0px 0px 8px 0px;">This is the measured throughput for the port.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Interpreting the results</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Interpreting the results">
+	<PARAM NAME="Keyword" VALUE="Result interpretation">
+	<PARAM NAME="Keyword" VALUE="Ops">
+	<PARAM NAME="Keyword" VALUE="Operations">
+	<PARAM NAME="Keyword" VALUE="Cycle">
+	<PARAM NAME="Keyword" VALUE="Errors">
+	<PARAM NAME="Keyword" VALUE="Debug logging">
+	<PARAM NAME="Keyword" VALUE="Verbose logging">
+	<PARAM NAME="Keyword" VALUE="Application events">
+	<PARAM NAME="Keyword" VALUE="System Events">
+	<PARAM NAME="Keyword" VALUE="DEBUGMODE">
+	<PARAM NAME="Keyword" VALUE="Test name">
+</OBJECT>
+
+<H1><A NAME="hid_results"></A>Interpreting the results</H1>
+
+<P><IMG SRC="../images/results1.gif" ALT="" BORDER=0></P>
+
+<P>This part of the main window displays a summary of all the results of all the tests that are currently running.</P>
+
+<P><B><I>Test Name</I></B></P>
+
+<P>This column shows a picture depicting the test type and the name of the test. Only those tests actually running are displayed.</P>
+
+<P><B><I>Cycle</I></B></P>
+
+<P>The number of test cycles that have been executed for a particular test. The meaning of a ‘test cycle’ varies from test to test. For example for the Printer test it is the number of full pages printed, for the Hard disk test it is the number of file write / verify cycles that have occurred. See the <A HREF="bith4vhv.htm">test description</A> for more details about the significance of this field.</P>
+
+<P><B><I>Ops (Operations)</I></B></P>
+
+<P>The number of test operations that have been executed for a particular test. The meaning of a ‘Operation’ varies from test to test. For example, for the Printer test it is the number of characters printed, for the Hard disk test it is the number of bytes that have been written or verified. See the <A HREF="bith4vhv.htm">test description</A> for more details about the significance of this field. The values are expressed in Units, Millions, Billions, Trillions and Quadrillions.</P>
+
+<P><B><I>Errors</I></B></P>
+
+<P>The number of errors that have been encountered while the test has been executing. This value should normally stay at zero. A value of greater than zero indicates there has been an error in the hardware or the software controlling the hardware. In some cases it is possible for the computer to self-detect an error. (such as the math’s and disk tests). In other cases the user must check themselves that no error has occurred (e.g. Is there sound coming from the speakers? Are printouts complete, clear and legible? ).</P>
+
+<P><B><I>Last error description</I></B></P>
+
+<P>This is the description of the last error that occurred. This will give some indication as to the cause of the error. See <A HREF="bith4ho3.htm">Common Errors</A> for a description of the errors that may be encountered.</P>
+
+</BODY>
+</HTML>

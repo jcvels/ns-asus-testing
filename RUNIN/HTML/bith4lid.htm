@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Reboot cycling</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Reboot">
+	<PARAM NAME="Keyword" VALUE="Restart">
+	<PARAM NAME="Keyword" VALUE="Cycle">
+	<PARAM NAME="Keyword" VALUE="Rebooter">
+	<PARAM NAME="Keyword" VALUE="Autostop">
+	<PARAM NAME="Keyword" VALUE="Command line">
+	<PARAM NAME="Keyword" VALUE="Loop">
+</OBJECT>
+
+<H1><A NAME="hid_reboot_cycle"></A>Reboot cycling</H1>
+
+<P>BurnInTest can be setup so that the PC will reboot itself in a cycle, with test runs occurring between each reboot. BurnInTest uses another software utility called Rebooter to reboot / restart a PC. Rebooter can be used from within BurnInTest or it can be run by itself (look for the executable called, rebooter.exe in the BurnInTest installation directory).</P>
+
+<P>To use Rebooter from within BurnInTest, go to the BurnInTest Preferences window and then select the timer tab. Clicking on the ‘Reboot options’ button will open the Rebooter configuration window. You can get additional help about Rebooter options by clicking on the help button in the Rebooter configuration window.</P>
+
+<P>Here is a brief description of how a BurnInTest can be set-up to reboot itself in a cycle.</P>
+
+<P><B><I>Step1 – Select and save Rebooter settings</I></B></P>
+
+<P>Open the Rebooter configuration window and use the “Clear” button to return the reboot count to 0.</P>
+
+<P>Set the ‘Maximum Reboots’ value to the number of cycles required.</P>
+
+<P>Set the other parameters in Rebooter. (Reboot type, Delay, etc). Don’t set the delay value to be too short, as you want BurnInTest to fully stop before rebooting. 20 Seconds is a good value.</P>
+
+<P>Save the settings, with the ‘Save Options’ button. Then close the Window.</P>
+
+<P><B><I>Step2 – Configure the settings you want in BurnInTest</I></B></P>
+
+<P>From the Preferences and Duty Cycle windows enter all the settings that you want for your test runs. When you close these windows, the settings are saved to disk and will become the new default values. Alternatively a separate configuration file could be created (using the ‘Save As Config’ menu option) and used on the command line.</P>
+
+<P>Make sure you</P>
+
+<P>-Set a test period with the Auto-Stop option in the preferences window.</P>
+
+<P>-Select ‘Reboot PC’ in the Action after Auto-Stop check boxes.</P>
+
+<P>-Have the log file accumulation option set in the Logging section of the preferences window.</P>
+
+<P><B><I>Step3 – Create an auto run shortcut</I></B></P>
+
+<P>Create an auto run short cut that points to the BurnInTest executable. You need to do this manually in Windows. The command line in the shortcut should use the ‘/r’ option. This will start tests executing in BurnInTest automatically. The command line for the shortcut should be something like</P>
+
+<PRE><CODE>C:\Program Files\BurnInTest\bit.exe  /r</CODE></PRE>
+
+<P>The Rebooter help file (Rebooter.hlp ) also contains more details about how to start programs automatically with Windows.</P>
+
+<P><B><I>Step4 – Start the cycle</I></B></P>
+
+<P>Start the 1<SUP>st</SUP> test run from within BurnInTest, with the Go button. At the end of the test period you have entered the PC will reboot according to the settings in Rebooter and after the reboot, BurnInTest will automatically re-start and do another test run, then Reboot again.</P>
+
+<P><B><I>More about Rebooter</I></B></P>
+
+<P>Rebooter is a small utility program developed by PassMark Software to help automate the PC hardware testing process. It has been designed to work with PassMark BurnInTest but will also work with 3<SUP>rd</SUP> party application. Rebooter allows you to,</P>
+
+<P>-Shutdown, Reboot or Logout of a PC.</P>
+
+<P>-Reboot a PC from the command line</P>
+
+<P>-Set a timer so that the PC will reboot after a certain amount of time</P>
+
+<P>-Setup a reboot loop, to reboot a PC over an over again in a cycle.</P>
+
+<P>-Force a shutdown or request a shutdown.</P>
+
+<P>-Enable and disable the Windows auto-login feature. (NT/2000/XP only)</P>
+
+<P>-Include reboots into your hardware stress testing plan, (when used with BurnInTest).</P>
+
+</BODY>
+</HTML>

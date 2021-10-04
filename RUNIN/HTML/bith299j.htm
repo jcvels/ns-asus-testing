@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Fault finding procedure</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Fault">
+	<PARAM NAME="Keyword" VALUE="Bug Hunting">
+</OBJECT>
+
+<H1><A NAME="hid_fault_finding"></A>Fault finding</H1>
+
+<P>What follows is some hints on how go about finding the cause of a particular system instability. (i.e. The system locks up, you get the windows blue screen, etc..). We don’t want to try and explain the steps involved in each of these processes, they are just points that may warrant future investigation.</P>
+
+<P>Check you don’t have any viruses.</P>
+
+<P>Check the drive for errors using the built in Window error checker.</P>
+
+<P>Check that space is available on the disk for the windows swap file</P>
+
+<P>Have a look through the issues in the <A HREF="bith60kz.htm">precautions</A> section of this help file.</P>
+
+<P>Don’t run all the BurnInTest tests at once. Run just the 2D graphics, then run just the 3D graphics, then just the disk, etc..  This will allow the problem to be isolated to one area.</P>
+
+<P>Boot Windows up in Safe Mode and see if the system is more stable. The Windows98, ‘msconfig’ tool may also help here.</P>
+
+<P>If you suspect hardware, and you know what you’re doing, pull out all the “optional hardware”, e.g. LAN cards, I/O cards and see if the system is more stable.</P>
+
+<P>Once again, if you know what you’re doing, start swapping out components of the system to see if the fault can be localized. Obviously you’ll need some spare hardware to do this.</P>
+
+<P>If you suspect DirectX 3D problems consider using the dxdiag.exe tool that comes with DirectX.</P>
+
+<P>Faulty RAM may not always be detected by the memory test. It may manifest itself as a disk fault of system crash.</P>
+
+<P>If you’re really stuck you may want to try a reinstallation of Windows on a reformatted disk. Think carefully about this option before you attempt it, there are lots of good reasons why you don’t want to reformat your hard disk.</P>
+
+<P>Make sure you’ve got the most up to date software drivers for your hardware. Drivers are a never-ending source of problems.</P>
+
+<P>Check that you haven’t ended up with an over clocked CPU and don’t know about it.</P>
+
+<P>Check that you haven’t purchased the cheapest and nastiest hardware in the hope of saving a couple of dollars (or pounds, francs, etc). Often it may not be the cheap hardware that causes problems but the quality and support of the software drivers that come with the hardware that are a problem. Don’t shop on price alone, check out the support and product reviews.</P>
+
+</BODY>
+</HTML>

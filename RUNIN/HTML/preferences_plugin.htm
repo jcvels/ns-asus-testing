@@ -1,0 +1,171 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Plugin</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Firewire,KeyboardTest,ModemTest,Plugin,Preferences" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?preferences_plugin.htm"; }
+  else { parent.quicksync('a8.12'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Headingpage"><span class="f_Headingpage">Plugin</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="preferences_parport.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="preferences_pretest.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 7px 0px 7px 0px;">The Plugin test is only included in the BurnInTest Pro version only.</p>
+<p style="margin: 7px 0px 7px 0px;">You can specify up to 5 external Plugin test applications .</p>
+<p><span style="text-decoration: underline;">Run at the same time:</span> Choose this option to run all Plugins at the same time<br>
+<span style="font-style: italic; text-decoration: underline;">Run each separately:</span><span style="font-style: italic;"> </span>Choose this option to run Plugins separately, launching the next one when the previous finishes<br>
+<span style="text-decoration: underline;">Ignore "no operations" timeout:</span> When selected the "no operations" timeout message will not be logged<br>
+&nbsp;</p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">Specify Plugin Appliction 1..5</span></p>
+<p class="p_PreferencesControl"><span class="f_PreferencesControl">Application</span></p>
+<p style="margin: 0px 0px 8px 0px;">Specifies the Plugin filename and command line arguments. See Available Plugin’s below for examples.</p>
+<p class="p_PreferencesControl"><span class="f_PreferencesControl">Run as pre-test plugin</span></p>
+<p style="margin: 0px 0px 8px 0px;">Some Plugin tests may require manual user testing, for example, testing a keyboard. You can specify that a plugin be run before the main set of tests, such that the Plugin test will run, exit on completion of that test, and then the main set of tests will be run. This option is available for all Plugins.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">Plugin’s available from Passmark</span></p>
+<p style="margin: 0px 0px 8px 0px;">PassMark has developed Plugins for touch screen, Modem, Keyboard and Firewire port testing.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; text-decoration: underline;">Touchscreen testing</span></p>
+<p style="margin: 0px 0px 8px 0px;">When PassMark’s <a href="http://www.passmark.com/products/monitortest.htm" target="_blank" class="weblink">MonitorTest</a> is used as a BurnInTest Plugin, it tests in a pre-defined test sequence. MonitorTest shows a series of touch test displays that prompt the user to take certain actions to test the TouchScreen. PassMark MonitorTest allows single touch tests and multi touch pan, zoom, rotate and tap gesture tests.</p>
+<p style="margin: 0px 0px 8px 0px;">Version of Plugin required: PassMark MonitorTest V3.1 Build 1000 (or higher)</p>
+<p style="margin: 0px 0px 8px 0px;">Test name within BurnInTest displays and reports: Monitor.</p>
+<p style="margin: 0px 0px 8px 0px;">Test information displayed in BurnInTest: Status text, number of operations, errors and cycles, error text and severity.</p>
+<p style="margin: 0px 0px 8px 0px;">Application field should be set to:</p>
+<p><span style="color: #008000;">MonitorTest.exe /p </span></p>
+<p><span style="color: #008000;"> &nbsp; Where:</span></p>
+<p style="text-indent: 48px;"><span style="color: #008000;">/p specifies MonitorTest to run as a plugin</span></p>
+<p><span style="color: #008000;">e.g.</span></p>
+<p><span style="color: #008000;">C:\Program Files\MonitorTest\MonitorTest.exe /p </span></p>
+<p><span style="color: #008000;">Note: any arguments that contain a directory path, must be enclosed in quotation marks.</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;">Run as pre-test plugin: should be checked.</p>
+<p style="margin: 0px 0px 8px 0px;">Notes:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">1)</span></td><td>You should install MonitorTest before starting.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">2)</span></td><td>You should license MonitorTest so that the “Welcome” window is not displayed when the BurnInTest tests are started.</td></tr></table></div><p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; text-decoration: underline;">Modem testing</span></p>
+<p style="margin: 0px 0px 8px 0px;">When PassMark’s <a href="http://www.passmark.com/products/modemtst.htm" target="_blank" class="weblink">ModemTest</a> is used as a BurnInTest Plugin, it tests in the Local Diagnostics mode. This mode requires only a single modem and no telephone line. ModemTest requests Identification information from the Modem (via a series of AT commands) and then if supported by the modem starts a local loop back on the analog side of the modem, ModemTest then sends data packets which are echoed back by the modem.</p>
+<p style="margin: 0px 0px 8px 0px;">Version of Plugin required: PassMark ModemTest V1.3 1010 (or higher)</p>
+<p style="margin: 0px 0px 8px 0px;">Test name within BurnInTest displays and reports: Modem.</p>
+<p style="margin: 0px 0px 8px 0px;">Test information displayed in BurnInTest:.Status text, number of operations, errors and cycles, error text and severity.</p>
+<p style="margin: 0px 0px 8px 0px;">Application field should be set to:</p>
+<p><span style="color: #008000;">ModemTest.exe /p &lt;COM port number&gt; &lt;Results file name&gt; &lt;Config file&gt;</span></p>
+<p><span style="color: #008000;"> &nbsp; Where:</span></p>
+<p style="text-indent: 48px;"><span style="color: #008000;">/p specifies ModemTest to run as a plugin,in local diagnostic mode;</span></p>
+<p style="text-indent: 48px;"><span style="color: #008000;">&lt;COM port number&gt; is the serial port the Modem is associated with;</span></p>
+<p style="text-indent: 48px;"><span style="color: #008000;">&lt;Results file name&gt; is a ModemTest specific result file;</span></p>
+<p style="text-indent: 48px;"><span style="color: #008000;">&lt;Config file&gt; is a ModemTest specific configuration file.</span></p>
+<p><span style="color: #008000;">e.g.</span></p>
+<p><span style="color: #008000;">C:\Program Files\ModemTest\ModemTest.exe /p 1 results.log "C:\Program Files\ModemTest\ModemTest.cfg"</span></p>
+<p><span style="color: #008000;">Note: any arguments that contain a directory path, must be enclosed in quotation marks.</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;">Run as pre-test plugin: should be unchecked.</p>
+<p style="margin: 0px 0px 8px 0px;">Notes:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">3)</span></td><td>You should install ModemTest before starting.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">4)</span></td><td>You should license ModemTest so that the “Welcome” window is not displayed when the BurnInTest tests are started.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">5)</span></td><td>You should set up a configuration file and save it in the ModemTest directory before starting.</td></tr></table></div><p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; text-decoration: underline;">Keyboard testing</span></p>
+<p style="margin: 0px 0px 8px 0px;">When PassMark’s <a href="http://www.passmark.com/products/keytest.htm" target="_blank" class="weblink">KeyboardTest</a> is used as a BurnInTest Plugin, it tests in the Batch mode without collecting the manually entered information such as Keyboard Serial number. This mode allows automatic detection of all keys being successfully pressed, of User failure with User selected reasons. The keyboard can be failed at any time during the test or on requested user verification. A reason from a list of failure reasons will also be logged in BurnInTest.</p>
+<p style="margin: 0px 0px 8px 0px;">It should be noted that the KeyboardTest Keyboard Layout file (.kbl) needs to describe the keyboard you plan to test. This file describes all of the keys on the keyboard and is used (among other things) to determine when all the keys have been pressed and hence the trigger for automatically passing the keyboard. You may be able to use one of the default keyboards shipped with KeyboardTest, you may find a matching keyboard on our website Keyboard Layout Download Page or you may have to create your own .kbl file as described in the KeyboardTest help file.</p>
+<p style="margin: 0px 0px 8px 0px;">Version of Plugin required: PassMark KeyboardTest V2.2 1011 (or higher)</p>
+<p style="margin: 0px 0px 8px 0px;">Test name within BurnInTest displays and reports: Keyboard.</p>
+<p style="margin: 0px 0px 8px 0px;">Test information displayed in BurnInTest:.Status text, number of operations, errors and cycles, error text and severity.</p>
+<p style="margin: 0px 0px 8px 0px;">Application field should be set to:</p>
+<p><span style="color: #008000;">KeyboardTest.exe /p</span></p>
+<p><span style="color: #008000;"> &nbsp; Where:</span></p>
+<p style="text-indent: 48px;"><span style="color: #008000;">/p specifies KeyboardTest to run as a plugin,in a modified batch mode</span></p>
+<p><span style="color: #008000;">e.g.</span></p>
+<p><span style="color: #008000;">C:\KeyboardTest\KeyboardTest.exe /p</span></p>
+<p style="margin: 0px 0px 8px 0px;">Run as pre-test plugin: should be unchecked.</p>
+<p style="margin: 0px 0px 8px 0px;">Notes:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">1)</span></td><td>You should install KeyboardTest before starting.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">2)</span></td><td>You should license KeyboardTest so that the “Welcome” window is not displayed when the BurnInTest tests are started.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">3)</span></td><td>You should set up a Keyboard configuration file and bitmap of your test keyboard before starting. Please refer to the KeyboardTest help file.</td></tr></table></div><p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; text-decoration: underline;">Battery Capacity testing</span></p>
+<p>The design capacity (max capacity at manufacture time) will be compared with the current charge capacity, so if the battery is fully charged but is less than the design capacity by the threshold amount an error will be flagged. </p>
+<p>&nbsp;</p>
+<p class="p_PreferencesGroupbox">Application field should be set to:</p>
+<p><span style="color: #008000;">Battery_Capacity_Plugin.exe /t &lt;value&gt; OR Battery_Capacity_Plugin.exe /p &lt;value&gt;</span></p>
+<p><span style="color: #008000;">  &nbsp;Where:</span></p>
+<p style="text-indent: 48px;"><span style="color: #008000;">/t &lt;value&gt; represents the value to be used when comparing the design capacity to the current capacity. Default value is 1000.</span></p>
+<p style="text-indent: 48px;"><span style="color: #008000;">/p &lt;value&gt; represents a percentage value when comparing the design capacity to the current capacity, eg /p 75 - an error will be logged if the current capacity is less than 75% of the design capacity.</span></p>
+<p style="text-indent: 48px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 14px;"><span style="color: #008000;">Optional:</span></p>
+<p style="text-indent: 48px;"><span style="color: #008000;">/fc changes the comparison to use the fully charged capacity, instead of the default current charge, and compare it to the design capacity</span></p>
+<p><span style="color: #008000;">e.g.</span></p>
+<p><span style="color: #008000;">C:\Program Files\BurnInTest\Battery_Capacity_Plugin.exe /t 15000</span></p>
+<p class="p_PreferencesGroupbox">Run as pre-test plugin: should be checked, this Plugin is designed to run before the other tests, without the need for user input.</p>
+<p class="p_PreferencesGroupbox">When using the "/fc" option some information field names and messages will be changed  to reflect the different comparison values used (from "Current Charge" to "Full Capacity").</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; text-decoration: underline;">Sound testing</span></p>
+<p>This plugin will play a selected sound file and the tester can use the buttons to indicate if it played back correctly or not.</p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 8px 0px;">Application field should be set to:</p>
+<p><span style="color: #008000;">Sound_Plugin.exe /f &lt;filename&gt;</span></p>
+<p><span style="color: #008000;"> &nbsp; Where:</span></p>
+<p style="text-indent: 48px;"><span style="color: #008000;">/f &lt;filename&gt; represents the audio file to be played, valid filetypes are MP3, WAV and MIDI.</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #008000;">e.g.</span></p>
+<p><span style="color: #008000;">C:\Program Files\BurnInTest\Sound_Plugin.exe /f TestMP3.mp3</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;">Run as pre-test plugin &amp; Run each separately: should be checked, this Plugin is designed to run before the other tests and requires user input to proceed. </p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; text-decoration: underline;">Microphone testing</span></p>
+<p>This plugin will display a window showing the available microphones with record and play buttons. Default recording settings of 2 channel - 24 bit - 192kHz are used, if this isn’t supported by the microphone the closest match is used (and recorded in the BurnInTest log). 10 seconds of audio will be recording and can then be played back.</p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 8px 0px;">Application field should be set to:</p>
+<p><span style="color: #008000;">Microphone_Plugin.exe </span></p>
+<p><span style="color: #008000;">No parameters are required</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #008000;">e.g.</span></p>
+<p><span style="color: #008000;">C:\Program Files\BurnInTest\Microphone_Plugin.exe</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;">Run as pre-test plugin &amp; Run each separately: should be checked, this plugin is designed to run before the other tests and requires user input to proceed. </p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; text-decoration: underline;">Microphone testing</span></p>
+<p>This plugin will display a window showing the available microphones with record and play buttons. Default recording settings of 2 channel - 24 bit - 192kHz are used, if this isn’t supported by the microphone the closest match is used (and recorded in the BurnInTest log). 10 seconds of audio will be recording and can then be played back.</p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 8px 0px;">Application field should be set to:</p>
+<p><span style="color: #008000;">Microphone_Plugin.exe </span></p>
+<p><span style="color: #008000;">No parameters are required</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #008000;">e.g.</span></p>
+<p><span style="color: #008000;">C:\Program Files\BurnInTest\Microphone_Plugin.exe</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;">Run as pre-test plugin &amp; Run each separately: should be checked, this plugin is designed to run before the other tests and requires user input to proceed. </p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; text-decoration: underline;">Webcam testing</span></p>
+<p>This plugin will display a window showing the available webcams and will display the video feed from the currently selected webcam. </p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 8px 0px;">Application field should be set to:</p>
+<p><span style="color: #008000;">Webcam_Plugin.exe</span></p>
+<p><span style="color: #008000;">No parameters are required</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #008000;">e.g.</span></p>
+<p><span style="color: #008000;">C:\Program Files\BurnInTest\Webcam_Plugin.exe</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;">Run as pre-test plugin &amp; Run each separately: should be checked, this plugin is designed to run before the other tests and requires user input to proceed. </p>
+<p style="margin: 0px 0px 8px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

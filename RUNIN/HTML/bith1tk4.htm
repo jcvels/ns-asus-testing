@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Sound card test</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Sound card">
+	<PARAM NAME="Keyword" VALUE="Wave files">
+	<PARAM NAME="Keyword" VALUE="Midi files">
+	<PARAM NAME="Keyword" VALUE="MP3 files">
+	<PARAM NAME="Keyword" VALUE="Speaker">
+	<PARAM NAME="Keyword" VALUE="Sound clips">
+	<PARAM NAME="Keyword" VALUE="Music">
+	<PARAM NAME="Keyword" VALUE="Loopback">
+	<PARAM NAME="Keyword" VALUE="Audio">
+	<PARAM NAME="Keyword" VALUE="Mixer">
+	<PARAM NAME="Keyword" VALUE="Volume">
+	<PARAM NAME="Keyword" VALUE="Distortion">
+</OBJECT>
+
+<H1><A NAME="hid_tests_sound"></A>Sound card test</H1>
+
+<P>This test operates in two different modes. The standard mode verifies that the sound card can play back MP3, wave form audio and MIDI (Musical Instrument Digital Interface) sound.</P>
+
+<P>There is also a loopback mode, which requires a <A HREF="bith6cdr.htm">loopback cable</A>. Loopback mode measures the distortion between audio input and audio output. <A HREF="bith6cdr.htm">Loopback cables</A> are available from http://www.passmark.com</P>
+
+<P><B><I>Standard Test:</I></B></P>
+
+<P>Three small sound clips are played by in a loop. The duration of play back is determined by the duty cycle setting selected by the user. A larger duty cycle setting will result in a longer playback period. The sound test window displays the amount of time remaining in the playback. If the sound clip is shorter than the test period, then the sound will be played in a loop until the test period is complete.</P>
+
+<P>You may select the files that are played during the test in the Sound preferences window. The default test files are in the BurnInTest installation directory. </P>
+
+<P>C:\Program Files\BurnInTest\Testsound.mid  (Midi file)<BR>
+C:\Program Files\BurnInTest\Testsound.wav  (Wave file)<BR>
+C:\Program Files\BurnInTest\Testsound.mp3  (MP3 file)<BR>
+</P>
+
+<P>While the test is running the user should verify that the sounds produced are clear and without distortion. If no sound is heard and BurnInTest detects no errors, check</P>
+
+<P>-The mute and volume settings in the Windows mixer / volume control window</P>
+
+<P>-The speakers are plugged into the correct plug on the sound card
+
+<UL>
+	<LI>The speakers volume control is turned up</LI>
+</UL>
+
+<P><B><I>Loopback Test:</I></B></P>
+
+<P>Loopback testing involves connecting the audio out and microphone in plugs of your computers sound card together with an <A HREF="bith6cdr.htm">audio loopback cable</A>. </P>
+
+<P>The test uses a single channel (mono), 8 bit sound format with telephone quality sample rate (11025Hz). It outputs a sin wave tone with a frequency of 300Hz and measures the input values for distortion. It is possible to set the maximum level of distortion before an error is logged in the Sound preferences window. </P>
+
+<P>Note: If you use the Sound Loopback test at the same time as you use the Video Playback test, you must use a Video file with no audio component as the audio will impact the distortion ratio of the sound test.</P>
+
+<P>Before beginning a loopback test, there are a few important configurations, which must be carried out in Windows in order for the test results to be meaningful.</P>
+
+<P><B>Getting ready for the loopback test</B></P>
+
+<P><I>1. Open the mixer.</I></P>
+
+<P>This can be done from Control Panel =&gt;Sounds and Audio devices. Alternatively, the mixer can be started by double clicking on the small speaker icon on the task bar. Note that the mixer device has two properties sections, Playback and Recording, which contain different volume controls depending on your sound card. It is possible to toggle between the two sections through the Options =&gt;Properties menu item of the mixer device.</P>
+
+<P><I>2. Check that Wave output is enabled.</I></P>
+
+<P><IMG SRC="../images/mixer1.gif" ALT="" BORDER=0>Look at the settings for the overall Volume Control and Wave volume control. The slide bars should be near the centre of the range and the Mute check boxes should be unchecked. It is advisable to Mute all other output devices (e.g. Midi, CD Audio) in order to maintain a pure output signal. In particular, the Line In volume control should be muted to prevent feedback loops in some sound cards. Initially leave the balance setting in the middle. If these settings are not correct, there will be no sound output.</P>
+
+<P><I>3. Switch to the mixer recording (input) window.</I></P>
+
+<P>From the mixer window select the Options =&gt; Properties menu item, and then select the Recording option and the volume control check boxes. After clicking on OK the recording volume controls for the mixer inputs are displayed.</P>
+
+<P><I>4. Check that Line In input is enabled.</I></P>
+
+<P><IMG SRC="../images/mixer3.gif" ALT="" BORDER=0>This volume control is the most important setting for the loopback test. If the volume setting is too low, the input signals will be correspondingly vague and therefore distortion will be high. If the volume setting is too high, the input signal may become “capped” as the sound waves become truncated. This will also lead to high distortion and errors being logged. You may need to play with this control while the test is in progress in order to find the “sweet spot”. A useful tool for calibrating your input and output audio levels is PassMark SoundCheck, available from http://www.passmark.com.</P>
+
+<P>Once the Volume Controls and Recording Controls have been configured correctly, the test is ready to begin. BurnInTest measures the level of distortion between the output signal and the input signal on a wave-by-wave basis. If the distortion measured exceeds the value set in the Sound Preferences window and an error is logged and the output and input waves are displayed in the Sound Test window. Waves that exceed 0.5 of the maximum distortion level are also displayed, but no error is logged.</P>
+
+</BODY>
+</HTML>

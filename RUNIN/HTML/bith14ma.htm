@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>USB preferences dialog box</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Preferences">
+	<PARAM NAME="Keyword" VALUE="USB port">
+	<PARAM NAME="Keyword" VALUE="Serial Number (USB)">
+	<PARAM NAME="Keyword" VALUE="USB">
+</OBJECT>
+
+<H1><A NAME="hid_preferences_usb"></A>Test Preferences – USB ports</H1>
+
+<P><I>(Applicable to BurnInTest Pro version only)</I></P>
+
+<P><B><I>Maximum number of USB ports</I></B></P>
+
+<P>This is the maximum number of USB devices that BurnInTest attempts to connect to. In general you will want to set this value to be equal to the number of USB loopback devices that you would typically have connected to the machine. A maximum of 10 plugs may be used at the same time. If there are more plugs connected than configured in this section, USB ports will be tested based on the following: Ports with USB2 loopback plugs attached are first allocated for test (lowest device number to highest), followed by ports with USB1 loopback plugs attached (lowest device number to highest).</P>
+
+<P><B><I>USB Loopback plugs detected</I></B></P>
+
+<P>This is a list of the loopback plugs that have been detected as being connected to the PC. Examples are:</P>
+
+<P>PMUSB2-0: 480Mb/s (PASSMARK USB2Test, Serial #:PMK5C0KV, V2)</P>
+
+<P>PMUSB2-1: 12Mb/s (PASSMARK USB2Test, Serial #:PMK5C0SD, V2)</P>
+
+<P>PMUSB1-0: 12Mb/s (USB Loopback plug, Serial #:PM29K8PH)</P>
+
+<P>PMUSBn-m specifies whether the USB port has a Passmark USB loopback plug connected to it, where n specifies whether the plug is a USB1 or USB2 loopback plug, and m specifies the device number. The device number is just a sequential number (for USB1 and separately for USB2) which is incremented for each plug connected. </P>
+
+<P>The maximum speed supported by the connected protocol for this Port is then displayed Note: (1) that the 2<SUP>nd</SUP> port in the list has a USB2 loopback plug attached, but the port only supports USB1 and hence only the lower maximum speed of 12Mb/s is available and displayed. (2) This is not a benchmarked speed, but based on the protocol the plug has been able to connect to the PC with. <I>(3) Benchmarking speed can be undertaken using the USB2Test software.</I></P>
+
+<P>The text after the Maximum Speed is the description of the device that was found in the memory of the plug. This text will normally be, " USB Loopback plug " for a USB1 loopback device and “PASSMARK USB2Test” for a USB2 loopback plug.</P>
+
+<P>The serial number is a unique identification number that is different for each plug. A typical serial number would be, " PMK5C0KV ". This unique serial number is stored in the plug.</P>
+
+<P>For USB2 loopback plugs, the Version of the firmware is then displayed.</P>
+
+<P>See the <A HREF="bith5yn6.htm">USB port test</A> for more details.</P>
+
+<P><B><I>USB Transmission timeout</I></B></P>
+
+<P><I>Only applies to the USB1 loopback plug.</I></P>
+
+<P>The user may specify the transmission timeout (in milliseconds). If a reply hasn’t been received after this time, an error will be logged.</P>
+
+</BODY>
+</HTML>

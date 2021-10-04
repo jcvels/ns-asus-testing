@@ -1,0 +1,116 @@
+/* Text Styles */
+hr { color: #000000}
+body, table, tr, th /* Normal */
+{
+ font-size: 10pt;
+ font-family: 'Arial';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.f_CodeExample /* Code Example */
+{
+ font-size: 8pt;
+ font-family: 'Courier New';
+}
+span.f_Comment /* Comment */
+{
+}
+span.f_CourierFixed /* Courier Fixed */
+{
+ font-size: 9pt;
+ font-family: 'Courier New';
+}
+span.f_Headingpage /* Heading page */
+{
+ font-size: 14pt;
+ font-weight: bold;
+}
+span.f_Heading1 /* Heading1 */
+{
+ font-size: 16pt;
+ font-weight: bold;
+}
+span.f_ImageCaption /* Image Caption */
+{
+ font-size: 8pt;
+ font-weight: bold;
+}
+span.f_NewStyle /* New Style */
+{
+}
+span.f_Notes /* Notes */
+{
+}
+span.f_PreferencesControl /* Preferences Control */
+{
+ font-style: italic;
+ text-decoration: underline;
+}
+span.f_PreferencesGroupbox /* Preferences Groupbox */
+{
+ font-size: 12pt;
+ font-style: italic;
+ font-weight: bold;
+}
+span.f_Preferencestest /* Preferences test */
+{
+}
+span.f_Preferencestitle /* Preferences title */
+{
+}
+span.f_testheading /* test heading */
+{
+}
+span.f_test1 /* test1 */
+{
+}
+span.f_testh /* testh */
+{
+}
+/* Paragraph styles */
+p /* Normal */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.p_CodeExample /* Code Example */
+{
+ white-space: nowrap;
+}
+.p_Comment /* Comment */
+{
+}
+.p_Headingpage /* Heading page */
+{
+ margin: 8px 0px 0px 0px;
+}
+.p_Heading1 /* Heading1 */
+{
+ margin: 8px 0px 0px 0px;
+}
+.p_ImageCaption /* Image Caption */
+{
+}
+.p_NewStyle /* New Style */
+{
+ margin: 0px 0px 8px 0px;
+}
+.p_Notes /* Notes */
+{
+}
+.p_PreferencesControl /* Preferences Control */
+{
+ margin: 0px 0px 8px 0px;
+}
+.p_PreferencesGroupbox /* Preferences Groupbox */
+{
+ margin: 0px 0px 8px 0px;
+}
+.p_Preferencestitle /* Preferences title */
+{
+ margin: 0px 0px 8px 0px;
+}

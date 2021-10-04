@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>How to add the Lock pages in memory right</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Locking pages">
+	<PARAM NAME="Keyword" VALUE="Rights to lock pages">
+	<PARAM NAME="Keyword" VALUE="Administrator rights">
+	<PARAM NAME="Keyword" VALUE="Memory test">
+	<PARAM NAME="Keyword" VALUE="RAM test">
+	<PARAM NAME="Keyword" VALUE="Policy">
+	<PARAM NAME="Keyword" VALUE="Security">
+</OBJECT>
+
+<H1><A NAME="hid_add_lockrights"></A>Setting the Lock Pages in Memory right</H1>
+
+<P><IMG SRC="../images/lockpagesinram.gif" ALT="" BORDER=0></P>
+
+<P>To use the advanced RAM test, the user needs to be logged in as the administrator and have the “Lock pages in memory” right. This right is turned off by default when Windows is installed. To turn it on you need to be logged in as the administrator and complete the following steps.</P>
+
+<P>1/Open the Windows control panel.</P>
+
+<P>2/Open the “Administrative Tools” window from the control panel and then open the “Local Security Policy” utility. This should open a new window called. “Local Security Settings”.</P>
+
+<P>3/In the left hand section of the window, click on the “User Rights Assignment”, folder. This folder can be found under the “Local Policies” folder.</P>
+
+<P>4/In the right hand section of the window find the “Lock pages in memory” policy. Then select “Action / Security” from the menu to display the “Local security Policy Setting” window. (In Windows XP, the menu option is now called “Properties” instead of “Security”).</P>
+
+<P>5/Use the add button to assign the right to the administrator. The “Local Policy Setting” check box should now be checked. Click on OK to close the window. (In Windows XP, this is slightly more complex and you will probably need the “Advanced” button to search for users to add).</P>
+
+<P>6/You now need to log off and log back on (or reboot your machine) for this new setting to take effect.</P>
+
+<P>If you check back in the “Local Security Policy” utility after you login you should now see that the Administrator has “Effective rights” to lock pages in memory.</P>
+
+<P>Note1: This function is only available in Windows 2000 and XP Professional, (but not XP home).</P>
+
+<P>Note2: Windows XP security can be a complex thing. If you have a problem after following this procedure and rebooting, set the “Lock pages in memory” right to “Everyone” and try again.</P>
+
+</BODY>
+</HTML>

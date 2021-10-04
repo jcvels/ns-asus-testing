@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?faq.htm"; }
+else { parent.quicksync('a9'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Problems and FAQ</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="FAQ,Frequently Asked Questions,Common Problems,Problems,Errors,Security,Passwords" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16pt; font-weight: bold;">  Frequently Asked Questions (FAQ)</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-family: 'Times New Roman'; font-style: italic;">Note: See the PassMark™ website (www.passmark.com) for the latest version of the FAQ</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="whats_new.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="systemreq.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Q. Why trying to reboot, I get a message like, “Could not adjust privileges...” or &nbsp;“Could not open security token…”</span></p>
+<p style="margin: 7px 0px 7px 0px;">In Windows NT/2000/XP/2003/Vista you need to have the correct security permissions set in order to shutdown Windows. These messages can be avoided by using an Administrator account, which has full security permissions. The permission required is called, “Shut down the system”. </p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Q. Why doesn’t the Auto-login feature work in Windows95/98/ME</span></p>
+<p style="margin: 7px 0px 7px 0px;">The different versions of Microsoft’s operating systems work differently internally. There is however some advice from Microsoft on how to avoid the network login prompt appearing in Windows95/98/ME. See question Q152104 in Microsoft knowledge base for more details.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Q. I have entered the correct User name and password but the auto-login fails.</span></p>
+<p style="margin: 7px 0px 7px 0px;">If you have set the DontDisplayLastUserName flag in the registry, this prevents auto-login from functioning. See question Q159969 in Microsoft knowledge base for more details.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Q. Is setting auto-login a security risk?</span></p>
+<p style="margin: 7px 0px 7px 0px;">Although enabling auto-login can make it more convenient to use Windows, <span style="font-weight: bold;">use of this feature is a security risk</span>.</p>
+<p style="margin: 7px 0px 7px 0px;">Setting a computer for auto-login means that anyone who can physically obtain access to the computer can gain access to all of the computer contents, potentially including any network or networks it is connected to. A second risk is that enabling auto-login causes the password to be stored in the registry, in plaintext. The specific registry key that stores this value is remotely readable by the Authenticated Users group.</p>
+<p style="margin: 7px 0px 7px 0px;">As a result, this setting is only appropriate for cases in which the computer is physically secured, and steps have been taken to ensure that untrusted users cannot remotely access the registry.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Q. How can I disable auto-login and remove my clear text password from the windows registry?</span></p>
+<p style="margin: 7px 0px 7px 0px;">Just disabling the auto-login feature is <span style="font-weight: bold;">not</span> enough. You need to</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Clear the Password field </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Then use the Set Auto-login button to update the registry entry.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Then disable Auto-login</td></tr></table></div><p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Q After setting up Auto-login how can I log in as a different user (without disabling it permanently)</span></p>
+<p style="margin: 7px 0px 7px 0px;">To bypass the Auto-Admin Logon process, and to logon on as a different user, hold down the SHIFT key after a logoff or after a Windows restart.</p>
+
+</td></tr></table>
+
+</body>
+</html>

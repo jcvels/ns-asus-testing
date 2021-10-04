@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>SMART;Attributes;Drive failure;</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="SMART">
+	<PARAM NAME="Keyword" VALUE="S.M.A.R.T">
+	<PARAM NAME="Keyword" VALUE="Attribute">
+	<PARAM NAME="Keyword" VALUE="Threshold">
+	<PARAM NAME="Keyword" VALUE="Drive failure">
+</OBJECT>
+
+<H1><A NAME="hid_smart"></A>What is S.M.A.R.T?</H1>
+
+<P>S.M.A.R.T. (Self-Monitoring Analysis and Reporting Technology) is an interface between the BIOS and a computers hard disk. It is a feature of the Enhanced Integrated Drive Electronics (<B>EIDE</B>) technology that controls access to the hard drive. If S.M.A.R.T is enabled when a computer is set up, the BIOS can receive analytical information from the hard drive and determine whether to send the user a warning message about possible future failure of the hard drive.</P>
+
+<P>S.M.A.R.T monitors a set of drive attributes, such as temperature, throughput performance and the number of hours the drive has been powered on. It compares these attributes to a corresponding set of thresholds. If an attribute drops below its threshold, the drive is no longer considered fit for use and should be replaced immediately. Not all attributes are available on all drives, however - it is the responsibility of the drive manufacturer to include S.M.A.R.T support.</P>
+
+<P>Some of the more common S.M.A.R.T attributes are listed here.</P>
+
+<P><I>Raw Read Error Rate</I><BR>
+Represents the rate of uncorrected read errors. An error condition indicates that there is a problem with either disk surface or read/write heads.</P>
+
+<P><I>Throughput Performance</I><BR>
+Represents the throughput performance of the drive. I.e. The speed at which the drive is reading and writing data.</P>
+
+<P><I>Spin Up Time<BR>
+</I>Represents the average amount of time required to spin up the drive spindle to operational speed from a stopped state.</P>
+
+<P><I>Start/Stop Count</I><BR>
+Represents the number of start/stop cycles for the drive. The drive being powered on/off or suspended/woken up are considered as start/stop cycles.</P>
+
+<P><I>Reallocated Sector Count</I><BR>
+Represents the amount of spare sector pool available. Spare sectors are used to replace sectors that became bad for some reason (for instance, if a read error occurs). Therefore the more sectors reallocated, the worse the condition of the drive.</P>
+
+<P><I>Seek Error Rate<BR>
+</I>Represents the number of seek errors. Each time the drive attempts a seek operation, but fails to position its head correctly, the seek error rate increases.</P>
+
+<P><I>Seek Time Performance</I><BR>
+Represents how efficiently the drive is performing seek operations. An error indicates problems with the drive subsystem, for instance the servo responsible for positioning the head.</P>
+
+<P><I>Spin Retry Count</I><BR>
+Represents the number of times a drive fails to spin its spindle up to operation speed on the first attempt.</P>
+
+<P><I>Calibration Retry Count<BR>
+</I>Calibration is the act of repositioning the drive read/write head to cylinder 0. This value represents the number of times a calibration has failed on the first attempt.</P>
+
+<P><I>Reallocation Event Count</I><BR>
+Represents the number of reallocation events, which have taken place. Sometimes multiple sectors are reallocated together – this corresponds to one reallocation event. (See also: <I>Reallocated Sector Count</I> and </P>
+
+<P><I>Current Pending Sector Count</I>).</P>
+
+<P><I>Current Pending Sector Count</I><BR>
+Represents the number of sectors currently pending reallocation.</P>
+
+<P><I>Offline Scan Incorrect Sector Count</I><BR>
+Represents the amount of errors detected during the last offline scan.</P>
+
+<P><I>Ultra ATA CRC Error Count</I><BR>
+Represents the number of CRC error found in the Ultra DMA high-speed transfer mode. (CRC stands for Cyclic Redundancy Check and is data verification algorithm which uses polynomial checksums). </P>
+
+<P><I>Write Error Count</I><BR>
+Represents the rate of uncorrected write errors. An error indicates that there is a problem with either disk surface or read/write heads.</P>
+
+</BODY>
+</HTML>

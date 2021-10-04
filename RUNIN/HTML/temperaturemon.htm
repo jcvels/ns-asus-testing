@@ -1,0 +1,95 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?temperaturemon.htm"; }
+else { parent.quicksync('a7.9.1'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Temperature monitoring</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Temperature,BatteryMon,Battery,UPS,Voltage,Charge,Hmonitor,Intel Active Monitor,MBM,SpeedFan" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p style="margin: 7px 0px 7px 0px;"><span style="font-size: 12pt; font-family: 'Times New Roman';"> </span><span style="font-size: 16pt; font-weight: bold;"> Temperature and Battery monitoring</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="preferences_temp.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="preferences_tape.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Battery monitoring (via BatteryMon)</span></p>
+<p style="margin: 0px 0px 8px 0px;"><img src="batmonicon48x48.png" width="50" height="50" border="0" alt="batmonicon48x48"></p>
+<p style="margin: 0px 0px 8px 0px;">BurnInTest can work with another product from PassMark Software called BatteryMon. &nbsp;BatteryMon allows the charge level in laptop batteries and uninterruptible power supplies UPSs to be monitored. Turning on this feature will cause BurnInTest to log the battery statistics collected by BatteryMon. Both programs need to be active and running for this feature to work. Statistics collected will appear in the HTML, Text and binary log files, where they will be broken down on a per battery basis. There is also a summary charge level displayed in the main window. When specified in Logging preferences, temperature and battery information will also be reported each periodic log interval.  </p>
+<p style="margin: 0px 0px 8px 0px;">For more information about BatteryMon see the PassMark Software web site.</p>
+<p style="margin: 0px 0px 8px 0px;"><a href="http://www.passmark.com/products/batmon.htm" class="weblink">http://www.passmark.com/products/batmon.htm</a></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Temperature monitoring</span></p>
+<p style="margin: 0px 0px 8px 0px;">BurnInTest V6 supports temperature monitoring directly and also via many third party system monitoring applications currently available. By using BurnInTest with these applications, is it possible to Burn in your hardware while monitoring and logging the temperature of your CPU(s), motherboard and hard disks.</p>
+<p style="margin: 0px 0px 8px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-weight: bold;">About BurnInTest temperature monitoring (directly - no 3rd part application)</span></p>
+<p style="margin: 0px 0px 8px 0px;">BurnInTest provides 3 types of temperature sources:</p>
+<p style="margin: 0px 0px 8px 0px;">1) Intel CPUs. Temperature average of CPU cores or a specific core. E.g.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>"CPU 1 average": the average of the CPU core temperature values (e.g. the average temperatures of core 1 and core 2 on CPU 1);</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>"CPU 1 core 1": the temperature on core 1 of CPU 1;</td></tr></table></div><p style="margin: 0px 0px 8px 0px;">2) AMD CPUs. Temperature average of CPU cores or a specific core. E.g.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>"CPU 1": the CPU 1 package temperature values;</td></tr></table></div><p style="margin: 0px 0px 8px 0px;">3) Hard Disks that support S.M.A.R.T.. E.g. </p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>"HDD 0 (ST3160827AS)": Physical hard disk drive number 0 (model in brackets).</td></tr></table></div><p style="margin: 0px 0px 8px 0px;">Most modern CPUs include a thermal monitoring capability for fan speed threshold triggering and CPU protection purposes. These are not highly accurate temperature sensors. CPU temperatures can generally be sourced directly from the CPU or from an external component on the Motherboard (e.g. a SuperIO chip). In all cases, the CPU temperature reported by BurnInTest is sourced directly from the CPU and this may vary from externally reported CPU temperatures. These values should be treated as approximate values. In general the CPU temperature is more accurate at higher temperatures (as this is when the CPU mainly utilizes the temperature monitoring), and less accurate at lower temperatures. Some Intel CPU temperatures less than 50C may mean little more than just that, the temperature is less than 50C. While the temperatures may have a high degree of error at lower temperatures, the values can still be quite useful in determining differences between temperatures, such as determining whether a different cooling solution leads to a higher or lower CPU temperature.</p>
+<p style="margin: 0px 0px 8px 0px;">The CPU temperature calculation is specific to each type of CPU. The current version of BurnInTest supports the following CPUs:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Most Intel Core2, Atom and Core i7 CPUs,</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>AMD K10 and K11 CPUs (Opteron and Phenom). </td></tr></table></div><p style="margin: 0px 0px 8px 0px;">The Hard disk drive (HDD) temperatures are sourced from the disk S.M.A.R.T. attributes. As such the disk needs to support S.M.A.R.T. - most modern HDD's do.</p>
+<p style="margin: 0px 0px 8px 0px;">Both the CPU and HDD temperature monitoring requires BurnInTest be run with administrator privileges. In Vista &nbsp;(and later), this means "Elevated administrator" privileges are required.</p>
+<p style="margin: 0px 0px 8px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-weight: bold;">About Intel Active Monitor</span></p>
+<p style="margin: 0px 0px 8px 0px;">Versions tested with BurnInTest: 1.19</p>
+<p style="margin: 0px 0px 8px 0px;">Intel Active Monitor monitors CPU temperatures, motherboard temperatures, voltages and fan speeds. It contains some system information and supports programmable alerts.</p>
+<p style="margin: 0px 0px 8px 0px;">Intel Active Monitor is available from <a href="http://www.intel.com" target="_blank" class="weblink">http://www.intel.com/design/motherbd/active.htm</a></p>
+<p style="margin: 0px 0px 8px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-weight: bold;">About Intel Desktop Utilities</span></p>
+<p style="margin: 0px 0px 8px 0px;">Versions tested with BurnInTest: 3.0 and 2.1</p>
+<p style="margin: 0px 0px 8px 0px;">Intel Desktop Utilities monitors CPU temperatures, motherboard temperatures, voltages and fan speeds. It contains some system information and supports programmable alerts. It is compatible with most newer Intel motherboards.</p>
+<p style="margin: 0px 0px 8px 0px;">Intel Desktop Utilities is available from <a href="http://www.intel.com" target="_blank" class="weblink">http://www.intel.com/design/motherbd/software/idu/</a></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-weight: bold;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-weight: bold;">About SpeedFan</span></p>
+<p style="margin: 0px 0px 8px 0px;">Versions tested with BurnInTest: 4.08, 4.32, 4.35, 4.37</p>
+<p style="margin: 0px 0px 8px 0px;">SpeedFan monitors CPU, motherboard, memory and HDD temperatures. It also monitors voltages and fan speeds. It allows the user to alter fan speeds to aid the over clocking enthusiast. It reports system information - in particular SM Bus info and SMART attributes.</p>
+<p style="margin: 0px 0px 8px 0px;">SpeedFan is available from <a href="http://www.almico.com/speedfan.php" target="_blank" class="weblink">http://www.almico.com/speedfan.php</a></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">About Hmonitor</span></p>
+<p style="margin: 0px 0px 8px 0px;">Versions tested with BurnInTest: 3.1.2.5 and 4.0.1.2</p>
+<p style="margin: 0px 0px 8px 0px;">Hmonitor Pro monitors and displays hardware parameters collected by the several sensor chips, installed on certain motherboards. The program can monitor voltages, CPU temperature, Motherboard temperature and cooler fans RPMs. It is fully customizable with alarms that can be set to go off when the temperature goes too high. In addition to this there is a built in "thermo control" function, that kicks in when the CPU is idle. Hmonitor can be used under 2000/XP/Vista operating systems on Intel-based personal computers.</p>
+<p style="margin: 0px 0px 8px 0px;">Hmonitor is currently available at <a href="http://www.hmonitor.com" class="weblink">http://www.hmonitor.com</a>. PassMark also maintains a Web page that can tell you where to get Hmonitor.</p>
+<p style="margin: 0px 0px 8px 0px;"><a href="http://www.passmark.com/products/temperature.htm" target="_blank" class="weblink">http://www.passmark.com/products/temperature.htm</a></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-weight: bold;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-weight: bold;">About MBM (Motherboard Monitor)</span></p>
+<p style="margin: 0px 0px 8px 0px;">Versions tested with BurnInTest: 5.3.3.0 and 5.5.5.1</p>
+<p style="margin: 0px 0px 8px 0px;">MBM monitors CPU temperatures, motherboard temperatures, voltages and fan speeds. It contains some basic system information and supports programmable alerts (also email alerts or application launch on alert), and logging. However several years ago, Alexander Van Kaam the developer of MBM, announced that development on Motherboard Monitor has been stopped due to lack of financial resources to purchase hardware and the difficult in getting technical details from the motherboard manufacturers. The web site has also now be closed. Copies of the software are still available on the Net however if you search for them.</p>
+<p style="margin: 0px 0px 8px 0px;">&nbsp;</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-weight: bold;">General comments about using the 3rd party applications</span></p>
+<p style="margin: 0px 0px 8px 0px;">In the case of each temperature monitoring application…</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="19"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Check that your main board supports temperature monitoring. This can be done from the documentation that comes with the board / computer or from the manufacturers web page.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="19"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Ensure that the third party monitoring application is correctly installed. See below for a list of supported applications.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="19"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Check that third party monitoring application supports your motherboard. Each application comes with a list of supported boards. See below for more details on the supported applications.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="19"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Check that the third party monitoring application is a compatible version. See below for a list of compatible versions.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="19"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Run the third party monitoring application, then Run BurnInTest.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="19"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Make sure temperature monitoring is turned on in BurnInTest (from the Test preferences Window) and if required, the temperature source value is selected. For Hmonitor, up to two sources can be selected for display and logging in BurnInTest.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="19"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Start testing.</td></tr></table></div><p style="margin: 0px 0px 8px 0px;">BurnInTest reads the CPU temperature values from the third party monitoring application, displaying them on the screen and writing them to disk if logging is turned on. Please bear in mind that the accuracy of the temperature values in BurnInTest depend entirely on the third party application in question.</p>
+<p style="margin: 0px 0px 8px 0px;">&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

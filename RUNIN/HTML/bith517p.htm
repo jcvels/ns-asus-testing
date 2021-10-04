@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Tape preferences dialog box</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Preferences">
+	<PARAM NAME="Keyword" VALUE="Tape">
+	<PARAM NAME="Keyword" VALUE="Tape drive">
+</OBJECT>
+
+<H1><A NAME="hid_preferences_tape"></A>Test Preferences – Tape</H1>
+
+<P><I>(Applicable to BurnInTest Pro version only)</I></P>
+
+<P><B><I>Tape drive</I></B></P>
+
+<P>The tape drive ID can be entered into this field. Windows normally assigns the name of the tape drive. Typical names are TAPE0, TAPE1, etc..</P>
+
+<P><B><I>File size and Number of files</I></B></P>
+
+<P>The number of test files and the size of each file can be selected here. The size of the tape must be large enough to hold the files selected.</P>
+
+<P><B><I>Option: Formatting</I></B></P>
+
+<P>The formatting step tries to create a new partition on the tape. The size of the partition will depend on the tape drive in use. Some tape drives may not support this option as not all media types require this formatting step to be executed before the tape media is used.</P>
+
+<P><B><I>Option: Locking</I></B></P>
+
+<P>The locking step attempts to physically lock the tape in the drive, so that it can not be manually ejected during the test. Some tape drives may not support this option.</P>
+
+<P><B><I>Option: Writing file marks</I></B></P>
+
+<P>File marks are used to separate files on a tape. Normally a file mark is a short section of blank tape. Different tape drives support file marks that are different in length and content. File marks are not required to run this test as BurnInTest knows the exact length of each file written to the tape and thus has no need to be notified when the end of a file is reached. If you get file mark errors when running the tape test, turn this option off as your tape drive probably doesn’t support the type of firemarks used by BurnInTest.</P>
+
+<P><B><I>Drive info button</I></B></P>
+
+<P>This window display information that has been extracted from the tape drive. It allows the user to see which features are supported by a particular tape drive. This window is really only intended for tape drive experts.</P>
+
+<P><B><I>Media info button</I></B></P>
+
+<P>This window display information that has been extracted from the tape drive and its current media. It allows the user to see some information about the media currently in the drive. This window is really only intended for tape drive experts.</P>
+
+</BODY>
+</HTML>

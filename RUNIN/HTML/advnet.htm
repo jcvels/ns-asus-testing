@@ -1,0 +1,91 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Advanced network test</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Advanced Network Test,Network Test,Advanced" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?advnet.htm"; }
+  else { parent.quicksync('a6.9'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Headingpage"><span class="f_Headingpage">Advanced network test</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="tests_network.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="tests_cdrom.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 12pt; font-style: italic;">(Applicable to BurnInTest Pro version only)</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Overview</span></p>
+<p style="margin: 0px 0px 8px 0px;">The Advanced Network test allows stability and load testing of up to 12 Network Interfaces (NICs) on a system running BurnInTest. </p>
+<p style="margin: 0px 0px 8px 0px;">The Advanced Network test is a peer to peer TCP/IP test of NICs using various parameters and load settings. BurnInTest is capable of detecting the presence of remote machines on the same network segment that are running "EndPoint" software (i.e. all EndPoints need to be visible to all the BurnInTest system NICs). BurnInTest will need to run on one system and the remote machines will need to run the ‘EndPoint’ (EP) software. </p>
+<p style="margin: 0px 0px 8px 0px;">IPv4 and IPv6 (Vista and later) can be tested. Note: BurnInTest and the Endpoints must support IPv4.</p>
+<p style="margin: 0px 0px 8px 0px;">One instance of the BurnInTest Advanced Network test can only be run on a Network. That is, you can not run 2 (or more) BurnInTest Advanced Network tests at the same time on the same network. Up to 12 NIC's on the BurnInTest system may be selected for testing.</p>
+<p style="margin: 0px 0px 8px 0px;">The EP application (endpoint.exe) may be run on up to 12 other systems on the network. Only 1 EP can be run per system. An EP can not be run on the BurnInTest system.</p>
+<p>To set the Advanced network configuration options, select Configuration -&gt; Test Preferences -&gt; the Network tab, select "Advanced network test" and select the "Edit options" button. Please see <a href="advnetoptions.htm">Advanced Network Test</a> for descriptions of the options available.</p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic; font-weight: bold;">EP (End point) overview</span></p>
+<p style="margin: 0px 0px 8px 0px;">The EP purpose is to detect requests from BurnInTest to start network testing and to send, receive and verify data from BurnInTest. </p>
+<p style="margin: 0px 0px 8px 0px;">EP is a standalone application that is started on a remote machine and will be able to run whether there is an instance of BurnInTest running or not. It will need to be able to access all available NICs of the machine that it is running on. .</p>
+<p style="margin: 0px 0px 8px 0px;">The “<span style="text-decoration: underline;">Endpoint.exe</span>” software file is included in the BurnInTest installation directory and should be copied to the remote PC’s and run from these systems. For example they should be copied from the BurnInTest directory on the main PC, C:\Program Files\BurnInTest\Endpoint.exe, to each remote PC to a directory C:\Program Files\BurnInTest\Endpoint\Endpoint.exe. An EP can be run by double clicking on the application file. </p>
+<p style="margin: 0px 0px 8px 0px;">To use the advanced network test there must be at least 1 EP running on another system (up to 1 EP running on each of 6 systems) on the network. The higher the configured load (required %) and the larger the number of NIC's under test (on the BurnInTest system), the more Endpoints you should use. </p>
+<p style="margin: 0px 0px 8px 0px;">It is recommended that the EP NIC's be the same or higher speed as the fastest BurnInTest system NIC. ie. it is probably not a good test if the EP NIC is 10Mb/s, and the BurnInTest system NIC is 100Mb/s or 1Gb/s. Only the 'first' EP NIC will be used for testing, hence it is suggested that the slowest NIC's are disconnected, leaving a single NIC (the fastest) connected on the EP system.</p>
+<p style="margin: 0px 0px 8px 0px;">As a guide, it is suggested that with low load (required %), up to a maximum of 3 NICs can be tested per EP. With high load (required %), up to a maximum of 1 NIC can be tested per EP. </p>
+<p style="margin: 0px 0px 8px 0px;">For example:</p>
+<p style="margin: 0px 0px 8px 0px;">(1) If you were testing 2 x Gb NICs (BurnInTest side) with a configured load of 5%, then 1 x EP with a Gb NIC would be suitable. 2 x EPs could be used. 3 x or more EP's would provide no value.</p>
+<p style="margin: 0px 0px 8px 0px;">(2) If you were testing 2 x Gb NICs (BurnInTest side) with a configured load of 90%, then 2 x EPs with a Gb NIC would be suitable. 1 x EP would most likely provide lower throughput. 3 x or more EP's would provide no value.</p>
+<p style="margin: 0px 0px 8px 0px;">(3) If you were testing 6 x 100Mb NICs (BurnInTest side) with a configured load of 5%, then 2 EPs with a 100Mb NICs would be suitable. A single EP would most likely provide lower throughput. 3 to 6 would provide greater throughput. 7 x or more EP's &nbsp;would provide no value (and is not supported - a maximum of 6 EP's are supported).</p>
+<p style="margin: 0px 0px 8px 0px;">It should be noted that the system may not be able to achieve the configured load (required %) due to a number of factors, including CPU load, and network configuration. It is suggested that other BurnInTest tests (e.g. CPU test) are not set such that they push the CPU beyond 'hard on 90%' when running the Advanced Network test.</p>
+<p style="margin: 0px 0px 8px 0px;">To successfully run the test, BurnInTest uses broadcasts to find all the available EP applications on the network, so anything that may block the broadcasts, such as a router, needs to be taken into account. Firewalls could also interfere with the test and may need to be configured to allow BurnInTest and the EP applications to use the network.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic; font-weight: bold;">How the test works</span></p>
+<p style="margin: 0px 0px 8px 0px;">At the start of testing, BurnInTest broadcasts a request to the EPs on the local LAN segment. The broadcast will use UDP and be directed at the universal 255.255.255.255 broadcast address. Each EP will respond to this request. This provides BurnInTest with a list of all available EPs.</p>
+<p style="margin: 0px 0px 8px 0px;">BurnInTest will then start a network test for each BurnInTest NIC selected for testing. Each of these BurnInTest system NICs will be assigned one Endpoint NIC to test with. For example, with 3 BurnInTest NIC's and 3 EP systems, NIC1 -&gt; EP1, NIC2 -&gt; EP2, NIC3 -&gt;EP3. If there are more BIT system NICs than EPs then the available EPs will be used, for example, with 4 BurnInTest NIC's and 2 EP systems, NIC1 -&gt; EP1, NIC2 -&gt; EP2, NIC3 -&gt; EP1, NIC4 -&gt; EP2. This allocation will remain the same for the duration of the test.</p>
+<p style="margin: 0px 0px 8px 0px;">A test will be started for each NIC and BurnInTest will send a control message to it's designated EP NIC to request it to start testing, on receiving a 'Ready to test' response from the EP, BurnInTest will setup test TCP sockets (WinSock) on the user specified port (+ the test number) and start sending test data to the EP. If full duplex is configured for that NIC, then the EP will also send test data back to it's allocated BurnInTest system NIC. </p>
+<p style="margin: 0px 0px 8px 0px;">The test data is pseudo randomly generated at both the BurnInTest and EP ends (ie. the data is not just 'looped' by the EP). A checksum will be added to the data to allow BurnInTest and each EP to verify the data integrity (if the user has selected this option).</p>
+<p class="p_Heading1">Both BurnInTest and the EP monitor Network load in order to estimate how much data should be sent from BurnInTest to an already connected EP (and from an EP to BurnInTest) in order to achieve the required % load.</p>
+<p>Errors will be logged in the standard BurnInTest log files as specified in Configuration -&gt; Test Preferences -&gt; Logging.</p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-style: italic; font-weight: bold;">Notes</span></p>
+<p style="margin: 0px 0px 8px 0px;">To ensure compatibility between BurnInTest and the Endpoint software, it is important that you use the version of Endpoint.exe that is included in the BurnInTest distribution you are using.</p>
+<p style="margin: 0px 0px 8px 0px;">In Windows XP and later you need to be the administrator to run this test. In Windows Vista &nbsp;(and later) you will need to run BurnInTest and the Endpoint software with Elevated administrator privileges ("Run as administrator") or turn off UAC (User Account Control). Turning off UAC will remove all user account control and you should understand the impact of this before doing it (and ensure the system is returned to required settings after the test).</p>
+<p style="margin: 0px 0px 8px 0px;">In some cases, it is possible that a failing NIC (such as reported send or receive errors) can lead to subsequent false positive errors being reported for other NICs. When analyzing Advanced Network errors, this should be considered and the first error (within a period of 1 minute) taken to be the problem NIC.</p>
+<p style="margin: 0px 0px 8px 0px;">CheckEnd (previously distributed with BurnInTest) has been removed and is now obsolete.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-weight: bold;">Examples</span></p>
+<p style="margin: 0px 0px 8px 0px;">The Advanced network test window for a test of an IPv4 and IPv6 NIC on the BurnInTest system to a single Endpoint system on the test network:</p>
+<p style="margin: 0px 0px 8px 0px;"><img src="advanced_network_test_window2.png" width="300" height="349" border="0" alt="advanced_network_test_window2"></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;">The endpoint system:</p>
+<p style="margin: 0px 0px 8px 0px;"><img src="endpoint.png" width="616" height="321" border="0" alt="endpoint"></p>
+
+</td></tr></table>
+
+</body>
+</html>

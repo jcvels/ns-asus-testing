@@ -1,0 +1,72 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Tape drive testing</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Tape,Pattern,Tape drive,Media,Drive,Filemarks,Partition,Format,Locking" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?tests_tape.htm"; }
+  else { parent.quicksync('a6.17'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Headingpage"><span class="f_Headingpage">Tape drive test [TAPE]</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="tests_sound.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="tests_usb.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 12pt; font-style: italic;">(Applicable to BurnInTest Pro version only)</span></p>
+<p style="margin: 0px 0px 8px 0px;">Tests the tape drive connected to the PC. Drives can be connected via the SCSI bus, IDE bus or any other method supported by Windows XP &nbsp;(and later). Note that Windows 2000 and later operating systems no longer supports tape drives that use the floppy disk interface. The tape drive to be tested can be selected from the <a href="preferences_tape.htm">Test Preferences</a> window.</p>
+<p style="margin: 7px 0px 7px 0px;">A blank tape (media) is required to run this test. If the tape is not blank any existing data will be overwritten and permanently lost.</p>
+<p style="margin: 0px 0px 8px 0px;">There are three optional steps that can be included as part of each test cycle. See the <a href="preferences_tape.htm">Test Preferences</a> window for more details.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Test description</span></p>
+<p style="margin: 0px 0px 8px 0px;">The test is carried out by writing a number of files onto the tape, rewinding the tape and then verifying the files were correctly written by re-reading them from the tape. A progress bar shows the percentage complete for the current test cycle. The contents of the files will correspond to a particular data pattern. The following patterns will be used in a cyclic manner in the following order.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="width:48px">&nbsp;</span>Sequence (0,1,2...255)</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="width:48px">&nbsp;</span>Binary 1 (10101010)</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="width:48px">&nbsp;</span>Binary 2 (01010101)</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="width:48px">&nbsp;</span>Zeros (00000000)</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="width:48px">&nbsp;</span>Ones (11111111)</p>
+<p style="margin: 7px 0px 7px 0px;">The number of files created and the size of each file can be set in the Preferences window. The tape needs to be large enough to contain the number of files selected plus a small amount of overhead for file marks.</p>
+<p style="margin: 0px 0px 8px 0px;">A test cycle is completed each time all the files have been written and re-read. A cycle may end prematurely for some errors conditions. The number of ‘Ops’ reported in the main window is the total of the bytes read and bytes written.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Pattern</span></p>
+<p style="margin: 0px 0px 8px 0px;">The current data pattern that is being used to fill the test files. (see the list above)</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Bytes Written</span></p>
+<p style="margin: 0px 0px 8px 0px;">This is the total number of bytes that have written to the tape</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Bytes Read</span></p>
+<p style="margin: 0px 0px 8px 0px;">This is the total number of bytes that have read from the tape</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Errors</span></p>
+<p style="margin: 0px 0px 8px 0px;">This is the number of <a href="commonerrors.htm">errors</a> detected.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Throughput (R/W)</span></p>
+<p style="margin: 0px 0px 8px 0px;">This is the measured throughput for the tape drive. Measured in MB/Sec. A separate value is maintained for reading and writing. A few large test files will result in better throughput compared to many small ones.</p>
+
+</td></tr></table>
+
+</body>
+</html>

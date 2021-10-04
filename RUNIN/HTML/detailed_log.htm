@@ -1,0 +1,87 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Event Log</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Detailed log,Error classifications,Error log,Error settings,Errors - ignoring" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?detailed_log.htm"; }
+  else { parent.quicksync('a5.5'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Headingpage"><span class="f_Headingpage">Event Log</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="results.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="temperature.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 0px 0px 8px 0px;"><img src="eventlog.png" width="698" height="366" border="0" alt="eventlog"></p>
+<p style="margin: 0px 0px 8px 0px;">The Event Log tab displays the recent errors and status messages that have occurred during a test run. It is possible to save a copy of the test events using the Copy to clipboard functions, the ‘File -&gt; Save Report’ menu item, or in a test report using 'Preferences-&gt;Logging'.</p>
+<p style="margin: 0px 0px 8px 0px;">The event window is updated in as events occur and can be left open while a test run is in progress. There is no practical limit to the number of events that can be written to a test report. </p>
+<p style="margin: 7px 0px 7px 0px;">Context sensitive popup menus are available using the mouse 'Right click', while double clicking on an event will open the "Common test error messages" help to display a description common errors.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Event Classification</span></p>
+<p style="margin: 0px 0px 8px 0px;">Test events (such as test errors) are classified into different severity levels of CRITICAL, SERIOUS, WARNING or INFORMATION. Where an informational line (related to this error) follows the error line, the error classification is not repeated and is shown as a LOG NOTE (to aid determination of the number of unique errors per classification).</p>
+<p style="margin: 0px 0px 8px 0px;">A test failure is defined to be one or more CRITICAL, SERIOUS or WARNING errors. INFORMATION level events are logged for information only and are not considered to constitute a test failure. An event classification of NONE also exists and this means that the event is not meaningful in the context of the test being undertaken and events configured this way are ignored. All events may be configured to not be reported if they are not meaningful in a specific test environment (by setting to NONE in <a href="detailed_log.htm#configure">BITErrorClassifications.txt</a>).</p>
+<p style="margin: 0px 0px 8px 0px;">Each line is color coded based on the Error Classification.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Time stamp</span></p>
+<p style="margin: 0px 0px 8px 0px;">The time stamp records the time when the event occurred. The format is, YYYY-MM-DD HH:MM:SS</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Test type</span></p>
+<p style="margin: 0px 0px 8px 0px;">The test type refers to the name of the test which originated the event. Examples are, “RAM”, Floppy Disk”. The word “Status”, indicated that the event is not an error but just a status message.</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-style: italic; font-weight: bold;">Details</span></p>
+<p style="margin: 0px 0px 8px 0px;">This is a text field that contains additional information about the error (or status message).</p>
+<p style="margin: 0px 0px 8px 0px;">In some cases a log entry may be spread across two lines. The 1st line will contain some general information about the error and the 2nd line will contain more detail.</p>
+<p style="margin: 0px 0px 8px 0px;">Some error messages may contain internal program variables (and thus be fair cryptic). These are not always intended to be interpreted by the user can but help us track down faults in our software.</p>
+<p style="margin: 7px 0px 7px 0px;"><a name="configure"></a><span style="font-style: italic; font-weight: bold; text-decoration: underline;">Configuring Error Classifications</span></p>
+<p style="margin: 0px 0px 8px 0px;">Each of the standard errors detected by BurnInTest can configured to include a customer specific string and error classification. The file <span style="font-style: italic;">BITErrorClassification.txt</span> (in the software directory) contains the error text and classification used by BurnInTest. </p>
+<p style="margin: 0px 0px 8px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;">The file is formatted as a Comma Separated File with four fields:</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">1.</span></td><td>Error number – this must not be changed by the customer;</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">2.</span></td><td>Error description text – this may be changed. This must be a sting enclosed by quotes;</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">3.</span></td><td>Error classification – this may be changed. This must be one of the following text values (not in quotes): CRITICAL, SERIOUS, WARNING, INFORMATION or NONE.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">4.</span></td><td>Customer comment – this is optional and may be changed – it is ignored by BurnInTest.</td></tr></table></div><p style="margin: 0px 0px 8px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;">Comment lines may be inserted by using a “#” at the start of the line. These lines will be ignored by BurnInTest.</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;">An example is shown below:</p>
+<p style="margin: 0px 0px 8px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 48px;"><span style="font-size: 8pt;"># PassMark BurnInTest,,,</span></p>
+<p style="margin: 0px 0px 8px 48px;"><span style="font-size: 8pt;"># Error message text and classification,,,</span></p>
+<p style="margin: 0px 0px 8px 48px;"><span style="font-size: 8pt;">0,"No errors",NONE,</span></p>
+<p style="margin: 0px 0px 8px 48px;"><span style="font-size: 8pt;">1,"Incorrect mathematical addition",SERIOUS,</span></p>
+<p style="margin: 0px 0px 8px 48px;"><span style="font-size: 8pt;">2,"Incorrect mathematical subtraction",SERIOUS,</span></p>
+<p style="margin: 0px 0px 8px 48px;"><span style="font-size: 8pt;">3,"Incorrect mathematical division",SERIOUS,</span></p>
+<p style="margin: 0px 0px 8px 48px;"><span style="font-size: 8pt;">4,"Incorrect mathematical multiply",SERIOUS,</span></p>
+<p style="margin: 0px 0px 8px 48px;"><span style="font-size: 8pt;">5,"Incorrect MMX addition",SERIOUS,</span></p>
+<p style="margin: 0px 0px 8px 48px;"><span style="font-size: 8pt;">6,"Incorrect MMX subtraction",SERIOUS,</span></p>
+<p style="margin: 0px 0px 8px 48px;"><span style="font-size: 8pt;">7,"Incorrect MMX multiplication",SERIOUS,</span></p>
+<p style="margin: 0px 0px 8px 48px;"><span style="font-size: 8pt;">8,"Failed Windows call - Line Drawing",SERIOUS,</span></p>
+<p style="text-align: justify; margin: 0px 0px 8px 0px;"><span style="color: #000000;">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

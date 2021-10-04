@@ -1,0 +1,515 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Scripts;Creating scripts;sequential testing;</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Script">
+	<PARAM NAME="Keyword" VALUE="Scripting">
+	<PARAM NAME="Keyword" VALUE="Run">
+	<PARAM NAME="Keyword" VALUE="Load">
+	<PARAM NAME="Keyword" VALUE="Message">
+	<PARAM NAME="Keyword" VALUE="Sleep">
+	<PARAM NAME="Keyword" VALUE="Setduration">
+	<PARAM NAME="Keyword" VALUE="Setdutycycle">
+	<PARAM NAME="Keyword" VALUE="SetSerial">
+	<PARAM NAME="Keyword" VALUE="SetMachineType">
+	<PARAM NAME="Keyword" VALUE="SetNotes">
+	<PARAM NAME="Keyword" VALUE="SetLog">
+	<PARAM NAME="Keyword" VALUE="SetPlugin">
+	<PARAM NAME="Keyword" VALUE="Sub-script input files">
+	<PARAM NAME="Keyword" VALUE="passing a script from an external application">
+</OBJECT>
+
+<H1><A NAME="hid_scripting"></A>Scripting</H1>
+
+<P>BurnInTest includes a simple scripting language that allows tests to be executed in a sequence. </P>
+
+<P>A PASS/FAIL indication for all of the tests included in the script can be displayed at the end of the scripted test run. To achieve this you should select “Accumulate logs until manually cleared” from the Logging Preferences and results should be cleared before or at the start of the scripted test run. </P>
+
+<P>Script files are ASCII text files that you can create with a text editor (e.g. notepad). The file name must end with the extension ‘.bits’. To start a script use the ‘Test / Execute script’ menu item.</P>
+
+<P>Each script command must appear on its own line in the text file and the entire command must appear on a single line. (i.e. a single command can not be split across multiple lines).</P>
+
+<P>The command and its parameters must be separated by one or more spaces.</P>
+
+<P>Comments can be included by starting the line with the ‘#’ character.</P>
+
+<P>The following commands are available in the current version of the software</P>
+
+<P><B><I>RUN COMMAND</I></B></P>
+
+<P><I>Syntax:</I></P>
+
+<P>RUN  &lt;Test Name&gt;</P>
+
+<P><I>Parameters:</I></P>
+
+<P>&lt;Test Name&gt;See below for a list of all test names.</P>
+
+<P><I>Examples:</I></P>
+
+<P>#Run the CD test with the current settings</P>
+
+<P>RUN CD</P>
+
+<P>#Run all the tests in the current configuration simultaneously</P>
+
+<P>RUN CONFIG</P>
+
+<P><B><I>LOAD COMMAND</I></B></P>
+
+<P><I>Syntax:</I></P>
+
+<P>LOAD  &lt;File name&gt;</P>
+
+<P><I>Parameters:</I></P>
+
+<P>&lt;File name&gt;The full path name to a configuration file. This configuration file must have been previously created from within BurnInTest. A partial path name can be used to load a configuration file from the current directory. A loaded configuration file will over write all preferences currently selected.</P>
+
+<P><I>Examples:</I></P>
+
+<P>#Load the low load configuration file that we created earlier</P>
+
+<P>LOAD “C:\ConfigurationFiles\LowLoad.bitcfg”</P>
+
+<P><B><I>LOOP</I></B></P>
+
+<P><I>Syntax:</I></P>
+
+<P>LOOP &lt;number of iterations&gt;</P>
+
+<P>{</P>
+
+<P>&lt;Tasks to repeat&gt;</P>
+
+<P>}</P>
+
+<P><I>Parameters:</I></P>
+
+<P>&lt; number of iterations &gt;The number of times the Tasks within brackets will be repeated.</P>
+
+<P><I>Examples:</I></P>
+
+<P>LOG "Start"</P>
+
+<P>SETDURATION 1</P>
+
+<P>LOOP 3</P>
+
+<P>{</P>
+
+<P>LOG "CPU Test"</P>
+
+<P>RUN MMX</P>
+
+<P>}</P>
+
+<P><B><I>MESSAGE COMMAND</I></B></P>
+
+<P><I>Syntax:</I></P>
+
+<P>MESSAGE  &lt;Message Text&gt;</P>
+
+<P><I>Parameters:</I></P>
+
+<P>&lt; Message Text &gt;A single line of text that will be displayed in a window with an OK button. The user must click on the OK button to continue with the script.</P>
+
+<P><I>Examples:</I></P>
+
+<P>MESSAGE “Insert the test disc into the DVD drive then click on OK to proceed with the test”</P>
+
+<P><B><I>SLEEP COMMAND</I></B></P>
+
+<P><I>Syntax:</I></P>
+
+<P>SLEEP  &lt;Delay period&gt;</P>
+
+<P><I>Parameters:</I></P>
+
+<P>&lt; Delay period &gt;An integer that represents the number of milliseconds to pause before continuing with the next command in the script..</P>
+
+<P><I>Examples:</I></P>
+
+<P>#Pause 2 seconds</P>
+
+<P>SLEEP 2000</P>
+
+<P><B><I>SETDURATION COMMAND</I></B></P>
+
+<P><I>Syntax:</I></P>
+
+<P>SETDURATION  &lt;Duration&gt;</P>
+
+<P><I>Parameters:</I></P>
+
+<P>&lt;Duration&gt;Sets the test duration in minutes. Using this command is the same as changing the auto-stop period from the preferences window.</P>
+
+<P><I>Examples:</I></P>
+
+<P>#Set the test duration to 90 seconds</P>
+
+<P>SETDURATION  1.5</P>
+
+<P><B><I>SETCYCLES COMMAND</I></B></P>
+
+<P><I>Syntax:</I></P>
+
+<P>SETCYCLES &lt;Number of test cycles&gt;</P>
+
+<P><I>Parameters:</I></P>
+
+<P>&lt; Number of test cycles &gt;Sets the number of test cycles that will lead to an automatic stopping of the test runs after all selected tests have reached or exceeded this number of test cycles. Using this command is the same as changing the auto-stop number of cycles from the preferences window.</P>
+
+<P><I>Example 1:</I></P>
+
+<P>#Set the number of test cycles to 1</P>
+
+<P>SETCYCLES 1</P>
+
+<P><I>Example : Run each test one cycle in series.</I></P>
+
+<P>SETCYCLES 1</P>
+
+<P>SETDURATION 0 </P>
+
+<P>LOG "Run Maths Test”</P>
+
+<P>RUN MATHS</P>
+
+<P>LOG "Run MMX Test”</P>
+
+<P>RUN MMX</P>
+
+<P>Etc…</P>
+
+<P>NOTE: Automatic stopping after a set number of test cycles is only supported in the licensed version of BurnInTest.</P>
+
+<P><B><I>SETDUTYCYCLE COMMAND</I></B></P>
+
+<P><I>Syntax:</I></P>
+
+<P>SETDUTYCYCLE  &lt;Test Name&gt;  &lt;Duty setting&gt;</P>
+
+<P><I>Parameters:</I></P>
+
+<P>&lt;Test Name&gt;See below for a list of all test names.</P>
+
+<P>&lt;Duty setting&gt;Sets the duty cycle for the specified test to the value specified. Values must be between 1 and 100. Using this command is the same as changing the duty cycle value from the Test duty cycle window.</P>
+
+<P><I>Examples:</I></P>
+
+<P>#Set the disk test to maximum load</P>
+
+<P>SETDUTYCYCLE  DISK  100</P>
+
+<P>#Set the CPU test to medium  load</P>
+
+<P>SETDUTYCYCLE  DISK  65</P>
+
+<P><B><I>SETSERIAL COMMAND</I></B></P>
+
+<P><I>Syntax:</I></P>
+
+<P>SETSERIAL &lt; Serial Number &gt;</P>
+
+<P><I>Parameters:</I></P>
+
+<P>&lt;Serial Number&gt;The serial number string. Must be enclosed in double quotes (“”).</P>
+
+<P><I>Examples:</I></P>
+
+<P>#Set the serial number </P>
+
+<P>SETSERIAL "1234-shdfgdhs-GHGHG"</P>
+
+<P><B><I>SETMACHINETYPE COMMAND</I></B></P>
+
+<P><I>Syntax:</I></P>
+
+<P>SETMACHINETYPE &lt; Machine Name&gt;</P>
+
+<P><I>Parameters:</I></P>
+
+<P>&lt; Machine Name &gt;The Machine Name. Must be enclosed in double quotes (“”).</P>
+
+<P><I>Examples:</I></P>
+
+<P>#Set Machine type </P>
+
+<P>SETMACHINETYPE "Dell XPS800"</P>
+
+<P><B><I>SETNOTES COMMAND</I></B></P>
+
+<P><I>Syntax:</I></P>
+
+<P>SETNOTES &lt;Notes &gt;</P>
+
+<P><I>Parameters:</I></P>
+
+<P>&lt; Notes &gt;The Notes. Must be enclosed in double quotes (“”).</P>
+
+<P><I>Examples:</I></P>
+
+<P>#Set Notes </P>
+
+<P>SETNOTES "Test notes defined by the external application."</P>
+
+<P><B><I>SETLOG COMMAND</I></B></P>
+
+<P><I>Syntax:</I></P>
+
+<P>SETLOG &lt;Filename&gt; </P>
+
+<P><I>Parameters:</I></P>
+
+<P>&lt;Filename&gt;The name of the log file. The file name must be enclosed in double quotes (“”). The file must be an executable.</P>
+
+<P><I>Examples:</I></P>
+
+<P>#Set log file with full path</P>
+
+<P>SETLOG "C:\Program Files\Plugin\plugin_log"</P>
+
+<P>#Set log file with path relative to BurnInTest drive</P>
+
+<P>SETLOG "\Program Files\Plugin\plugin_log"</P>
+
+<P>#Set log file with path relative to BurnInTest application path </P>
+
+<P>SETLOG "plugin_log"</P>
+
+<P><B><I>SETPLUGIN COMMAND</I></B></P>
+
+<P>Sets up the <I>first </I>external test plug-in application executable file name.</P>
+
+<P><I>Syntax:</I></P>
+
+<P>SETPLUGIN &lt;Filename&gt; </P>
+
+<P><I>Parameters:</I></P>
+
+<P>&lt;Filename&gt;The name of the plugin file. The file name must be enclosed in double quotes (“”). The file must be an executable, and the “.exe” must be included.</P>
+
+<P><I>Examples:</I></P>
+
+<P>#Set plug-in test application file with full path</P>
+
+<P>SETPLUGIN "C:\Program Files\Plugin\plugin.exe”</P>
+
+<P>#Set plug-in test application file with path relative to BurnInTest drive</P>
+
+<P>SETPLUGIN "\Program Files\Plugin\plugin.exe”</P>
+
+<P>#Set plug-in test application file with path relative to BurnInTest application path </P>
+
+<P>SETPLUGIN "plugin.exe”</P>
+
+<P><B><I>&lt;Test Name&gt; Parameter</I></B></P>
+
+<P>The test name parameter can takes the following values. The first value “CONFIG” is special because it does not refer to the name of an individual test. When used with the RUN command it causes all tests in the current configuration file to be started simultaneously.</P>
+
+<P>CONFIG</P>
+
+<P>MATHS</P>
+
+<P>MMX</P>
+
+<P><I>BurnInTest 64bit version specific: </I></P>
+
+<P>MMX and 3Dnow! have been superseded and are not supported in BurnInTest. The MMX  and 3Dnow! Tests have been removed from the 64bit version of BurnInTest.</P>
+
+<P>End 64bit specific</P>
+
+<P>CD</P>
+
+<P>DISK</P>
+
+<P>MEMORY</P>
+
+<P>NETWORK</P>
+
+<P>PARALLEL</P>
+
+<P>PRINTER</P>
+
+<P>SERIAL</P>
+
+<P>SOUND</P>
+
+<P>TAPE</P>
+
+<P>USB</P>
+
+<P>2D</P>
+
+<P>3D</P>
+
+<P>VIDEO</P>
+
+<P>PLUGIN</P>
+
+<P><B><I>Example</I></B></P>
+
+<P>#Load my preferred test configuration</P>
+
+<P>LOAD "MyConfiguration1.bitcfg"</P>
+
+<P>#Override the test duration for all tests</P>
+
+<P>SETDURATION 60</P>
+
+<P>MESSAGE "Click on OK to start test run"</P>
+
+<P>RUN MATHS</P>
+
+<P>MESSAGE "Insert test discs into both the CD and DVD drive"</P>
+
+<P>RUN CD</P>
+
+<P>#Load my preferred test configuration for disk testing</P>
+
+<P>LOAD "MyDiskConfig.bitcfg"</P>
+
+<P>RUN CONFIG</P>
+
+<P><B><I>EXECUTE COMMAND</I></B></P>
+
+<P><I>Overview:</I></P>
+
+<P>Executes an external file and continues processing the script.</P>
+
+<P><I>Syntax:</I></P>
+
+<P>EXECUTE &lt;Filename&gt; &lt;Parameters&gt;</P>
+
+<P><I>Parameters:</I></P>
+
+<P>FilenameThe name of the file to execute. The file name must be enclosed in double quotes (“”). The file must be an executable.</P>
+
+<P>ParametersAny command line parameters which you wish to pass to your executable. If any of these parameters are filenames, you should enclose them in double quotes (“”)</P>
+
+<P><I>Examples:</I></P>
+
+<P>#Start up Notepad with some results before starting tests.</P>
+
+<P>EXECUTE "c:\winnt\system32\notepad.exe" "c:\MyResults\Results.txt"</P>
+
+<P>RUN CONFIG</P>
+
+<P><B><I>EXECUTEWAIT COMMAND</I></B></P>
+
+<P><I>Overview:</I></P>
+
+<P>Runs an executable file and waits for that process to finish before continuing to process the script.</P>
+
+<P><U>Passing configuration information from an external program to BurnInTest.</U></P>
+
+<P>The executable file may produce a file of scripting commands that are to be run by BurnInTest once the executable file has closed. As an example, this may be used to set the Machine type, serial number, test notes etc at the start of a script file.. </P>
+
+<P>The only script commands that will be processed by BurnInTest are the SET… commands. All other commands will be ignored. If this file, called a Sub-Script file, is created is must:
+
+<UL>
+	<LI>be placed in the same directory as the EXECUTEWAIT executable file;<BR><BR></LI>
+
+	<LI>must be called “bit-script-input.txt”; and<BR><BR></LI>
+
+	<LI>must conform to the scripting file format.</LI>
+</UL>
+
+<P>After processing the script commands in this file, BurnInTest will delete the file.</P>
+
+<P><I>Syntax:</I></P>
+
+<P>EXECUTE &lt;Filename&gt; &lt;Parameters&gt;</P>
+
+<P><I>Parameters:</I></P>
+
+<P>FilenameThe name of the file to execute. The file name must be enclosed in double quotes (“”). The file must be an executable.</P>
+
+<P>ParametersAny command line parameters which you wish to pass to your executable. If any of these parameters are filenames, you should enclose them in double quotes (“”)</P>
+
+<P><I>Examples:</I></P>
+
+<P>#Start PassMark’s Sleeper application with user defined parameters.</P>
+
+<P>EXECUTEWAIT "sleeper.exe" -S1000 -R 30 -N 1 –E</P>
+
+<P>#Start up Notepad with some results before starting tests.</P>
+
+<P>EXECUTEWAIT "c:\winnt\system32\notepad.exe" "c:\MyResults\Results.txt"</P>
+
+<P>RUN CONFIG</P>
+
+<P><B><I>LOG COMMAND</I></B></P>
+
+<P><I>Overview:</I></P>
+
+<P>Writes text to the detailed error and status log history.</P>
+
+<P><I>Syntax:</I></P>
+
+<P>LOG &lt;Text&gt;</P>
+
+<P><I>Parameters:</I></P>
+
+<P>TextThe text to be added to the detailed error and status log history.</P>
+
+<P><I>Examples:</I></P>
+
+<P>#Start an S1 sleep and log the start and stop times</P>
+
+<P>LOG "Sleep S1 Duration 60 seconds starting"</P>
+
+<P>EXECUTEWAIT SLEEPER -S1 -D 60</P>
+
+<P>LOG "Sleep S1 Duration 60seconds complete"</P>
+
+<P><B><I>REBOOT and REBOOTEND COMMAND</I></B></P>
+
+<P>Note: These commands should only be used where multiple reboots within one script are required. The commands are designed in such a way that they ONLY make sense in the following context…</P>
+
+<P>BurnInTest must be launched automatically at start up using a shortcut to bit.exe in the Start-Up directory. The shortcut must use the /s command line parameter to automatically run the script, which contains the REBOOT command. So if, for example the script file containing the REBOOT command was called ‘Reboot.bits’, then the command line ‘Target’ of the shortcut would look something like</P>
+
+<PRE><CODE>“C:\Program Files\BurnInTest\bit.exe” /s Reboot.bits</CODE></PRE>
+
+<P>These commands require that the Rebooter application is present in the BurnInTest application directory. Any reboots occurring as a result of these commands will use the current Rebooter settings.</P>
+
+<P>Overview:</P>
+
+<P>REBOOT reboots the computer. After the computer boots up, and BurnInTest restarts, the script will continue to execute at the line following the REBOOT command.</P>
+
+<P>REBOOTEND reboots the computer. After the computer boots up, BurnInTest will restart, but the script will no longer continue to execute.</P>
+
+<P>Example:</P>
+
+<P>MESSAGE “Run some 3D tests”</P>
+
+<P>RUN 3D</P>
+
+<P>MESSAGE “Reboot for the first time”</P>
+
+<P>REBOOT</P>
+
+<P>MESSAGE “Run some 2D tests”</P>
+
+<P>RUN 2D</P>
+
+<P>MESSAGE “Reboot for the second time”</P>
+
+<P>REBOOT</P>
+
+<P>MESSAGE “And now one final reboot”</P>
+
+<P>REBOOTEND</P>
+
+<P>MESSAGE “This message will never be displayed”</P>
+
+<P>Note: It is recommended to use “Accumulate logs” when using REBOOT and REBOOTEND.</P>
+
+</BODY>
+</HTML>

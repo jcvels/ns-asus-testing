@@ -5,7 +5,6 @@
 :: PARAMETROS INICIALES
 @echo off
 color 1F
-cls
 
 :: CONFIGURACION
 set FFKI_IP=192.168.0.167

@@ -1,0 +1,73 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>USB ports</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Preferences,USB port,Serial Number (USB),USB" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?preferences_usb.htm"; }
+  else { parent.quicksync('a8.22'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Headingpage"><span class="f_Headingpage">USB ports</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="battery_monitoring.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="preferences_video_play.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 7px 0px 7px 0px;">The USB test is only included in the BurnInTest Pro version only.</p>
+<p class="p_PreferencesGroupbox"><span class="f_PreferencesGroupbox">Loopback test </span></p>
+<p class="p_PreferencesControl"><span class="f_PreferencesControl">Automatically select all USB ports with USB 2.0 Loopback plugs connected</span></p>
+<p style="text-align: justify; margin: 0px 0px 8px 0px;">When selected, this option determines the number of USB tests at the start of each test run by detecting the number of PassMark USB 2.0 Loobpack plugs correctly connected to the system at that time. </p>
+<p style="text-align: justify; margin: 0px 0px 8px 0px;">It should be noted that while this improves test automation, it is possible that a USB port is faulty and the <a href="http://www.passmark.com/products/usb2loopback.htm" target="_blank" class="weblink">USB2.0 Loopback Plug</a> has failed to be detected and the number of tests run is less than the required number of tests. When using this option, some type of validation should be done to verify that all of the USB 2.0 loopback plugs are correctly connected , e.g. check the Tx and Rx LEDs flash on all plugs during the test. </p>
+<p class="p_PreferencesControl"><span class="f_PreferencesControl">Number of USB ports to test</span></p>
+<p style="text-align: justify; margin: 0px 0px 8px 0px;">This is the number of USB devices that BurnInTest attempts to connect to. In general you will want to set this value to be equal to the number of USB loopback devices that you would typically have connected to the machine. A maximum of 25 plugs may be used at the same time. If there are more plugs connected than configured in this section, USB ports will be tested based on the following: Ports with USB2.0 loopback plugs attached are first allocated for test (lowest device number to highest), followed by ports with USB1 loopback plugs attached (lowest device number to highest).</p>
+<p class="p_PreferencesControl"><span class="f_PreferencesControl">PassMark USB 2.0 Loopback plugs detected</span></p>
+<p style="text-align: justify; margin: 0px 0px 8px 0px;">This is a list of the loopback plugs that have been detected as being connected to the PC. Examples are:</p>
+<p style="margin: 0px 0px 0px 48px;">PMUSB2-0: 480Mb/s (PASSMARK USB2Test, Serial #:PMK5C0KV, V2)</p>
+<p style="text-indent: 10px; margin: 0px 0px 0px 38px;">PMUSB2-1: 12Mb/s (PASSMARK USB2Test, Serial #:PMK5C0SD, V2)</p>
+<p style="margin: 0px 0px 0px 48px;">PMUSB1-0: 12Mb/s (USB Loopback plug, Serial #:PM29K8PH)</p>
+<p style="text-align: justify;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="text-align: justify; margin: 0px 0px 8px 0px;">PMUSBn-m specifies whether the USB port has a Passmark USB loopback plug connected to it, where n specifies whether the plug is a USB1 or USB2.0 loopback plug, and m specifies the device number. The device number is just a sequential number (for USB1 and separately for USB2) which is incremented for each plug connected. </p>
+<p style="text-align: justify; margin: 0px 0px 8px 0px;">The maximum speed supported by the connected protocol for this Port is then displayed Note: (1) that the 2nd port in the list has a USB2.0 loopback plug attached, but the port only supports USB1 and hence only the lower maximum speed of 12Mb/s is available and displayed. (2) This is not a bench marked speed, but based on the protocol the plug has been able to connect to the PC with. <span style="font-style: italic;">(3) Benchmarking speed can be undertaken using the USB2Test software.</span></p>
+<p style="text-align: justify; margin: 0px 0px 8px 0px;">The text after the Maximum Speed is the description of the device that was found in the memory of the plug. This text will normally be, " USB Loopback plug " for a USB1 loopback device and “PASSMARK USB2Test” for a USB2.0 loopback plug.</p>
+<p style="text-align: justify; margin: 0px 0px 8px 0px;">The serial number is a unique identification number that is different for each plug. A typical serial number would be, " PMK5C0KV ". This unique serial number is stored in the plug.</p>
+<p style="text-align: justify; margin: 0px 0px 8px 0px;">For USB2.0 loopback plugs, the version of the firmware is then displayed.</p>
+<p style="margin: 0px 0px 8px 0px;">See the <a href="tests_usb.htm">USB port test</a> for more details.</p>
+<p class="p_PreferencesControl"><span class="f_PreferencesControl">Refresh list</span></p>
+<p class="p_PreferencesControl"><span class="f_PreferencesControl" style="font-style: normal;">Select this option to detect all of the USB 2,0 Loopback plug currently connected to the system.</span></p>
+<p class="p_PreferencesControl"><span class="f_PreferencesControl">PassMark USB 1.x loopback plug transmission timeout</span></p>
+<p><span style="font-style: italic;">Only applies to the USB1 loopback plug.</span></p>
+<p style="text-align: justify; margin: 0px 0px 8px 0px;">The user may specify the transmission timeout (in milliseconds). If a reply hasn’t been received after this time, an error will be logged.</p>
+
+</td></tr></table>
+
+</body>
+</html>

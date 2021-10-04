@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Timer and test duration preferences dialog box</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Preferences">
+	<PARAM NAME="Keyword" VALUE="Timer">
+	<PARAM NAME="Keyword" VALUE="Duration">
+	<PARAM NAME="Keyword" VALUE="Time">
+	<PARAM NAME="Keyword" VALUE="Autostop">
+	<PARAM NAME="Keyword" VALUE="Reboot">
+	<PARAM NAME="Keyword" VALUE="Restart">
+</OBJECT>
+
+<H1><A NAME="hid_preferences_timer"></A>Test Preferences – Post-Test</H1>
+
+<P>There are different actions that may be taken based on whether a test Passes or Fails, and whether the test is automatically stopped (i.e. the test has run for the set duration) or manually stopped by the user pressing the Stop button.</P>
+
+<P><B><I>Auto Stop</I></B></P>
+
+<P>Actions specific to automatically stopped tests are described below.</P>
+
+<P><I><U>Option1: Stop Tests (Normal behavior)</U></I></P>
+
+<P>This option will stop all the running tests and close all test windows. The Result window indicating a PASS or FAIL will be displayed. This is the normal default setting.</P>
+
+<P><I><U>Option2: Stop Tests and print results</U></I></P>
+
+<P>This option will stop all the running tests and close all test windows. The results will be sent to the default printer.</P>
+
+<P><I><U>Option3: Run external application and exit</U></I></P>
+
+<P>To help with the process of test automation it is possible to have BurnInTest run an external application, and exit automatically, after the tests have been completed. This could be used, for example, to call an application or batch file that would undertake a different type of testing (e.g. PassMark PerformanceTest) or customer specific reporting. </P>
+
+<P><I><U>Option4: Exit and Reboot PC</U></I></P>
+
+<P>This option is useful for reboot cycling testing. Once configured BurnInTest can be setup so that the PC will reboot itself in a cycle, with test runs occurring between each reboot. See the section on <A HREF="bith4lid.htm">Reboot cycling</A> for more details.</P>
+
+<P><B><I>Manual Stop</I></B></P>
+
+<P>Actions specific to manually stopped tests are described below.</P>
+
+<P><I><U>Option1: Stop Tests (Normal behavior)</U></I></P>
+
+<P>This option will stop all the running tests and close all test windows. This is the normal default setting.</P>
+
+<P><I><U>Option2: Display option to run application</U></I></P>
+
+<P>This option allows tests to be stopped prior to reaching the test duration, while maintaining a post test process that is consistent with the automatic stop actions (such as customer specific reporting). BurnInTest can display an option to the user asking whether they want to run the Post test application after a test run is manually stopped. If the user selects to run the external application, BurnInTest will exit after running the application. If the user selects not to run the external application, then BurnInTest will not exit.</P>
+
+<P><B><I>Other Options</I></B></P>
+
+<P><I><U>Always display result Window</U></I></P>
+
+<P>By default, this option is unchecked, and the result window indicating PASS/FAIL is only displayed after the Auto Stop, Stop Tests option. The user may specify to display this result window for the other options (i.e. manually stopped tests, and running an external application). If this option is checked the result window will be displayed after any external application is run, and before exiting BurnInTest.</P>
+
+<P><I><U>External Application</U></I></P>
+
+<P>This specifies the application to be run if the appropriate option above is selected.</P>
+
+<P><I>Syntax:</I></P>
+
+<P>&lt; Filename&gt; &lt;Parameter List&gt;</P>
+
+<P><I>Parameters:</I></P>
+
+<P>&lt; Filename &gt;The name of the executable file. The file name must be enclosed in double quotes (“”). The file must be a batch or executable, and the “.bat” or “.exe” must be included.</P>
+
+<P>&lt; Parameter List &gt;An optional list an parameters to be passed to the application. Each fixed parameter must be enclosed in quotations. </P>
+
+<P>A number of variable parameters are supported. These parameters will be substituted with fixed strings enclosed in double quotes (“”). These are: </P>
+
+<P><CODE>$RESULT -  “PASS” or “FAIL” will be substituted if the test is stopped automatically. If the test is manually stopped by the user, “PASS (manual abort)” or “FAIL (manual abort)” will be substituted.  </CODE></P>
+
+<PRE><CODE>    $SERIAL – The serial number will be substituted. 
+    $MACHINETYPE – The machine type will be substituted. 
+    $NOTES – The notes will be substituted. </CODE></PRE>
+
+<P><I>Examples:</I></P>
+
+<P>#Set plug-in test application file with full path</P>
+
+<P>c:\temp\cleanup.bat </P>
+
+<P>c:\temp\cleanup.exe $RESULT $SERIAL $MACHINETYPE $NOTES</P>
+
+<P>#Set plug-in test application file with path relative to BurnInTest drive</P>
+
+<P>\temp\cleanup.exe</P>
+
+<P>#Set plug-in test application file with path relative to BurnInTest application path </P>
+
+<P>cleanup.exe</P>
+
+<P><I><U>Reboot options</U></I></P>
+
+<P>Selecting this button will open the “Passmark Rebooter” application to set the reboot configuration.</P>
+
+</BODY>
+</HTML>

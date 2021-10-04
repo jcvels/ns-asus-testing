@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Video memory testing</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Graphics test suite">
+	<PARAM NAME="Keyword" VALUE="Video memory">
+	<PARAM NAME="Keyword" VALUE="Video RAM">
+</OBJECT>
+
+<H1><A NAME="hid_tests_videomem"></A>2D Graphics – Video memory test</H1>
+
+<P>This test directly writes, reads and verifies data to the primary display device using the Microsoft DirectDraw interface. As such, the version of DirectX specified in the System Requirements must be installed on the machine under test.</P>
+
+<P>You may test…
+
+<UL>
+	<LI>Just the local video memory – that is the graphics adapters onboard memory.<BR><BR></LI>
+
+	<LI>All video memory – this includes the local video memory and any other video memory, such as RAM reserved for graphics.</LI>
+</UL>
+
+<P>In each case, the test first determines how much of the appropriate memory is free and then fills this memory with a series of test patterns. Each test pattern is written to video memory and then displayed in the test window. After display, the test pattern data is read back from video memory and verified. Any errors are reported.</P>
+
+<P>The screen color depth must be set to a minimum of 16 bits.</P>
+
+<P>The test patterns used are similar to the memory test, plus some color specific patterns.
+
+<UL>
+	<LI>White11111111<BR><BR></LI>
+
+	<LI>Black00000000<BR><BR></LI>
+
+	<LI>Binary 110101010<BR><BR></LI>
+
+	<LI>Binary 201010101<BR><BR></LI>
+
+	<LI>Sequence(1, 2, 3, …)<BR><BR></LI>
+
+	<LI>Red<BR><BR></LI>
+
+	<LI>Green<BR><BR></LI>
+
+	<LI>Blue</LI>
+</UL>
+
+</BODY>
+</HTML>

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Bluetooth</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Bluetooth" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?bluetooth.htm"; }
+  else { parent.quicksync('a6.4'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Headingpage"><span class="f_Headingpage">Bluetooth</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="overview.htm"><img src="nav_up_blue.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="tests_3dg.htm"><img src="nav_left_blue.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="tests_maths.htm"><img src="nav_right_blue.gif" border=0 alt="Next"></a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>The Bluetooth test allows a systems Bluetooth adapter to be tested with a remote Bluetooth device.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>The Bluetooth test can be turned on or off in preferences. The remote Bluetooth device name is to be specified in Preferences, if no device name is specified, the test assumes the first remote Bluetooth device found is to be used for the test. This allows for automation when multiple remote Bluetooth devices are detected.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>The Bluetooth test will run at the same time as the other tests selected (e.g. CPU) and will have 3 stages: </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 48px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">1.</span></td><td>Search for Bluetooth devices (already paired devices and devices in range),</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 48px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">2.</span></td><td>Request the specified (or first) remote Bluetooth device service profiles and </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 48px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">3.</span></td><td>For the duration of the test, continuously connect and disconnect to the “File transfer” service profile of the specified remote Bluetooth device. If the “File transfer” service profile is not available, the first service profile found will be used.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>The local and remote Bluetooth devices will need to support the Bluetooth “File transfer” service profile. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>On making a connection to the remote Bluetooth device, some remote devices require an Authentication Passkey to be entered on the remote device, and then on the local device. This occurs on the first iteration and this requires user manual interaction to enter a Passkey on both sides. Second and subsequent connections do not require the Passkey to be re-entered. Some devices allow certain service profiles to not require Authentication (a Passkey), and in this case, no user interaction should be required. We have been testing both scenarios. The later scenario is supported on a HP Windows Mobile Pocket PC we have (as the remote Bluetooth device).</td></tr></table></div><p style="text-indent: -24px; margin: 0px 0px 0px 24px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -24px; margin: 0px 0px 0px 24px;">The test has been designed to test to a mobile Bluetooth device supporting the "File transfer" service profile e.g. Pocket PC, mobile phone and iPhone. It is not for PC to PC testing.</p>
+<p style="text-indent: -24px; margin: 0px 0px 0px 24px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -24px; margin: 0px 0px 0px 24px;">The Bluetooth test is available on Windows workstations XP SP3 and later, Vista and Windows 7.</p>
+<p style="text-indent: -24px; margin: 0px 0px 0px 24px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -24px; margin: 0px 0px 0px 24px;">To configure the Bluetooth test, please see "<a href="preferences_network.htm">Test Preferences window</a>.</p>
+<p style="text-indent: -24px; margin: 0px 0px 0px 24px;"><span style="color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -24px; margin: 0px 0px 0px 24px;"><span style="color: #000000;">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>
