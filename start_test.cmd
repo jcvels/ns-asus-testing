@@ -99,7 +99,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
 
     :: RUN-IN
     echo. [%TIME%] Ejecutando run-in test. (runin_test.cmd)
-    cmd.exe /c %DIR%\BATTERY\battery_test.cmd
+    cmd.exe /c %DIR%\PWR\runin_test.cmd
 
     :: OA3
     cmd.exe /c %DIR%\OA3\ejecutar_dpk.cmd
