@@ -80,7 +80,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
     cmd.exe /c %DIR%\USB\usb_test.cmd
 
     :: HDMI
-    echo. [%TIME%] Ejecutando battery test. (hdmi_test.cmd)
+    echo. [%TIME%] Ejecutando hdmi test. (hdmi_test.cmd)
     cmd.exe /c %DIR%\HDMI\hdmi_test.cmd
 
     :: LEDS
@@ -99,7 +99,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
 
     :: RUN-IN
     echo. [%TIME%] Ejecutando run-in test. (runin_test.cmd)
-    cmd.exe /c %DIR%\PWR\runin_test.cmd
+    cmd.exe /c %DIR%\RUNIN\runin_test.cmd
 
     :: OA3
     cmd.exe /c %DIR%\OA3\ejecutar_dpk.cmd
