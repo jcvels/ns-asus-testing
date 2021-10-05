@@ -10,8 +10,8 @@ set LOG=on_test.log
 
     cd %TOOLDIR%
 
-    bit.exe -c "notebook-prod-bitcfg"
-
+    C:\Program Files (x86)\BurnInTest\bit.exe -c %TOOLDIR%\asus-runin-5m-v1.bitcfg
+    
     if not EXIST %PASS% (
         goto FAIL
     )
