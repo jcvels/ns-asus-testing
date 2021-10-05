@@ -88,13 +88,16 @@ echo. [%TIME%] Version de la herramienta: %VER%
     :: LID
 
     :: POWER
-    
+    echo. [%TIME%] Ejecutando power management test. (power_test.cmd)
+    cmd.exe /c %DIR%\PWR\power_test.cmd
 
     :: BATERY END
     echo. [%TIME%] Ejecutando battery test. (battery_test.cmd)
     cmd.exe /c %DIR%\BATTERY\battery_test.cmd
 
     :: RUN-IN
+    echo. [%TIME%] Ejecutando run-in test. (runin_test.cmd)
+    cmd.exe /c %DIR%\BATTERY\battery_test.cmd
 
     :: OA3
     cmd.exe /c %DIR%\OA3\ejecutar_dpk.cmd

@@ -1,8 +1,3 @@
-::  POWER TEST Script
-::  Release: 1.0
-::  Date: 02/10/2021
-::  Author: Jorge Pauvels ( JorgeClaudio.Pauvels@newsan.com.ar)
-
 @echo off
 
 :: CONFIGURACION
@@ -15,7 +10,7 @@ set LOG=on_test.log
 
     cd %TOOLDIR%
 
-    pwrtest.exe /sleep /c:5 /d:60 /p:60 /s:4
+    bit.exe -c "notebook-prod-bitcfg"
 
     if not EXIST %PASS% (
         goto FAIL
@@ -26,7 +21,7 @@ set LOG=on_test.log
 :: PASS
 :PASS
 color 2F
-echo. [%TIME%] PASS (power_test.cmd)
+echo. [%TIME%] PASS (runin_test.cmd)
 goto END
 
 :: FAIL

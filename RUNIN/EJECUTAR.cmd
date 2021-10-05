@@ -1,1 +1,0 @@
-bit.exe -c "notebook-prod-bitcfg"
