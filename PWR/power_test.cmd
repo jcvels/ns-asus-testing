@@ -15,7 +15,7 @@ set LOG=on_test.log
 
     cd %TOOLDIR%
 
-    pwrtest.exe /sleep /c:5 /d:60 /p:60 /s:4
+    pwrtest.exe /sleep /c:5 /d:60 /p:60 /s:4 > %PASS%
 
     if not EXIST %PASS% (
         goto FAIL

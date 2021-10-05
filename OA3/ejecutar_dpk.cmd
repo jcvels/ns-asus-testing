@@ -29,6 +29,7 @@ if %errorlevel% == 0 (
 	color 4F
 	echo. [%TIME%] El equipo ya tiene una DPK inyectada.
 	%SHOWDPK%
+	pause
 	goto PASS
 ) 
 
@@ -36,7 +37,7 @@ if %errorlevel% == 0 (
 ping %FFKI_IP% >> %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
-	echo. [%TIME%] No hay conexión con el FFKI.
+	echo. [%TIME%] No hay conexion con el FFKI.
 	goto FAIL
 ) 
 
@@ -44,7 +45,7 @@ if not %errorlevel% == 0 (
 find /C "%FFKI_IP%" %CONFIGFILE% >> %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
-	echo. [%TIME%] Error de configuración de IP en archivo CFG.
+	echo. [%TIME%] Error de configuracion de IP en archivo CFG.
 	goto FAIL
 ) 
 
@@ -68,7 +69,7 @@ if NOT EXIST on_test.xml (
 %FLASHTOOL% %FLASHCOMMAND% >> %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
-	echo. [%TIME%] ERROR HERRAMIENTA DE INYECCIÓN
+	echo. [%TIME%] ERROR HERRAMIENTA DE INYECCION
 	goto FAIL
 )
 

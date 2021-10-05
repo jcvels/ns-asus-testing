@@ -89,6 +89,8 @@ echo. [%TIME%] Version de la herramienta: %VER%
 
     :: POWER
     echo. [%TIME%] Ejecutando power management test. (power_test.cmd)
+    echo. [%TIME%] El equipo se suspendera 5 veces durante 60 segundos cada vez.
+
     cmd.exe /c %DIR%\PWR\power_test.cmd
 
     :: BATERY END
@@ -103,6 +105,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
     cmd.exe /c %DIR%\OA3\ejecutar_dpk.cmd
 
     :: SYSTEM INSTALL
+    echo. [%TIME%] Installacion de imagen cliente. (imagen.cmd)
 
 :: END
 echo. [%TIME%] Finalizando.
