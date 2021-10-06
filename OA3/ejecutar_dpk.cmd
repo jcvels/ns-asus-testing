@@ -27,9 +27,7 @@ cd %TOOLDIR%
 if %errorlevel% == 0 (
 	color 4F
 	echo. [%TIME%] El equipo ya tiene una DPK inyectada.
-	%SHOWDPK%
-	pause
-	goto PASS
+	goto REPORT
 ) 
 
 :: VERIFICA CONEXION
@@ -72,6 +70,10 @@ if not %errorlevel% == 0 (
 	goto FAIL
 )
 
+:: REBOOT
+shutdown /r /f /t 0
+
+:REPORT
 :: REPORTE DE INYECCION + HASH + OHR INFO AL SERVER
 %OA3TOOL% -Report -Configfile=%CONFIGFILE% > %LOGFILE%
 if not %errorlevel% == 0 (
@@ -80,6 +82,7 @@ if not %errorlevel% == 0 (
 	goto FAIL
 ) 
 
+echo. [INFO] %SHOWDPK%
 %SHOWDPK%
 
 cd %DIR%

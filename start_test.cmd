@@ -36,7 +36,11 @@ echo. [%TIME%] Version de la herramienta: %VER%
     cmd.exe /c %DIR%\WIFI\wireless_test.cmd
 
     :: JUST FOR DEBUG
-    goto oa3
+    %DIR%\OA3\TOOLS\oa3tool.exe /validate > out.log
+    if %errorlevel% == 0 (
+        echo. [%TIME%] Continuando con inyeccion DPK
+        goto REPORT
+    ) 
 
     :: FAN - Validacion de funcionamiento, velocidad encendido y apagado del system fan
     echo. [%TIME%] Ejecutando validacion del system fan. (fan_test.cmd)
