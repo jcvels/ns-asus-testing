@@ -32,7 +32,7 @@ if %errorlevel% == 0 (
 ping %FFKI_IP% > %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
-	echo. [%TIME%] No hay conexion con MDOS FFKI ( %FFKI_IP% ).
+	echo. [%TIME%] No hay conexion con MDOS FFKI
 	goto FAIL
 ) 
 
