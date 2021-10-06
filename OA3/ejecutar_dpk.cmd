@@ -18,13 +18,13 @@ set LOGFILE=%CD%\OA3\injection.log
 :: INICIO
 echo.
 echo. [%TIME%] OEM Activation 3.0 Key Injection Script 2.2
-echo. [%TIME%] Iniciando nuevo proceso de inyeccion: %date% %time% >> %LOGFILE%
+echo. [%TIME%] Iniciando nuevo proceso de inyeccion %time% > %LOGFILE%
 
 :: ARREGLOS PREVIOS
 :: REG DELETE "HKLM\SYSTEM\CurrentControlSet\Services\ClipSVC\Parameters" /v "ProcessBiosKey" /f
 
 :: VERIFICA SI EXISTE UNA DPK INYECTADA EN EL SISTEMA Y RECUPERA EL PKID
-%OA3TOOL% /validate >> %LOGFILE%
+%OA3TOOL% /validate > %LOGFILE%
 if %errorlevel% == 0 (
 	color 4F
 	echo. [%TIME%] El equipo ya tiene una DPK inyectada.
@@ -34,7 +34,7 @@ if %errorlevel% == 0 (
 ) 
 
 :: VERIFICA CONEXION
-ping %FFKI_IP% >> %LOGFILE%
+ping %FFKI_IP% > %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
 	echo. [%TIME%] No hay conexion con MDOS FFKI ( %FFKI_IP% ).
@@ -42,7 +42,7 @@ if not %errorlevel% == 0 (
 ) 
 
 :: VERIFICA CONFIGURACION
-find /C "%FFKI_IP%" %CONFIGFILE% >> %LOGFILE%
+find /C "%FFKI_IP%" %CONFIGFILE% > %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
 	echo. [%TIME%] Error de configuracion de IP en archivo CFG.
@@ -50,7 +50,7 @@ if not %errorlevel% == 0 (
 ) 
 
 :: SOLICITUD DE DPK AL SERVER
-%OA3TOOL% -Assemble -Configfile=%CONFIGFILE% >> %LOGFILE%
+%OA3TOOL% -Assemble -Configfile=%CONFIGFILE% > %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
 	echo. [%TIME%] ERROR OA3TOOL ASSEMBLE
@@ -58,7 +58,7 @@ if not %errorlevel% == 0 (
 ) 
 
 :: COPIA DE SEGURIDAD XML
-copy oa3.xml on_test.xml >> %LOGFILE%
+copy oa3.xml on_test.xml > %LOGFILE%
 if NOT EXIST on_test.xml (
 	color 4F
 	echo. [%TIME%] ERROR COPIA DE SEGURIDAD XML
@@ -66,7 +66,7 @@ if NOT EXIST on_test.xml (
 ) 
 
 :: INYECCION DE DPK EN BIOS
-%FLASHTOOL% %FLASHCOMMAND% >> %LOGFILE%
+%FLASHTOOL% %FLASHCOMMAND% > %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
 	echo. [%TIME%] ERROR HERRAMIENTA DE INYECCION
@@ -74,7 +74,7 @@ if not %errorlevel% == 0 (
 )
 
 :: REPORTE DE INYECCION + HASH + OHR INFO AL SERVER
-%OA3TOOL% -Report -Configfile=%CONFIGFILE% >> %LOGFILE%
+%OA3TOOL% -Report -Configfile=%CONFIGFILE% > %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
 	echo. [%TIME%] ERROR OA3TOOL REPORT 
