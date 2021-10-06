@@ -39,7 +39,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
     %DIR%\OA3\TOOLS\oa3tool.exe /validate > out.log
     if %errorlevel% == 0 (
         echo. [%TIME%] Continuando con inyeccion DPK
-        goto REPORT
+        goto OA3
     ) 
 
     :: FAN - Validacion de funcionamiento, velocidad encendido y apagado del system fan
