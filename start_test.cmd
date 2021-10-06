@@ -35,6 +35,9 @@ echo. [%TIME%] Version de la herramienta: %VER%
     echo. [%TIME%] Ejecutando validacion de wifi. (wireless_test.cmd)
     cmd.exe /c %DIR%\WIFI\wireless_test.cmd
 
+    :: JUST FOR DEBUG
+    goto oa3
+
     :: FAN - Validacion de funcionamiento, velocidad encendido y apagado del system fan
     echo. [%TIME%] Ejecutando validacion del system fan. (fan_test.cmd)
     cmd.exe /c %DIR%\FAN\fan_test.cmd

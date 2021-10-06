@@ -12,7 +12,7 @@ set CONFIGFILE=%CD%\OA3\TOOLS\oa3.cfg
 set OA3TOOL=%CD%\OA3\TOOLS\oa3tool.exe
 set FLASHTOOL=%CD%\OA3\TOOLS\SLPBuilderConsole.exe
 set SHOWDPK=%CD%\OA3\TOOLS\showLicences.exe
-set FLASHCOMMAND=/oa30:\OEM\OA3\TOOLS\OA3.bin
+set FLASHCOMMAND=/oa30:%CD%\OA3\TOOLS\OA3.bin
 set LOGFILE=%CD%\OA3\injection.log
 
 :: INICIO
