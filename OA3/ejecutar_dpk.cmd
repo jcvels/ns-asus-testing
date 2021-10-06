@@ -99,4 +99,4 @@ goto END
 
 :END
 timeout 2 > %LOG%
-color 1F
+color
