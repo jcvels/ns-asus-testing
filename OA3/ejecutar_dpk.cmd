@@ -7,7 +7,7 @@
 color 1F
 
 :: CONFIGURACION
-set FFKI_IP=192.168.0.167
+set FFKI_IP=MDOS
 set CONFIGFILE=%CD%\OA3\TOOLS\oa3.cfg
 set OA3TOOL=%CD%\OA3\TOOLS\oa3tool.exe
 set FLASHTOOL=%CD%\OA3\TOOLS\SLPBuilderConsole.exe
