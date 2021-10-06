@@ -16,12 +16,7 @@ set FLASHCOMMAND=/oa30:%CD%\OA3\TOOLS\OA3.bin
 set LOGFILE=%CD%\OA3\injection.log
 
 :: INICIO
-echo.
 echo. [%TIME%] OEM Activation 3.0 Key Injection Script 2.2
-echo. [%TIME%] Iniciando nuevo proceso de inyeccion %time% > %LOGFILE%
-
-:: ARREGLOS PREVIOS
-:: REG DELETE "HKLM\SYSTEM\CurrentControlSet\Services\ClipSVC\Parameters" /v "ProcessBiosKey" /f
 
 :: VERIFICA SI EXISTE UNA DPK INYECTADA EN EL SISTEMA Y RECUPERA EL PKID
 %OA3TOOL% /validate > %LOGFILE%
