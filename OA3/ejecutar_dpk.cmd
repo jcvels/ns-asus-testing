@@ -7,16 +7,20 @@
 color 1F
 
 :: CONFIGURACION
+set DIR=%CD%
+set TOOLDIR=%CD%\OA3\TOOLS
+
 set FFKI_IP=MDOS
-set CONFIGFILE=%CD%\OA3\TOOLS\oa3.cfg
-set OA3TOOL=%CD%\OA3\TOOLS\oa3tool.exe
-set FLASHTOOL=%CD%\OA3\TOOLS\SLPBuilderConsole.exe
-set SHOWDPK=%CD%\OA3\TOOLS\showLicences.exe
-set FLASHCOMMAND=/oa30:%CD%\OA3\TOOLS\OA3.bin
-set LOGFILE=%CD%\OA3\injection.log
+set CONFIGFILE=%TOOLDIR%\oa3.cfg
+set OA3TOOL=%TOOLDIR%\oa3tool.exe
+set FLASHTOOL=%TOOLDIR%\SLPBuilderConsole.exe
+set SHOWDPK=%TOOLDIR%\showLicences.exe
+set FLASHCOMMAND=/oa30:%TOOLDIR%\OA3.bin
+set LOGFILE=%TOOLDIR%\injection.log
 
 :: INICIO
 echo. [%TIME%] OEM Activation 3.0 Key Injection Script 2.2
+cd %TOOLDIR%
 
 :: VERIFICA SI EXISTE UNA DPK INYECTADA EN EL SISTEMA Y RECUPERA EL PKID
 %OA3TOOL% /validate > %LOGFILE%
@@ -78,6 +82,8 @@ if not %errorlevel% == 0 (
 
 %SHOWDPK%
 
+cd %DIR%
+
 :: PASS
 :PASS
 color 2F
@@ -89,5 +95,5 @@ goto END
 %CD%\MISC\fail_msg.cmd
 
 :END
-timeout 2 >> %LOG%
+timeout 2 > %LOG%
 color 1F
