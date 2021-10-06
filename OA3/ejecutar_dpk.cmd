@@ -13,7 +13,7 @@ set OA3TOOL=%CD%\OA3\TOOLS\oa3tool.exe
 set FLASHTOOL=%CD%\OA3\TOOLS\SLPBuilderConsole.exe
 set SHOWDPK=%CD%\OA3\TOOLS\showLicences.exe
 set FLASHCOMMAND=/oa30:\OEM\OA3\TOOLS\OA3.bin
-set LOGFILE=%CD%\OA3\injection_log_%date%_%time%.log
+set LOGFILE=%CD%\OA3\injection.log
 
 :: INICIO
 echo.
@@ -37,7 +37,7 @@ if %errorlevel% == 0 (
 ping %FFKI_IP% >> %LOGFILE%
 if not %errorlevel% == 0 (
 	color 4F
-	echo. [%TIME%] No hay conexion con el FFKI.
+	echo. [%TIME%] No hay conexion con MDOS FFKI ( %FFKI_IP% ).
 	goto FAIL
 ) 
 

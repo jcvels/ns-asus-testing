@@ -89,7 +89,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
 
     :: POWER
     echo. [%TIME%] Ejecutando power management test. (power_test.cmd)
-    echo. [%TIME%] El equipo se suspendera 5 veces durante 60 segundos cada vez.
+    echo. [%TIME%] El equipo se suspendera 5 veces durante 10 segundos cada vez.
 
     cmd.exe /c %DIR%\PWR\power_test.cmd
 
@@ -101,11 +101,11 @@ echo. [%TIME%] Version de la herramienta: %VER%
     echo. [%TIME%] Ejecutando run-in test. (runin_test.cmd)
     cmd.exe /c %DIR%\RUNIN\runin_test.cmd
 
-    :: OA3
+    :OA3
     cmd.exe /c %DIR%\OA3\ejecutar_dpk.cmd
 
     :: SYSTEM INSTALL
-    echo. [%TIME%] Installacion de imagen cliente. (imagen.cmd)
+    echo. [%TIME%] Instalacion de imagen cliente. (imagen.cmd)
 
 :: END
 echo. [%TIME%] Finalizando.
