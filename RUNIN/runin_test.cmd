@@ -10,11 +10,11 @@ set LOG=on_test.log
 
     cd %TOOLDIR%
 
-    "C:\Program Files (x86)\BurnInTest\bit.exe" -c asus-runin-5m-v1.bitcfg -r
+    "C:\Program Files (x86)\BurnInTest\bit.exe" -c asus-runin-30m-v1.bitcfg -r
 
-    @REM if not EXIST %PASS% (
-    @REM     goto FAIL
-    @REM )
+    if not EXIST %PASS% (
+        goto FAIL
+    )
 
     cd %DIR%
 

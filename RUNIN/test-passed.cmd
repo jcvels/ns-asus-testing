@@ -1,0 +1,1 @@
+echo PASS > test_passed.log
