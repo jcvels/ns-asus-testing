@@ -25,7 +25,6 @@ cd %TOOLDIR%
 :: VERIFICA SI EXISTE UNA DPK INYECTADA EN EL SISTEMA Y RECUPERA EL PKID
 %OA3TOOL% /validate > %LOGFILE%
 if %errorlevel% == 0 (
-	color 4F
 	echo. [%TIME%] El equipo ya tiene una DPK inyectada.
 	goto REPORT
 ) 
@@ -82,7 +81,7 @@ if not %errorlevel% == 0 (
 	goto FAIL
 ) 
 
-echo. [INFO] %SHOWDPK%
+:: MOSTRAR LICENCIAS
 %SHOWDPK%
 
 cd %DIR%
@@ -99,4 +98,4 @@ goto END
 
 :END
 timeout 2 > %LOG%
-color
+color 1F

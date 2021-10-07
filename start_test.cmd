@@ -96,7 +96,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
 
     :: POWER
     echo. [%TIME%] Ejecutando power management test. (power_test.cmd)
-    echo. [%TIME%] El equipo se suspendera 5 veces durante 10 segundos cada vez.
+    echo. [%TIME%] El equipo se suspendera 5 veces durante 30 segundos cada vez.
 
     cmd.exe /c %DIR%\PWR\power_test.cmd
 
@@ -113,6 +113,9 @@ echo. [%TIME%] Version de la herramienta: %VER%
 
     :: SYSTEM INSTALL
     echo. [%TIME%] Instalacion de imagen cliente. (imagen.cmd)
+    cd %DIR%\IMAGE\
+    imageDeployerLauncher.exe
+    cd %DIR%
 
 :: END
 echo. [%TIME%] Finalizando.
@@ -120,7 +123,8 @@ echo.
 echo. // ASUS Notebook Testing Script for MP //
 echo.
 color
-pause > null
+timeout 5 > null
+shutdown -r -f -t 0
 exit
 
 :: FAIL
