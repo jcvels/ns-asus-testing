@@ -35,7 +35,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
     echo. [%TIME%] Ejecutando validacion de wifi. (wireless_test.cmd)
     cmd.exe /c %DIR%\WIFI\wireless_test.cmd
 
-    :: JUST FOR DEBUG
+    :: CHECK IF DPK WAS INJECTED
     %DIR%\OA3\TOOLS\oa3tool.exe /validate > out.log
     if %errorlevel% == 0 (
         echo. [%TIME%] Continuando con inyeccion DPK
