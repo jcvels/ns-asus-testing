@@ -15,14 +15,10 @@ set MODEL=%CD%\BIOS\TOOLS\bios_model
 set SETTIME=%CD%\BIOS\TIME\
 set TEMP=%CD%\BIOS\TOOLS\on_test.tmp
 set LOG=%CD%\BIOS\bios_test.log
-set PARTN=90NB0TY1-M11530
+
 
 :: TESTING PROCCESS
-
-    :: add 90PN
-    %TOOL_1% /WS 19 %PARTN% > %TEMP%
-    timeout 1 >> %LOG%
-
+   
     :: get bios model by wmic
     wmic baseboard get product,manufacturer,version > %TEMP%
     timeout 1 >> %LOG%
