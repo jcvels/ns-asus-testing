@@ -94,7 +94,7 @@ goto END
 
 :: FAIL
 :FAIL
-%CD%\MISC\fail_msg.cmd
+%DIR%\MISC\fail_msg.cmd
 
 :END
 timeout 2 > %LOG%
