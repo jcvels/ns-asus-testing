@@ -5,6 +5,7 @@
 :: CONFIG
 @echo off
 color 1F
+mode 800
 cls
 
 :: SCRIPT CONFIG
