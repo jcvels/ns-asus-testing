@@ -32,7 +32,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
     :: UPDATE
     curl -s -H "Accept: application/vnd.github.VERSION.sha" "https://api.github.com/repos/jcvels/ns-asus-testing/commits/master" > version.log
     set /p VERREMOTE=<%CD%\version.log
-    find /C %VERREMOTE% %VERLOCAL% >> %LOG%
+    find /C %VERLOCAL% %VERREMOTE% >> %LOG%
     if %errorlevel% == 0 (
         echo. [%TIME%] HAY UNA ACTUALIZACION DISPONIBLE!
     )
