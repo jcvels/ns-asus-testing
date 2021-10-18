@@ -32,11 +32,13 @@ echo. [%TIME%] Version de la herramienta: %VER%
     :: UPDATE
     curl -s -H "Accept: application/vnd.github.VERSION.sha" "https://api.github.com/repos/jcvels/ns-asus-testing/commits/master" > remote-version
     set /p VERREMOTE=<%CD%\remote-version
-    find /C "%VERREMOTE%" %CD%\.git\FETCH_HEAD > %LOG%
-    if %errorlevel% == 0 (
+    find /C "%VERREMOTE%" %CD%\.git\FETCH_HEAD > null
+    if not %errorlevel% == 0 (
         echo. [%TIME%] Se requiere actualizacion...
+        echo.
         git checkout *.*
         git pull
+        echo.
         timeout 10
         shutdown -r -f -t 0
     ) else echo. [%TIME%] Ejecutando ultima version publicada.
