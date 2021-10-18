@@ -112,7 +112,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
     cmd.exe /c %DIR%\OA3\ejecutar_dpk.cmd
 
     :: SYSTEM INSTALL
-    echo. [%TIME%] Instalacion de imagen cliente. (imagen.cmd)
+    echo. [%TIME%] Instalacion de imagen cliente. (imageDeployerLauncher.exe)
     cd %DIR%\IMAGE\
     imageDeployerLauncher.exe
     cd %DIR%
