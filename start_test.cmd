@@ -1,6 +1,6 @@
 :: ASUS Testing Script
-:: Release: 0.0
-:: Date: 08/09/2021
+:: Release: 1.0
+:: Date: 18/10/2021
 
 :: CONFIG
 @echo off
