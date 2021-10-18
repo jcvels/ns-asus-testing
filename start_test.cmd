@@ -37,7 +37,7 @@ echo. [%TIME%] Version de la herramienta: %VER%
         echo. [%TIME%] Se requiere actualizacion...
         echo.
         git checkout *.*
-        git pull production
+        git pull
         echo.
         timeout 10
         shutdown -r -f -t 0
