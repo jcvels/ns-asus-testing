@@ -30,7 +30,8 @@ echo. [%TIME%] Version de la herramienta: %VER%
     cmd.exe /c %DIR%\WIFI\wireless_test.cmd
 
     :: UPDATE
-    set /p VERREMOTE=<curl -s -H "Accept: application/vnd.github.VERSION.sha" "https://api.github.com/repos/jcvels/ns-asus-testing/commits/master"
+    curl -s -H "Accept: application/vnd.github.VERSION.sha" "https://api.github.com/repos/jcvels/ns-asus-testing/commits/master" > version.log
+    set /p VERREMOTE=<%CD%\version.log
     find /C %VERREMOTE% %VERLOCAL% >> %LOG%
     if %errorlevel% == 0 (
         echo. [%TIME%] HAY UNA ACTUALIZACION DISPONIBLE!
