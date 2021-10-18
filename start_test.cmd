@@ -22,18 +22,25 @@ echo. [%TIME%] Configuracion de energia aplicada.
 C:\Windows\System32\powercfg.exe /s 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
 
 :: VERSION
-set /p VER=<%CD%\.git\FETCH_HEAD
+set /p VERLOCAL=<%CD%\.git\FETCH_HEAD
 echo. [%TIME%] Version de la herramienta: %VER%
+
+    :: WIFI CONECTION
+    echo. [%TIME%] Ejecutando validacion de wifi. (wireless_test.cmd)
+    cmd.exe /c %DIR%\WIFI\wireless_test.cmd
+
+    :: UPDATE
+    set /p VERREMOTE=<curl -s -H "Accept: application/vnd.github.VERSION.sha" "https://api.github.com/repos/jcvels/ns-asus-testing/commits/master"
+    find /C %VERREMOTE% %VERLOCAL% >> %LOG%
+    if %errorlevel% == 0 (
+        echo. [%TIME%] HAY UNA ACTUALIZACION DISPONIBLE!
+    )
 
     :: SERIAL NUMBER
     echo. [%TIME%] Ejecutando grabado SSN. (getSerialNumber.exe)
     cd %DIR%\BIOS\TOOLS\
     getSerialNumber.exe
     cd %DIR%
-
-    :: WIFI CONECTION
-    echo. [%TIME%] Ejecutando validacion de wifi. (wireless_test.cmd)
-    cmd.exe /c %DIR%\WIFI\wireless_test.cmd
 
     :: CHECK IF DPK WAS INJECTED
     %DIR%\OA3\TOOLS\oa3tool.exe /validate > out.log
