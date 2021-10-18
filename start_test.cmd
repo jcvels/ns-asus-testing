@@ -22,7 +22,7 @@ echo. [%TIME%] Configuracion de energia aplicada.
 C:\Windows\System32\powercfg.exe /s 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
 
 :: VERSION
-set /p VERLOCAL=<%CD%\.git\FETCH_HEAD
+set /p VER=<%CD%\.git\FETCH_HEAD
 echo. [%TIME%] Version de la herramienta: %VER%
 
     :: WIFI CONECTION
@@ -30,12 +30,16 @@ echo. [%TIME%] Version de la herramienta: %VER%
     cmd.exe /c %DIR%\WIFI\wireless_test.cmd
 
     :: UPDATE
-    curl -s -H "Accept: application/vnd.github.VERSION.sha" "https://api.github.com/repos/jcvels/ns-asus-testing/commits/master" > version.log
-    set /p VERREMOTE=<%CD%\version.log
-    find /C %VERLOCAL% %VERREMOTE% >> %LOG%
+    curl -s -H "Accept: application/vnd.github.VERSION.sha" "https://api.github.com/repos/jcvels/ns-asus-testing/commits/master" > remote-version
+    set /p VERREMOTE=<%CD%\remote-version
+    find /C "%VERREMOTE%" %CD%\.git\FETCH_HEAD > %LOG%
     if %errorlevel% == 0 (
-        echo. [%TIME%] HAY UNA ACTUALIZACION DISPONIBLE!
-    )
+        echo. [%TIME%] INICIANDO ACTUALIZACION...
+        git checkout *.*
+        git pull
+        timeout 10
+        shutdown -r -f -t 0
+    ) else echo. [%TIME%] Se está ejecutando la ultima version del testeo.
 
     :: SERIAL NUMBER
     echo. [%TIME%] Ejecutando grabado SSN. (getSerialNumber.exe)
