@@ -34,12 +34,12 @@ echo. [%TIME%] Version de la herramienta: %VER%
     set /p VERREMOTE=<%CD%\remote-version
     find /C "%VERREMOTE%" %CD%\.git\FETCH_HEAD > %LOG%
     if %errorlevel% == 0 (
-        echo. [%TIME%] INICIANDO ACTUALIZACION...
+        echo. [%TIME%] Se requiere actualizacion...
         git checkout *.*
         git pull
         timeout 10
         shutdown -r -f -t 0
-    ) else echo. [%TIME%] Se está ejecutando la ultima version del testeo.
+    ) else echo. [%TIME%] Ejecutando ultima version publicada.
 
     :: SERIAL NUMBER
     echo. [%TIME%] Ejecutando grabado SSN. (getSerialNumber.exe)
