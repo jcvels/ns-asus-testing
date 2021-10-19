@@ -13,7 +13,8 @@ set TOOL_3=setDateTime.exe
 set SETTIME=%CD%\BIOS\TIME\
 set TEMP=%CD%\BIOS\TOOLS\on_test.tmp
 set LOG=%CD%\BIOS\bios_test.log
-
+set VERSION=%CD%\BIOS\TOOLS\bios_version
+set MODEL=%CD%\BIOS\TOOLS\bios_model
 
 :: TESTING PROCCESS
    
