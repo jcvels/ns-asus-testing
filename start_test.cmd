@@ -12,7 +12,7 @@ set DIR=%CD%
 
 :: START
 echo.
-echo. // ASUS Notebook Testing Script for MP  =Release 1.0 = //
+echo. // ASUS Notebook Testing Script for MP //
 echo.
 echo. [%TIME%] Iniciando.
 echo. [%TIME%] El directorio de trabajo actual es %DIR%
