@@ -2,7 +2,7 @@
 
 :: CONFIGURACION
 set DIR=%CD%
-set TOOLDIR=%CD%\PWR
+set TOOLDIR=%CD%\RUNIN
 set PASS=test_passed.log
 set LOG=on_test.log
 
