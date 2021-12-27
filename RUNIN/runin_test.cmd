@@ -10,7 +10,13 @@ set LOG=on_test.log
 
     cd %TOOLDIR%
 
-    "C:\Program Files (x86)\BurnInTest\bit.exe" -c asus-runin-30m-v1.bitcfg -r
+    :: CONFIG FOR HD DISPLAY
+        copy /y asus-runin-30m-1366x768.bitcfg C:\Users\NEWSAN-ASUS\Documents\PassMark\BurnInTest\asus-runin-30m-1366x768.bitcfg
+        timeout 5
+        "C:\Program Files (x86)\BurnInTest\bit.exe" -c asus-runin-30m-1366x768.bitcfg -r
+
+    :: CONFIG FOR FHD DISPLAY
+        @REM "C:\Program Files (x86)\BurnInTest\bit.exe" -c asus-runin-30m-v1.bitcfg -r
 
     @REM if not EXIST %PASS% (
     @REM     goto FAIL
