@@ -1,6 +1,6 @@
 :: ASUS Testing Script
-:: Release: 1.0
-:: Date: 18/10/2021
+:: Release: 1.0 <=== MODIFICAR
+:: Date: 18/10/2021 <=== MODIFICAR
 
 :: CONFIG
 @echo off
@@ -25,9 +25,14 @@ C:\Windows\System32\powercfg.exe /s 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
 set /p VER=<%CD%\.git\FETCH_HEAD
 echo. [%TIME%] Version de la herramienta: %VER%
 
-    :: WIFI CONECTION
+    :: WIFI CONECTION 
+    
+    :: ===> TODO: Solo hacer la conexión.
+    
     echo. [%TIME%] Ejecutando validacion de wifi. (wireless_test.cmd)
     cmd.exe /c %DIR%\WIFI\wireless_test.cmd
+
+    :: ===> TODO: Mover configuracion de fecha y hora acá 
 
     :: UPDATE
     curl -s -H "Accept: application/vnd.github.VERSION.sha" "https://api.github.com/repos/jcvels/ns-asus-testing/commits/master" > remote-version
@@ -55,6 +60,8 @@ echo. [%TIME%] Version de la herramienta: %VER%
         echo. [%TIME%] Continuando con inyeccion DPK
         goto OA3
     ) 
+
+    :: ===> TODO: Poner aca Wifi-Check
 
     :: FAN - Validacion de funcionamiento, velocidad encendido y apagado del system fan
     echo. [%TIME%] Ejecutando validacion del system fan. (fan_test.cmd)
