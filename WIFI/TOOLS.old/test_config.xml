@@ -2,7 +2,8 @@
 <config>
   <profileFile>profile_JuanaManso.xml</profileFile>
   <wlanName>JuanaManso</wlanName>
-  <ntpServer>ar.pool.ntp.org</ntpServer>
   <pingServer>8.8.8.8</pingServer>
-  <autoFailTime>2</autoFailTime>
+  <dataUrl>https://www.newsan.com.ar/wp-content/uploads/2019/10/column_1-700x684.jpg</dataUrl>
+  <dataMd5>9d429ba8f037a96d9c7c89538f5b1c1f</dataMd5>
+  <autoFailTime>1</autoFailTime>
 </config>
