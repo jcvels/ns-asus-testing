@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <config>
-  <profileFile>ridns2.xml</profileFile>
+  <profileFile>profile_JuanaManso.xml</profileFile>
   <wlanName>JuanaManso</wlanName>
   <ntpServer>ar.pool.ntp.org</ntpServer>
   <pingServer>8.8.8.8</pingServer>
